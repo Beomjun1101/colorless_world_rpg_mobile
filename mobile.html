@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src https: http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>무색 Mobile 0.12.19 — iPad 터치 · 90% UI</title>
+<html lang="ko"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src https: http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>무색 Mobile 0.12.22 — 터치 UI 정리</title>
 <style>
 :root{color-scheme:dark;--ink:#edeae1;--dim:#adb5b1;--line:#ffffff24;--red:#d8675a;--paper:#c7b790}*{box-sizing:border-box}body,html{margin:0;overflow:hidden;width:100%;height:100%;background:#222b2b;color:var(--ink);font:14px/1.65 "Noto Sans CJK KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}button{font:inherit;cursor:pointer;border:1px solid #ffffff50;padding:11px 21px;background:#e4e1d7;color:#172224;border-radius:2px;transition:background .15s}button:hover{background:white}button.secondary{background:#1c272bcb;color:var(--ink);border-color:#ffffff30}button.secondary:hover{background:#354145}button.small{font-size:11px;padding:4px 9px}kbd{font:11px system-ui,sans-serif;border:1px solid #ffffff45;padding:2px 5px;border-radius:3px;white-space:nowrap;color:#f1ede2}.hidden{display:none!important}canvas#game{display:block;width:100vw;height:100vh;outline:none;cursor:crosshair}.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,#07121688)}#hud{position:fixed;inset:0;pointer-events:none;padding:26px 30px}.eyebrow{font-size:10px;letter-spacing:2.6px;color:#acb8b3}.location{font:600 27px/1.6 inherit;letter-spacing:3px;margin:3px 0;font-size:27px}.tag{font-size:11px;color:#b1bbb5}.quest{margin-top:25px;padding:12px 15px;border-left:2px solid var(--paper);max-width:260px;background:linear-gradient(90deg,#132123d9,#13212320)}.quest h3{font-size:13px;margin:0 0 7px;font-weight:600}.quest p{font-size:12px;margin:5px 0;color:#c6cfca}.quest .gold{color:#f1dfac}.right{position:absolute;top:27px;right:30px;text-align:right}#map{display:block;width:170px;height:170px;margin:10px 0 4px;border:1px solid #a8b3a13b;background:#132025b3}.mapHint{font-size:10px;letter-spacing:1px;color:#bcc7bf}#nav{position:absolute;top:25px;left:50%;transform:translateX(-50%);font-size:11px;color:#d1d3c8;letter-spacing:1px;text-align:center;white-space:nowrap}#nav b{display:block;font-size:13px;margin-top:3px;color:#e8debf}#boss{position:absolute;top:76px;left:50%;transform:translateX(-50%);width:390px;text-align:center}.boss-name{font-size:16px;letter-spacing:3px;margin-bottom:8px}.bar{height:6px;background:#091416d1;border:1px solid #ffffff1a}.bar i{display:block;background:#e1dfd4;height:100%;width:100%}#bossFill{background:var(--red)}#bossPhase{font-size:11px;margin-top:6px;color:#c5c9bd}.bottom{position:absolute;left:30px;bottom:28px;width:230px;padding:12px 14px;background:#152226b5}.health-label{display:flex;justify-content:space-between;font-size:11px;margin-bottom:7px}.stamina{height:3px;border:0;margin-top:7px}.stamina i{background:#c3af80}.supplies{font-size:11px;margin-top:8px;color:#c8cfc3}.controls{position:absolute;bottom:26px;right:30px;text-align:right;font-size:11px;line-height:2.3;color:#c6cfc4;background:linear-gradient(270deg,#142125c4,#14212500);padding:8px}.controls kbd{margin-left:7px}#tutorial{position:absolute;left:50%;bottom:143px;transform:translateX(-50%);width:390px;background:#142126ed;border:1px solid #b8b9a342;padding:14px 18px;pointer-events:auto;box-shadow:0 10px 30px #0002}#tutorial .step{color:var(--paper);letter-spacing:2px;font-size:10px}.tutorial-head{display:flex;justify-content:space-between;align-items:center}#tutorial h3{font-size:16px;margin:7px 0 3px}#tutorial p{font-size:12px;color:#c5cec7;margin:0}#guideBar{height:2px;margin-top:12px;background:#414b48}#guideBar i{display:block;height:100%;background:#ccbb8e;transition:width .2s}.prompt{position:absolute;left:50%;bottom:102px;transform:translateX(-50%);background:#152127ed;border:1px solid #b9bfac5c;padding:9px 18px;white-space:nowrap;font-size:12px}#toast{position:absolute;top:205px;left:50%;transform:translateX(-50%);max-width:570px;background:#142226e8;border:1px solid var(--line);padding:11px 21px;text-align:center;font-size:13px;opacity:0;transition:opacity .15s;pointer-events:none}#lock{position:fixed;display:none;width:25px;height:25px;border:1px solid #e6d8b5;transform:translate(-50%,-50%) rotate(45deg);pointer-events:none}#damage{position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 140px #b331376a;opacity:0}#labels{position:fixed;inset:0;pointer-events:none}.world-label{position:absolute;transform:translate(-50%,-100%);font-size:11px;white-space:nowrap;text-shadow:0 2px 4px #000;background:#132025a8;padding:2px 7px;border-radius:2px;color:#e6e3d3}.world-label.npc{color:#eddcb4;border-bottom:1px solid #e0ce9855}.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#081419ba;backdrop-filter:blur(3px);z-index:15}#overlay{justify-content:flex-start;background:linear-gradient(90deg,#0c191bf5,#0c191bbb 47%,#0c191b10);backdrop-filter:none}.titlepanel{margin-left:8vw;max-width:520px}.brand{font-family:serif;font-size:104px;line-height:1.2;letter-spacing:17px;font-weight:500;margin:17px 0}.subtitle{font-size:12px;letter-spacing:7px;color:#bfcbc3}.divider{width:42px;height:2px;background:var(--red);margin:28px 0}.intro{font-size:15px;line-height:2;color:#c7d0c7}.intro small{display:block;font-size:12px;color:#97a8a1;margin-top:16px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.fine{font-size:11px;color:#93a59d;margin-top:18px}.overlay-foot{position:absolute;left:8vw;bottom:25px;font-size:10px;letter-spacing:2px;color:#96a79f}.modal{max-height:90vh;overflow:auto;background:#152326f5;border:1px solid #bbc2ab40;box-shadow:0 20px 80px #0005;width:min(800px,90vw);padding:25px 30px}.modal h2{font-size:23px;letter-spacing:2px;margin:0 0 15px}.modal p{color:#c7d0c7}.modal .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin:20px 0}.help-item{border-bottom:1px solid var(--line);padding:9px 0;font-size:13px;display:flex;justify-content:space-between}.help-note{background:#0b171a77;padding:12px 16px;font-size:12px;color:#bdc7be}#dialog{background:#09141950;backdrop-filter:none;align-items:flex-end;padding-bottom:105px}#dialog .modal{width:min(700px,90vw);border-left:3px solid var(--paper);padding:21px 26px}#dialogTitle{font-size:17px;margin:0 0 13px;color:#ebdcaf}#dialogText{font-size:15px;line-height:1.9;color:#d9dfd3}#dialogText small{display:block;font-size:12px;color:#a4b3a9;margin-top:14px}.dialog-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.dialog-actions button{font-size:13px}.map-modal{width:min(900px,94vw);padding:20px 25px}#fullmap{display:block;width:100%;height:min(60vh,560px);background:#0c191d;border:1px solid var(--line)}.legend{font-size:11px;line-height:1.8;color:#b8c5ba;margin-top:10px}.journal-text{line-height:1.9;font-size:14px}.journal-text h3{font-size:15px;color:#e1d5b6;margin:20px 0 8px}#error{position:fixed;inset:0;background:#1c2a2e;z-index:100;padding:10vw;font-size:18px}.save-status{font-size:10px;color:#9eaea4;margin-top:5px}@media(max-width:1050px){#hud{padding:18px}.right{right:18px;top:18px}#map{width:130px;height:130px}.quest{max-width:220px;padding:8px 10px}.location{font-size:22px}#tutorial{width:330px;bottom:160px}.controls{right:18px;max-width:480px;font-size:10px}.bottom{left:18px;width:200px}#boss{top:78px;width:300px}#nav{top:20px}.titlepanel{margin-left:7vw}.brand{font-size:86px}}@media(max-height:650px){#tutorial{bottom:127px;padding:9px 14px}#toast{top:148px}#dialog{padding-bottom:50px}.titlepanel .divider{margin:16px 0}.brand{font-size:70px}.intro{font-size:13px}.quest{margin-top:12px}.modal{max-height:94vh}}
 
@@ -254,7 +254,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #e0bf82;outline-offs
 /* v0.12.11 — full-map zoom controls. */
 .map-top-actions{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.map-top-actions #mapZoomOut,.map-top-actions #mapZoomIn{min-width:34px;font-size:15px;padding:4px 9px}.map-top-actions #mapZoomReset{min-width:54px;padding:5px 8px;font-variant-numeric:tabular-nums}#fullmap{cursor:zoom-in}
 
-/* Mobile Touch Edition 0.12.14 — separate UI layer; gameplay/save rules stay shared. */
+/* Mobile Touch Edition 0.12.21 — contextual primary action; gameplay/save rules stay shared. */
 html{touch-action:manipulation}body.mobile-build{overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation;--mobile-ui-scale:.90}
 body.mobile-build #game{touch-action:none}
 .mobile-controls{position:fixed;inset:0;z-index:12;pointer-events:none;touch-action:none}
@@ -270,10 +270,10 @@ body.mobile-build #game{touch-action:none}
 .mobile-action{position:absolute;border-radius:50%;padding:0;background:#111c21e8;color:#efe8d7;border:1px solid #dfd2ad55;box-shadow:0 3px 14px #0007;font-weight:650;line-height:1.1;pointer-events:auto}
 .mobile-action:active,.mobile-action.pressed{transform:scale(.94);background:#38423f}
 .mobile-action.light{right:4px;bottom:4px;width:82px;height:82px;font-size:16px;background:#d5c7a9e8;color:#142022;border-color:#eadfca}
+.mobile-action.light.interaction{font-size:12px;background:#c2b17ee8;color:#142022;border-color:#f0ddb0;box-shadow:0 0 0 2px #d9c58b33,0 3px 14px #0007}
 .mobile-action.heavy{right:82px;bottom:72px;width:62px;height:62px;font-size:12px}
 .mobile-action.dodge{right:94px;bottom:5px;width:58px;height:58px;font-size:11px}
 .mobile-action.jump{right:8px;bottom:92px;width:58px;height:58px;font-size:11px}
-.mobile-action.interact{right:158px;bottom:128px;width:70px;height:48px;border-radius:24px;font-size:10px}
 .mobile-action.heal{right:168px;bottom:72px;width:54px;height:54px;font-size:10px}
 .mobile-action.guard{right:162px;bottom:9px;width:58px;height:58px;font-size:10px}
 .mobile-aim-hint{position:absolute;right:260px;bottom:max(18px,calc(env(safe-area-inset-bottom) + 12px));font-size:8px;color:#b8c1bb99;letter-spacing:.3px;pointer-events:none}
@@ -374,11 +374,29 @@ html.musaek-js-running #quickLookFallback{display:none}
    touch-action: manipulation disables Safari double-tap zoom while preserving tap delivery. */
 body.mobile-build #hud,body.mobile-build .mobile-controls{transform:scale(var(--mobile-ui-scale));transform-origin:center center}
 body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) .modal{transform:scale(var(--mobile-ui-scale));transform-origin:center center}
+
+/* v0.12.21 — mobile-only UI cleanup: touch labels, less duplicated chrome, safer tap targets. */
+body.mobile-build .controls{display:none!important}
+body.mobile-build .skill-slot kbd{display:none!important}
+body.mobile-build .prompt{display:none!important}
+body.mobile-build .touch-chip{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:18px;padding:0 5px;border:1px solid #ffffff30;border-radius:4px;color:#e8ddc2;font-size:7px;line-height:1;background:#172327}
+body.mobile-build #hotbar{gap:5px}
+body.mobile-build .skill-slot{width:52px;height:56px}
+body.mobile-build .skill-icon{font-size:23px;line-height:27px}
+body.mobile-build .skill-name{font-size:8.5px}
+body.mobile-build .mobile-quick{align-items:center}
+body.mobile-build .mobile-quick button{white-space:nowrap}
+body.mobile-build #mobileJournal.hidden{display:none!important}
+@media (max-height:430px){
+ body.mobile-build .skill-slot{width:49px;height:53px}
+ body.mobile-build #tutorial{width:176px}
+ body.mobile-build .quest{max-width:170px}
+}
 </style></head><body class="main-menu mobile-build">
 <canvas id="game" tabindex="0" aria-label="무색 3D 게임"></canvas><div class="vignette"></div><div id="labels"></div>
 <div id="hud"><div class="eyebrow">CHAPTER 01 / A RUMOR IN THE WOODS</div><div class="location" id="regionName">새벽마을</div><div class="tag" id="regionTag">안전 구역 · 사냥꾼의 첫걸음</div>
 <div class="quest"><h3 id="questTitle">첫 번째 발걸음</h3><div id="questLines"></div><div id="boarQuestHUD" class="hidden"><span id="boarQuestText"></span><button id="boarQuestTrack" class="small secondary">추적</button></div><div id="rioQuestHUD" class="hidden"><span id="rioQuestText"></span><button id="rioQuestTrack" class="small secondary">제작 의뢰 추적</button></div></div>
-<div class="right"><div class="eyebrow">MUSAEK / MOBILE 0.12.19</div><canvas id="map" width="240" height="240" aria-label="주변 지도"></canvas><div class="mapHint">N ↑　E →　<kbd>Tab</kbd> 전체 지도</div><div class="tag" id="cameraInfo">60° 내려다보기</div><div class="save-status" id="saveStatus"></div></div>
+<div class="right"><div class="eyebrow">MUSAEK / MOBILE 0.12.22</div><canvas id="map" width="240" height="240" aria-label="주변 지도"></canvas><div class="mapHint">북 ↑　동 →　전체 지도</div><div class="tag" id="cameraInfo">60° 내려다보기</div><div class="save-status" id="saveStatus"></div></div>
 <button id="statAlert" class="hidden" type="button" aria-label="미분배 능력치">!</button><div id="nav"></div><div id="boss" class="hidden"><div class="boss-overline">MID BOSS / THE CRIMSON BEAST</div><div class="boss-name">제보당의 붉은 괴수</div><div class="bar"><i id="bossFill"></i></div><div id="bossHP"></div><div id="bossPhase"></div></div>
 <div class="bottom">
 <div class="health-label"><span><span id="heroLevel">Lv.1</span> · 사냥꾼</span><span id="healthText">HP 100 / 100</span></div>
@@ -387,21 +405,21 @@ body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) 
 <div class="mana bar resource-gauge" id="manaGauge" role="progressbar" aria-label="마나 MP" aria-valuemin="0" aria-valuemax="50" aria-valuenow="50"><i id="manaFill"></i></div>
 <div class="resource-text resource-heading stamina-heading"><span id="staminaText">기력 100 / 100</span><span class="resource-use">일반·강공격·대시</span></div>
 <div class="bar stamina resource-gauge" id="staminaGauge" role="progressbar" aria-label="기력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><i id="staminaFill"></i></div>
-<div class="xp bar"><i id="xpFill"></i></div><div class="resource-text"><span id="xpText">0 / 32 EXP</span><span id="statHint">E · 미분배 5P</span></div>
-<div id="guardStatus" class="guard-status hidden"></div><div class="supplies"><span><kbd id="potionCD">Q</kbd> <span id="heals">하급 회복약 3</span></span><span id="hudGold">0 G</span></div></div>
-<div class="controls"><kbd>R</kbd> 대화 <kbd>E</kbd> 상태 <kbd>H</kbd> 조작 안내 <kbd>B</kbd> 소리</div>
-<div id="hotbar" aria-label="장착 스킬 4칸"><div class="skill-slot" id="skill0"><div class="cooldown-shade"></div><kbd>1</kbd><span class="skill-icon">╱</span><span class="skill-name">베기</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill1"><div class="cooldown-shade"></div><kbd>2</kbd><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill2"><div class="cooldown-shade"></div><kbd>3</kbd><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill3"><div class="cooldown-shade"></div><kbd>4</kbd><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="hotbar-caption">1 – 4 · 스킬　/　F · 대시　/　Space · 점프</div></div>
+<div class="xp bar"><i id="xpFill"></i></div><div class="resource-text"><span id="xpText">0 / 32 EXP</span><span id="statHint">상태 · 미분배 5P</span></div>
+<div id="guardStatus" class="guard-status hidden"></div><div class="supplies"><span><span id="potionCD" class="touch-chip">약</span> <span id="heals">하급 회복약 3</span></span><span id="hudGold">0 G</span></div></div>
+<div class="controls" aria-hidden="true"></div>
+<div id="hotbar" aria-label="장착 스킬 4칸"><div class="skill-slot" id="skill0"><div class="cooldown-shade"></div><span class="skill-icon">╱</span><span class="skill-name">베기</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill1"><div class="cooldown-shade"></div><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill2"><div class="cooldown-shade"></div><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="skill-slot" id="skill3"><div class="cooldown-shade"></div><span class="skill-icon">▧</span><span class="skill-name">잠김</span><span class="skill-cd"></span></div><div class="hotbar-caption">스킬 슬롯 터치</div></div>
 <div id="tutorial"><div class="tutorial-head"><span class="step" id="guideStep">조작 01 / 07</span><button id="skipGuide" class="secondary small">접기</button></div><h3 id="guideTitle"></h3><p id="guideText"></p><div id="guideBar"><i></i></div></div>
 <div id="commissionHUD" class="hidden"></div><div id="prompt" class="prompt hidden"></div><div id="toast" role="status"></div></div>
 <div id="mobileControls" class="mobile-controls hidden" aria-label="모바일 터치 조작">
  <div id="mobileQuick" class="mobile-quick">
   <button id="mobileMap" type="button" aria-label="지도 열기">지도</button>
   <button id="mobileStatus" type="button" aria-label="상태창 열기">상태</button>
+  <button id="mobileJournal" class="hidden" type="button" aria-label="모험 기록 열기">기록</button>
   <button id="mobileMenu" type="button" aria-label="게임 메뉴 열기">메뉴</button>
  </div>
  <div id="movePad" class="mobile-stick" aria-label="이동 스틱"><div class="mobile-stick-ring"></div><div id="moveThumb" class="mobile-stick-thumb"></div><span id="moveRunHint">바깥쪽 · 질주</span></div>
  <div id="mobileActions" class="mobile-actions">
-  <button id="mobileInteract" class="mobile-action interact" type="button">상호작용</button>
   <button id="mobileHeal" class="mobile-action heal" type="button">회복</button>
   <button id="mobileGuard" class="mobile-action guard" type="button">방어</button>
   <button id="mobileJump" class="mobile-action jump" type="button">점프</button>
@@ -413,7 +431,7 @@ body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) 
 </div>
 <div id="rotateNotice" class="rotate-notice" aria-hidden="true"><div><b>가로 화면 권장</b><span>휴대폰을 가로로 돌리면 터치 조작이 나타납니다.</span></div></div>
 <div id="lock"></div><div id="damage"></div>
-<div id="overlay" class="overlay"><section class="menu-identity"><div class="menu-kicker" id="overline">A WORLD WITHOUT COLOR</div><h1 class="brand" id="title">무색</h1><div class="subtitle" id="subtitle">THE STOLEN COLORS</div><div class="menu-story"><strong>세상이 잊어도,<br>당신의 여정은 남는다.</strong>잿빛 늪과 오래된 숲.<br>아직 꺼지지 않은 마을의 불빛.<br>멈춰 둔 모험으로 돌아오세요.</div><div class="menu-chapter">CHAPTER 01　/　제보당의 붉은 괴수<br><div class="menu-divider"></div>MOBILE TOUCH EDITION　—　PROTOTYPE 0.12.19</div><button id="sound" class="secondary menu-sound">소리 설정 · 터치해서 켜기</button><button id="openClock" class="secondary menu-sound">시계 설정 · 로컬 / 서버</button></section><section class="menu-shell"><div id="connectionBadge" class="menu-status"><i class="status-light"></i><span>로컬 저장 확인 중</span></div><div id="menuContent"></div><div id="menuMessage" class="menu-message" role="status" aria-live="polite"></div></section></div>
+<div id="overlay" class="overlay"><section class="menu-identity"><div class="menu-kicker" id="overline">A WORLD WITHOUT COLOR</div><h1 class="brand" id="title">무색</h1><div class="subtitle" id="subtitle">THE STOLEN COLORS</div><div class="menu-story"><strong>세상이 잊어도,<br>당신의 여정은 남는다.</strong>잿빛 늪과 오래된 숲.<br>아직 꺼지지 않은 마을의 불빛.<br>멈춰 둔 모험으로 돌아오세요.</div><div class="menu-chapter">CHAPTER 01　/　제보당의 붉은 괴수<br><div class="menu-divider"></div>MOBILE TOUCH EDITION　—　PROTOTYPE 0.12.22</div><button id="sound" class="secondary menu-sound">소리 설정 · 터치해서 켜기</button><button id="openClock" class="secondary menu-sound">시계 설정 · 로컬 / 서버</button></section><section class="menu-shell"><div id="connectionBadge" class="menu-status"><i class="status-light"></i><span>로컬 저장 확인 중</span></div><div id="menuContent"></div><div id="menuMessage" class="menu-message" role="status" aria-live="polite"></div></section></div>
 <input id="accountBackupFile" type="file" accept=".json,.musaek,application/json" class="hidden">
 <div id="storagePanel" class="overlay hidden"><section class="modal storage-modal"><div class="topline"><div><div class="eyebrow">THE HUNTER'S ARCHIVE</div><h2 id="storageTitle">여정의 기록</h2></div><button id="closeStorage" class="secondary small">닫기</button></div><p class="storage-topnote" id="storageHint"></p><div id="saveCards" class="save-cards"></div><div class="storage-tools"><button id="storageExport" class="secondary">현재 진행 파일로 내보내기</button><button id="storageImport" class="secondary">기존 저장 파일 가져오기</button><button id="storageAccountExport" class="secondary">계정 전체 백업</button><button id="storageRefresh" class="secondary">목록 새로고침</button></div><div id="storageMessage" class="storage-note" role="status" aria-live="polite"></div></section></div>
 
@@ -422,8 +440,8 @@ body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) 
 </div>
 
 <div id="dialog" class="overlay hidden"><section class="modal"><h2 id="dialogTitle"></h2><div id="dialogText"></div><div id="dialogActions" class="dialog-actions"></div></section></div>
-<div id="help" class="overlay hidden"><section class="modal"><div class="topline"><h2>사냥꾼의 모바일 조작 안내</h2><button id="closeHelp" class="secondary small">닫기</button></div><div class="help-resource"><b>마나 MP ≠ 기력</b><p>마나: 일반·강공격·스킬·달리기의 연료. 기력: 일반·강공격·대시의 여력.<br>일반·강공격은 두 자원을 함께 쓰고, 스킬은 마나만, F 대시는 기력만 씁니다.<br>Q 하급 회복약은 HP만 회복합니다. 자세한 설명은 이 도움말 아래의 생존 수첩에서 다시 읽으세요.</p></div><div class="help-grid"><div class="help-item"><span>제작한 방패로 1회 방어</span><kbd>G 누르기</kbd></div>
-<div class="help-item"><span>이동 · 바깥까지 밀면 질주</span><kbd>왼쪽 스틱</kbd></div><div class="help-item"><span>상호작용 · 대화</span><kbd>상호작용</kbd></div><div class="help-item"><span>점프</span><kbd>점프</kbd></div><div class="help-item"><span>달리기 · MP 초당 0.1</span><kbd>스틱 바깥</kbd></div><div class="help-item"><span>대시 · 공격 중 사용 가능</span><kbd>대시</kbd></div><div class="help-item"><span>약공격 · 3연타</span><kbd>공격</kbd></div><div class="help-item"><span>강공격</span><kbd>강공</kbd></div><div class="help-item"><span>공격 방향</span><kbd>자동 근접 조준</kbd></div><div class="help-item"><span>수동 공격 방향</span><kbd>빈 화면 드래그 · 카메라는 캐릭터 중심</kbd></div><div class="help-item"><span>카메라 거리</span><kbd>두 손가락 확대/축소</kbd></div><div class="help-item"><span>하급 회복약 · HP +30 (고정) / 8초</span><kbd>회복</kbd></div><div class="help-item"><span>탐험 지도</span><kbd>지도</kbd></div><div class="help-item"><span>메뉴 · 저장 · 불러오기</span><kbd>메뉴</kbd></div><div class="help-item"><span>소리 설정 / 음소거</span><kbd>B / M</kbd></div></div><div class="help-item"><span>상태 · 능력치 · 스킬 장착</span><kbd>상태</kbd></div><div class="help-item"><span>스킬</span><kbd>하단 스킬 슬롯 터치</kbd></div><div class="help-note">베기: MP 3.5 / 재사용 1초. 일반 공격 MP 0.5, 강공격 MP 1.5. 기력 소모는 아래 현재 무기 기준을 확인하세요. 피해 숫자는 실제 감소한 HP입니다.<br>F5: 슬롯 1에 빠른 저장 · F9: 불러오기 목록. 로컬 계정은 이 브라우저에 저장됩니다. 파일 이동 전에 계정 백업을 보관하세요. 달리는 동안 MP 자연 회복은 멈춥니다. MP가 바닥나면 걷기로 전환되며, 회복 후 Shift를 떼었다가 다시 누르세요. 카메라는 60도 각도를 유지합니다. 마을은 안전 구역입니다. 먼저 길잡이 세라에게 마나·기력과 상태창을 배우고 미분배 포인트를 모두 사용한 뒤, 슬라임 5마리·판매·회복약 구매·수습 장검 제작·휴식의 입문 의뢰를 완료하세요. 마을 서쪽 대장간에서는 무기·방어구·아티팩트·미궁 입장권을 제작하고, 모루에서 무기를 강화·복구·전승할 수 있습니다. 이후 로안의 슬라임 25마리 메인 의뢰를 받고 완료 보고하면 미궁 입장 자격을 얻습니다. 외부에서 미궁에 들어갈 때마다 입장권 1개를 사용합니다.</div><div id="actualStaminaHelp" class="help-note"></div><div id="survivalNotes"></div><div class="actions"><button id="showGuide" class="secondary">단계별 가이드 다시 보기</button></div></section></div>
+<div id="help" class="overlay hidden"><section class="modal"><div class="topline"><h2>사냥꾼의 모바일 조작 안내</h2><button id="closeHelp" class="secondary small">닫기</button></div><div class="help-resource"><b>마나 MP ≠ 기력</b><p>마나: 일반·강공격·스킬·달리기의 연료. 기력: 일반·강공격·대시의 여력.<br>일반·강공격은 두 자원을 함께 쓰고, 스킬은 마나만, 대시는 기력만 씁니다.<br>회복 버튼은 하급 회복약을 사용해 HP만 회복합니다. 자세한 설명은 이 도움말 아래의 생존 수첩에서 다시 읽으세요.</p></div><div class="help-grid"><div class="help-item"><span>제작한 방패로 1회 방어</span><kbd>방어 버튼</kbd></div>
+<div class="help-item"><span>이동 · 바깥까지 밀면 질주</span><kbd>왼쪽 스틱</kbd></div><div class="help-item"><span>약공격 · 대상 근처에서는 상호작용으로 자동 전환</span><kbd>공격 / 상호작용</kbd></div><div class="help-item"><span>점프</span><kbd>점프</kbd></div><div class="help-item"><span>달리기 · MP 초당 0.1</span><kbd>스틱 바깥</kbd></div><div class="help-item"><span>대시 · 공격 중 사용 가능</span><kbd>대시</kbd></div><div class="help-item"><span>강공격</span><kbd>강공</kbd></div><div class="help-item"><span>공격 방향</span><kbd>자동 근접 조준</kbd></div><div class="help-item"><span>수동 공격 방향</span><kbd>빈 화면 드래그 · 카메라는 캐릭터 중심</kbd></div><div class="help-item"><span>카메라 거리</span><kbd>두 손가락 확대/축소</kbd></div><div class="help-item"><span>하급 회복약 · HP +30 (고정) / 8초</span><kbd>회복</kbd></div><div class="help-item"><span>탐험 지도</span><kbd>지도</kbd></div><div class="help-item"><span>메뉴 · 저장 · 불러오기</span><kbd>메뉴</kbd></div><div class="help-item"><span>소리 설정 / 음소거</span><kbd>메뉴 → 소리 설정</kbd></div></div><div class="help-item"><span>상태 · 능력치 · 스킬 장착</span><kbd>상태</kbd></div><div class="help-item"><span>스킬</span><kbd>하단 스킬 슬롯 터치</kbd></div><div class="help-note">베기: MP 3.5 / 재사용 1초. 일반 공격 MP 0.5, 강공격 MP 1.5. 기력 소모는 아래 현재 무기 기준을 확인하세요. 피해 숫자는 실제 감소한 HP입니다.<br>저장과 불러오기는 메뉴에서 할 수 있습니다. 로컬 계정은 이 브라우저에 저장됩니다. 파일 이동 전에 계정 백업을 보관하세요. 달리는 동안 MP 자연 회복은 멈춥니다. MP가 바닥나면 걷기로 전환되며, 회복 후 이동 스틱을 중앙으로 놓았다가 다시 바깥쪽으로 밀어 주세요. 카메라는 60도 각도를 유지합니다. 마을은 안전 구역입니다. 먼저 길잡이 세라에게 마나·기력과 상태창을 배우고 미분배 포인트를 모두 사용한 뒤, 슬라임 5마리·판매·회복약 구매·수습 장검 제작·휴식의 입문 의뢰를 완료하세요. 마을 서쪽 대장간에서는 무기·방어구·아티팩트·미궁 입장권을 제작하고, 모루에서 무기를 강화·복구·전승할 수 있습니다. 이후 로안의 슬라임 25마리 메인 의뢰를 받고 완료 보고하면 미궁 입장 자격을 얻습니다. 외부에서 미궁에 들어갈 때마다 입장권 1개를 사용합니다.</div><div id="actualStaminaHelp" class="help-note"></div><div id="survivalNotes"></div><div class="actions"><button id="showGuide" class="secondary">단계별 가이드 다시 보기</button></div></section></div>
 <div id="mapOverlay" class="overlay hidden"><section class="modal map-modal"><div class="topline"><div><div class="eyebrow">FIELD NOTES / EXPLORATION</div><h2 id="mapTitle">색을 잃은 대지</h2></div><div class="map-top-actions"><button id="mapZoomOut" class="secondary small" aria-label="지도 축소">−</button> <button id="mapZoomReset" class="secondary small"><span id="mapZoomValue">100%</span></button> <button id="mapZoomIn" class="secondary small" aria-label="지도 확대">＋</button> <button id="townMapToggle" class="secondary small">마을 확대</button> <button id="mapExtent" class="secondary small hidden">미궁 전체 범위</button> <button id="closeMap" class="secondary small">닫기</button></div></div>
 <div class="map-layout"><div class="map-sheet"><canvas id="fullmap" width="1000" height="660" aria-label="탐험 지도"></canvas><div class="legend" id="mapLegend"></div></div><aside class="map-sidebar"><div class="map-objective"><div class="eyebrow">목적지</div><strong id="mapObjective"></strong><p id="mapObjectiveNote"></p><small id="mapDistance"></small><button id="mapResetTarget" class="secondary small">의뢰 목적지로</button></div><div id="mapTravel" class="map-travel hidden"></div><div id="mapPlaces"></div><div class="map-note" id="mapHintText"></div></aside></div></section></div>
 <div id="journal" class="overlay hidden"><section class="modal"><div class="topline"><h2>모험 기록</h2><button id="closeJournal" class="secondary small">닫기</button></div><div id="journalText" class="journal-text"></div></section></div>
@@ -431,34 +449,34 @@ body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) 
 <div id="combatTexts" aria-hidden="true"></div>
 <div id="statusPanel" class="overlay hidden"><section class="modal status-modal"><div class="topline"><div><div class="eyebrow">THE HUNTER / 아직 남아 있는 것들</div><h2>사냥꾼의 상태</h2><span id="statusLevel"></span></div><button id="closeStatus" class="secondary small">닫기</button></div><div id="statusPoints"></div><p id="statTaskHint" class="panel-note hidden" role="status"></p><nav id="statusTabs"><button data-tab="stats" class="selected">능력치</button><button data-tab="skills">스킬 장착</button><button data-tab="gear">장비 장착</button><button data-tab="loot">전리품</button><button data-tab="codex">사냥 도감</button></nav><div id="statusBody"></div><div class="panel-foot">창이 열리면 세계와 남은 공격 동작이 정지합니다. 닫으면 그 시점부터 이어집니다. 공격·방어 중 장비 교체 불가.</div></section></div>
 <div id="shopPanel" class="overlay hidden"><section class="modal shop-modal"><div class="topline"><div><div class="eyebrow">DAWN VILLAGE / TRADER</div><h2>상인 모르</h2></div><button id="closeShop" class="secondary small">닫기</button></div><p class="merchant-quote">“밖에서는 빛도 목숨도 값싸지. 여기선, 가져온 것에 값을 치르겠네.”</p><div id="shopLesson" class="lesson-shop hidden"></div><div id="shopGold"></div><div id="shopBody"></div><div class="actions"><button id="sellAllLoot" class="secondary">부산물 전부 판매</button><button id="buyPotion">하급 회복약 구매 · 18 G</button></div><p class="panel-note">판매한 부산물은 되돌릴 수 없습니다. 붉은 보석 파편과 미궁 입장권은 판매 불가입니다. 부산물 전부 판매는 코어도 자동으로 제외합니다.<br>온천 휴식은 무료이며 종류에 관계없이 회복약이 하나도 없을 때만 하급 회복약 1개를 지원합니다. 회복약이 하나라도 있으면 자원만 회복하며 보유량을 줄이지 않습니다.</p></section></div>
-<div id="forgePanel" class="overlay hidden"><section class="modal forge-modal"><div class="topline"><div><div class="eyebrow">DAWN VILLAGE / BLACKSMITH</div><h2>대장간 · 대장장이 브란</h2></div><button id="closeForge" class="secondary small">닫기</button></div><p class="merchant-quote">“좋은 쇠는 불에서 버티고, 좋은 사냥꾼은 기다릴 줄 알지.”</p><div id="forgeGold"></div><div id="forgeJob"></div><nav class="forge-tabs" id="forgeTabs"><button data-forge-tab="weapon" class="selected">무기</button><button data-forge-tab="armor">방어구</button><button data-forge-tab="artifact">아티팩트</button><button data-forge-tab="misc">기타</button><button data-forge-tab="owned">장비 판매</button></nav><div id="forgeBody"></div><p class="smith-note">무기는 등급별 제작비가 필요합니다. 골드·재료는 제작 확정 시 한 번 소모되고, 제작 시간은 플레이 중에 흐르고 메뉴·대화에서는 잠시 멈춥니다. 파일을 종료한 동안의 경과 시간은 다음 실행 때 반영됩니다. 고등급 장비일수록 오래 걸립니다. 장착 중이거나 잠근 장비는 판매할 수 없습니다. 장착 변경은 E 상태창에서 할 수 있습니다.</p></section></div>
+<div id="forgePanel" class="overlay hidden"><section class="modal forge-modal"><div class="topline"><div><div class="eyebrow">DAWN VILLAGE / BLACKSMITH</div><h2>대장간 · 대장장이 브란</h2></div><button id="closeForge" class="secondary small">닫기</button></div><p class="merchant-quote">“좋은 쇠는 불에서 버티고, 좋은 사냥꾼은 기다릴 줄 알지.”</p><div id="forgeGold"></div><div id="forgeJob"></div><nav class="forge-tabs" id="forgeTabs"><button data-forge-tab="weapon" class="selected">무기</button><button data-forge-tab="armor">방어구</button><button data-forge-tab="artifact">아티팩트</button><button data-forge-tab="misc">기타</button><button data-forge-tab="owned">장비 판매</button></nav><div id="forgeBody"></div><p class="smith-note">무기는 등급별 제작비가 필요합니다. 골드·재료는 제작 확정 시 한 번 소모되고, 제작 시간은 플레이 중에 흐르고 메뉴·대화에서는 잠시 멈춥니다. 파일을 종료한 동안의 경과 시간은 다음 실행 때 반영됩니다. 고등급 장비일수록 오래 걸립니다. 장착 중이거나 잠근 장비는 판매할 수 없습니다. 장착 변경은 상태 버튼의 장비 탭에서 할 수 있습니다.</p></section></div>
 <div id="anvilPanel" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="anvilTitle"><section class="modal anvil-modal"><div class="topline"><div><div class="eyebrow">ANVIL / TEMPER · REPAIR · TRANSFER</div><h2 id="anvilTitle">모루 · 불과 균열</h2></div><button id="closeAnvil" class="secondary small">닫기</button></div><div id="anvilGold"></div><nav id="anvilTabs" class="forge-tabs"><button data-anvil-tab="enhance" class="selected">강화</button><button data-anvil-tab="repair">복구</button><button data-anvil-tab="transfer">전승</button></nav><div id="anvilResult" role="status"></div><div id="anvilBody"></div><p class="smith-note">낡은 장검은 예비 무기로 유지합니다. 강화는 제작 무기만 가능합니다. 무기의 레벨 제한은 강화해도 바뀌지 않습니다.</p></section></div>
 <div id="clockPanel" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="clockTitle"><section class="modal clock-modal"><div class="topline"><h2 id="clockTitle">시계 설정</h2><button id="closeClock" class="secondary small">닫기</button></div><h3 id="clockState"></h3><p id="clockReadout"></p><label for="clockURL">서버 시계 URL <input id="clockURL" type="url" autocomplete="off" spellcheck="false" placeholder="배포한 HTTPS /api/time 주소"></label><div class="actions"><button id="clockSync">서버에 연결 / 동기화</button><button id="clockLocal" class="secondary">로컬 시계로 돌아가기</button></div><p id="clockError" role="status"></p><div class="help-note">기본은 내 기기 시계입니다. 공개 시간 서버는 연결되어 있지 않습니다.<br>연결하면 보스의 서울 정시 출현에 서버 시각을 사용합니다. 성공한 연결 주소는 이 브라우저에 기억합니다.<br>설정한 서버에는 시간 조회 요청만 보내며 계정·비밀번호·세이브는 보내지 않습니다.<br>서버가 끊기면 마지막 시각을 최대 30분간 추정하며 이후 로컬 시계로 돌아갑니다. 절전 복귀 시 다시 동기화합니다.<br>오프라인 파일이나 세이브 조작을 막는 보안 기능은 아닙니다. 제작·게시판의 일시정지 규칙은 유지합니다.</div></section></div>
 
 <div id="roomFade" aria-hidden="true"><span id="roomFadeName"></span></div>
 <div id="error" class="hidden"><h2>게임 화면을 시작하지 못했어요.</h2><p id="errorText">WebGL을 지원하는 최신 모바일 브라우저에서 열어주세요.</p></div>
 
-<div id="audioPanel" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="audioTitle"><section class="modal audio-modal"><div class="topline"><h2 id="audioTitle">숲의 소리</h2><button id="closeAudio" class="secondary small">B · 닫기</button></div>
+<div id="audioPanel" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="audioTitle"><section class="modal audio-modal"><div class="topline"><h2 id="audioTitle">숲의 소리</h2><button id="closeAudio" class="secondary small">닫기</button></div>
 <div class="audio-status"><strong id="audioStateText">클릭해서 소리를 켜 주세요.</strong><div id="audioTrackText">BGM · 아직 꺼지지 않은 불빛</div></div>
 <label class="audio-slider" for="masterVolume"><span>전체 음량</span><input id="masterVolume" type="range" min="0" max="100" value="70"><output id="masterVolumeValue">70%</output></label>
 <label class="audio-slider" for="musicVolume"><span>BGM</span><input id="musicVolume" type="range" min="0" max="100" value="35"><output id="musicVolumeValue">35%</output></label>
 <label class="audio-slider" for="sfxVolume"><span>효과음</span><input id="sfxVolume" type="range" min="0" max="100" value="75"><output id="sfxVolumeValue">75%</output></label>
 <div class="audio-buttons"><button id="audioRetry">소리 켜기 / 다시 연결</button><button id="audioTest" class="secondary">시험 소리</button><button id="audioMute" class="secondary">전체 끄기</button></div>
-<p id="audioError" role="status"></p><p class="audio-note">마을 · 숲 · 미궁 · 괴수 전투에 따라 음악이 바뀝니다.<br>이 파일 안에서 직접 합성하는 음악과 효과음입니다. 인터넷이나 별도 음원 파일이 필요하지 않습니다.<br>소리가 들리지 않으면 ‘다시 연결’을 누르고, 브라우저 탭과 기기의 음소거도 확인해 주세요.<br><kbd>M</kbd> 전체 음소거　 <kbd>B</kbd> 소리 설정</p></section></div>
+<p id="audioError" role="status"></p><p class="audio-note">마을 · 숲 · 미궁 · 괴수 전투에 따라 음악이 바뀝니다.<br>이 파일 안에서 직접 합성하는 음악과 효과음입니다. 인터넷이나 별도 음원 파일이 필요하지 않습니다.<br>소리가 들리지 않으면 ‘다시 연결’을 누르고, 브라우저 탭과 기기의 음소거도 확인해 주세요.<br>음소거와 음량 조절은 이 창의 버튼과 슬라이더를 사용하세요.</p></section></div>
 
 <div id="boardPanel" class="overlay hidden"><section class="modal board-modal"><div class="topline"><div><div class="board-eyebrow">DAWN ESTATE / COMMISSIONS</div><h2>영지 의뢰 게시판</h2><div id="boardTimer"></div></div><button id="closeBoard" class="secondary small">닫기</button></div><p id="boardIntro"></p><div id="boardQuests"></div><div class="board-footnote">Lv.3 + 입문 완료 후 개방. 게시판은 <b>서울 시각 00:00 / 06:00 / 12:00 / 18:00</b>에 3개 의뢰로 갱신됩니다. 메뉴·대화창을 열어 둬도 현실 시각 기준 갱신은 계속 흐릅니다. 메인·일반 퀘스트는 갱신되지 않습니다. 동시에 최대 2개만 수행할 수 있고, 완료해도 같은 주기에 새 의뢰가 즉시 생기지 않습니다.<br>갱신 시 미완료 게시판 의뢰만 만료됩니다. 완료 보상은 보관함에 남습니다. 납품 재료는 보고 시 소모됩니다. 완료한 납품이 갱신되면 재료를 보관함에 맡기며, 토벌은 수락 후부터 집계합니다.<br>단일 보상 추첨: 하급 회복약 10% · 골드 50% · 자유 능력치 1P 5% · 정해진 능력치 +1 10% · 경험치 10% · 일반 부산물 15%.<br>영구 스탯 보상이 나온 의뢰의 <b>바로 다음 의뢰</b>에는 영구 스탯 보상이 나오지 않습니다. 자유 포인트는 한 갱신 주기에 최대 한 번입니다. 입문 의뢰는 최초 안내용 별도 퀘스트입니다.</div></section></div><input id="saveFile" type="file" accept="application/json,.json" class="hidden">
 <script>
 'use strict';
 (()=>{
 try{document.documentElement.classList.add('musaek-js-running');}catch(_){}
-/* MUSAEK 0.12.19 — merchant sale chime and mobile iPad touch/UI polish.
+/* MUSAEK Mobile 0.12.22 — touch-first UI cleanup and contextual interaction.
  * All probabilities below are independent Bernoulli rolls, at Luck 5.
  * Skill power is not HP damage: strength and magic can modify it.
  */
 
 const MOBILE_BUILD=true;
-const MOBILE_EDITION='0.12.19-m3';
-const PATCH_REVISION=44;
+const MOBILE_EDITION='0.12.22-m6';
+const PATCH_REVISION=46;
 const DUNGEON_PUZZLE_REVISION=2;
 const RESPEC_GRANT_REVISION=1;
 const WORLD_LAYOUT_VERSION=3;
@@ -535,7 +553,7 @@ const WEAPON_PROFILES=Object.freeze({
 let shopTab='loot',dialogueReturn='play';
 
 const BALANCE=Object.freeze({
- version:8,balanceRevision:25,statGrowthRevision:2,progressionRevision:1,contactAttackSpeed:1.25,hitAttackSpeed:.75,hitSlowDuration:1,maxLevel:50,initialStat:5,initialPoints:5,pointsPerLevel:1,
+ version:8,balanceRevision:26,statGrowthRevision:2,progressionRevision:1,contactAttackSpeed:1.25,hitAttackSpeed:.75,hitSlowDuration:1,maxLevel:50,initialStat:5,initialPoints:5,pointsPerLevel:1,
  slotLevels:[1,5,10,15],xpGapZero:11,playerScale:.84*1.2,bossScale:1.5,
  basicMinPower:3,basicMaxPower:3,heavyPower:8,basicMana:.5,heavyMana:1.5,
  criticalChance:.025,criticalMinMultiplier:1.5,criticalMaxMultiplier:2.5,potionName:'하급 회복약',potionHealMin:30,potionHealMax:30,potionCooldown:8,potionPrice:18,
@@ -588,10 +606,10 @@ const MONSTERS=Object.freeze({
  townThug:{name:"골목의 불량배",type:"thug",rarity:'common',level:3,hp:95,xp:0,gold:0,attack:12,respawn:0,scale:1,drops:[]},
  roadSlime:{name:'길가 슬라임',type:'slime',rarity:'common',level:1,hp:20,xp:10,gold:.2,attack:8,respawn:35,scale:1,drops:[['slimeGel',.45],['slimeCore',.06],['roadSlimeRareCore',.01,true]]},
  swampSlime:{name:'잿빛 늪 슬라임',type:'slime',rarity:'common',level:3,hp:30,xp:18,gold:.3,attack:11,respawn:40,scale:1,drops:[['slimeGel',.60],['slimeCore',.12],['swampSlimeRareCore',.01,true]]},
- slimeQueen:{name:'슬라임 퀸',type:'slimeQueen',rarity:'boss',board:false,level:7,hp:320,xp:220,gold:2.4,attack:18,slam:27,respawn:240,scale:1.24,drops:[['slimeGel',1],['slimeCore',.45],['queenGel',.55],['slimeQueenCore',.10,true]]},
+ slimeQueen:{name:'슬라임 퀸',type:'slimeQueen',rarity:'boss',board:false,level:7,hp:320,xp:220,gold:2.4,attack:18,slam:27,respawn:3600,scale:1.24,drops:[['slimeGel',1],['slimeCore',.45],['queenGel',.55],['slimeQueenCore',.10,true]]},
  goblin:{name:'남쪽 숲 고블린',type:'goblin',rarity:'common',level:5,hp:48,xp:36,gold:.4,attack:15,respawn:55,scale:.96,drops:[['goblinScrap',.55],['goblinCharm',.06]]},
  goblinChief:{name:'고블린 족장',type:'goblin',rarity:'rare',level:7,hp:132,xp:120,gold:1.0,attack:24,respawn:110,scale:1.18,drops:[['goblinScrap',.80],['goblinCharm',.22]]},
- goblinShaman:{name:'고블린 주술사',type:'goblinShaman',rarity:'boss',board:false,level:10,hp:390,xp:330,gold:3.2,attack:21,slam:31,respawn:300,scale:1.10,drops:[['goblinScrap',1],['goblinCharm',.55],['goblinShamanCore',.10,true]]},
+ goblinShaman:{name:'고블린 주술사',type:'goblinShaman',rarity:'boss',board:false,level:10,hp:390,xp:330,gold:3.2,attack:21,slam:31,respawn:3600,scale:1.10,drops:[['goblinScrap',1],['goblinCharm',.55],['goblinShamanCore',.10,true]]},
  forestWolf:{name:'동쪽 숲 늑대',type:'wolf',rarity:'common',level:5,hp:72,xp:60,gold:.6,attack:21,respawn:60,scale:1.05,drops:[['wolfFur',.60],['wolfFang',.20],['forestWolfCore',.01,true]]},
  forestBoar:{name:'잿빛 엄니 멧돼지',type:'boar',rarity:'uncommon',level:7,hp:110,xp:100,gold:.9,attack:29,respawn:80,scale:1,drops:[['boarHide',.55],['boarTusk',.12],['forestBoarCore',.01,true]]},
  mazeWolf:{name:'미궁 늑대',type:'wolf',rarity:'common',level:8,hp:120,xp:115,gold:1.1,attack:27,respawn:60,scale:1.12,drops:[['darkFur',.65],['moonClaw',.18],['mazeWolfCore',.01,true]]},
@@ -631,7 +649,7 @@ const GEAR=Object.freeze({
  patchedChest:{id:'patchedChest',name:'덧댄 천 갑옷',slot:'armor',grade:'입문',sell:9,craft:20,materials:{slimeGel:8},damageReduction:.02,maxHpFlat:5,description:'점액으로 낡은 천을 겹쳐 굳혔다. 받는 피해 -2%, 최대 HP +5.'},
  hunterSword:{id:'hunterSword',name:'사냥꾼의 검',slot:'weapon',grade:'초중급',sell:55,craft:35,materials:{wolfFang:3,wolfFur:4,slimeGel:4},attackPct:0.12,rangePct:.07,visual:{kind:'fang',length:1.26,width:.12,tone:'armor'},description:'이빨 장검으로 넘어가기 전의 사냥용 검. 공격력 +12%, 사거리 +7%.'},
  paddedChest:{id:'paddedChest',name:'털 덧댄 갑옷',slot:'armor',grade:'초중급',sell:55,craft:45,materials:{boarHide:4,wolfFur:8},damageReduction:.06,maxHpFlat:7,description:'가죽 갑옷과 잿빛 늑대 갑옷 사이의 흉갑. 피해 -6%, 최대 HP +7.'},
- woodenShield:{id:'woodenShield',name:'수습 방패',slot:'shield',grade:'입문 방패',sell:7,craft:25,materials:{slimeGel:6},bossBlock:.5,description:'브란이 남은 목재를 제공한다. G를 누르는 동안 공격 1회 방어. 보스 피해는 50% 경감.'},
+ woodenShield:{id:'woodenShield',name:'수습 방패',slot:'shield',grade:'입문 방패',sell:7,craft:25,materials:{slimeGel:6},bossBlock:.5,description:'브란이 남은 목재를 제공한다. 방어 버튼으로 공격 1회를 막는다. 보스 피해는 50% 경감.'},
  hideShield:{id:'hideShield',name:'강화 가죽 방패',slot:'shield',grade:'중급 방패',sell:65,craft:60,materials:{boarHide:8,wolfFang:4},bossBlock:.75,description:'단단한 가죽판을 댄 방패. 공격 1회 방어, 보스 피해 75% 경감.'},
 
  starterSword:{id:'starterSword',name:'낡은 장검',slot:'weapon',grade:'기본',sell:0,craft:0,materials:{},attackPct:0,rangePct:0,crit:0,visual:{kind:'sword',length:1.15,width:.12,tone:'white'},description:'새벽마을에서 지급된 기본 장검.'},
@@ -954,7 +972,7 @@ function commitRepair(token){
  if(!x?.broken||x.locked||x.enhancement!==p.before||!repairDonors(x).some(d=>d.uid===p.donorUid)||!hasWorkshopCost(repairCost(x))){anvilProposal=null;anvilResult='복구 조건이 바뀌었습니다. 무기와 재료를 다시 확인하세요.';returnToAnvil();return false;}
  anvilProposal=null;payWorkshopCost(repairCost(x));
  hero.gearInstances=hero.gearInstances.filter(d=>d.uid!==p.donorUid);hero.equipment[x.gearId]--;
- x.broken=false;syncGearInstances();anvilResult=`복구 완료 · ${GEAR[x.gearId].name} +${x.enhancement} / E 장비 탭에서 다시 장착하세요.`;
+ x.broken=false;syncGearInstances();anvilResult=`복구 완료 · ${GEAR[x.gearId].name} +${x.enhancement} / 상태 → 장비 탭에서 다시 장착하세요.`;
  tone(480,.3,'sine',.02,700);saveGame();returnToAnvil();return {success:true,uid:x.uid,enhancement:x.enhancement,consumed:p.donorUid};
 }
 function showTicketRequirement(){
@@ -1116,7 +1134,7 @@ const SLIME_QUEEN_CLEARING=Object.freeze({x:220,z:55,r:13});
 const SWAMP_SLIME_POPULATION=27;
 const TOWN_BUILDINGS=Object.freeze([
  {id:'shop',name:'모르의 잡화점',x:-55,z:35,w:13,d:12,kind:'shop'},
- {id:'library',name:'새벽 기록관',x:-78,z:20,w:18,d:14,kind:'library'},
+ {id:'library',name:'새벽 도서관',x:-78,z:20,w:18,d:14,kind:'library'},
  {id:'sauna',name:'돌샘 온천',x:-113,z:77,w:16,d:14,kind:'sauna'}
 ]);
 const BOARD=Object.freeze({id:'board',name:'영지 의뢰 게시판',x:-68,z:61});
@@ -1125,7 +1143,7 @@ const RESIDENTS=Object.freeze([
  {id:'baker',name:'빵 굽는 마르타',x:-89,z:37.5,home:'baker',role:'resident',lines:['오늘도 밀가루가 모자라네. 그래도 경비병들 몫은 남겨 둬야지.','빵 굽는 냄새만큼은 용들도 가져가지 못했나 봐.']},
  {id:'weaver',name:'재봉사 렌',x:-103,z:21.5,home:'weaver',role:'resident',lines:['옷감이 전부 잿빛이라도 튼튼한 옷은 알아볼 수 있지.','옛날에는 염색실마다 이름이 있었다는데… 지금은 전부 같은 색이야.']},
  {id:'gatherer',name:'약초꾼 나리',x:-57,z:73.5,home:'gatherer',role:'resident',lines:['돌샘 온천에 가 봤어? 지하에서 올라오는 물이라 아직 따뜻해.','붉은 빛을 봤다는 사람들은 있어. 하지만 숲에서 돌아오지 못한 사람은 더 많아.']},
- {id:'carpenter',name:'목수 오웬',x:-79,z:90.5,home:'carpenter',role:'resident',lines:['이 영지는 작아도 문 하나 허술하게 달지 않아. 밤에는 그것이 목숨줄이거든.','잡화점은 동쪽, 기록관은 북쪽이야. 의뢰를 찾는다면 광장의 게시판을 보게.']}
+ {id:'carpenter',name:'목수 오웬',x:-79,z:90.5,home:'carpenter',role:'resident',lines:['이 영지는 작아도 문 하나 허술하게 달지 않아. 밤에는 그것이 목숨줄이거든.','잡화점은 동쪽, 도서관은 북쪽이야. 의뢰를 찾는다면 광장의 게시판을 보게.']}
 ]);
 const TOWN_HOUSES=Object.freeze([
  {id:'baker',x:-89,z:37,w:8,d:8},{id:'weaver',x:-103,z:21,w:9,d:8},
@@ -1141,18 +1159,18 @@ const ABRAM_GATE=Object.freeze({x:62,z:-195});
 const ABRAM_MERCHANT=Object.freeze({id:'abram_merchant',name:'상인 에다',x:136,z:-218.5,role:'merchant'});
 const ABRAM_SMITH=Object.freeze({id:'abram_smith',name:'대장장이 하겐',x:91,z:-218,yaw:Math.PI/2,anvilX:89,anvilZ:-221,forgeX:84,forgeZ:-218});
 const ABRAM_CAMP=Object.freeze({x:92.7,z:-166});
-const ABRAM_LIBRARIAN=Object.freeze({id:'abram_librarian',name:'기록관 유나',x:123,z:-173,role:'librarian'});
+const ABRAM_LIBRARIAN=Object.freeze({id:'abram_librarian',name:'사서 유나',x:123,z:-173,role:'librarian'});
 const ABRAM_PEOPLE=Object.freeze([
  {id:'abram_gate_guard',name:'아브람 문지기 벤',x:57.5,z:-192.5,role:'guard',yaw:Math.PI/2},
  {id:'abram_patrol',name:'파수병 리오',x:116,z:-197,role:'guard',yaw:Math.PI,lines:['새벽마을에서 왔군. 늑대의 울음이 잠잠해진 건 자네 덕분인가?','하겐은 이 마을의 철을 쓰지. 새벽마을과 다른 제작법을 갖고 있어.']},
- {id:'abram_guide',name:'길잡이 마렌',x:75,z:-187,role:'guide',yaw:Math.PI/2,lines:['아브람에 온 걸 환영해. 하겐의 대장간에는 새벽마을과 다른 아브람 전용 제작품이 있어. 제작은 대장장이, 강화·복구·전승은 모루에서 해.','절벽 너머에서 공중을 도는 적을 만나면 점프한 상태에서도 좌클릭·우클릭 공격이 닿아. 급강하해서 낮아진 순간을 노리는 것도 좋아.','Tab 지도의 빠른 이동은 마을 안에서만 쓸 수 있어. 해금한 마을끼리 이동하는 기능이라 필드에서는 먼저 직접 마을로 돌아와야 해.']},
+ {id:'abram_guide',name:'길잡이 마렌',x:75,z:-187,role:'guide',yaw:Math.PI/2,lines:['아브람에 온 걸 환영해. 하겐의 대장간에는 새벽마을과 다른 아브람 전용 제작품이 있어. 제작은 대장장이, 강화·복구·전승은 모루에서 해.','절벽 너머에서 공중을 도는 적을 만나면 점프한 상태에서도 공격·강공 버튼으로 타격할 수 있어. 급강하해서 낮아진 순간을 노리는 것도 좋아.','지도 화면의 빠른 이동은 마을 안에서만 쓸 수 있어. 해금한 마을끼리 이동하는 기능이라 필드에서는 먼저 직접 마을로 돌아와야 해.']},
  {id:'abram_herbalist',name:'약초상 노엘',x:152,z:-177,home:'abram_herb_house',role:'resident',lines:['붉은 빛을 봤다는 이야기가 여기도 들렸어. 아직은 소문이기를 바라는 사람도 있지.','새벽마을로 가는 길이 다시 열렸네. 약초를 실어 보내야겠어.']},
  {id:'abram_mason',name:'석공 루카',x:147,z:-150,home:'abram_mason_house',role:'resident',lines:['높은 성벽도 사람 손으로 쌓는 거야. 안으로 들어와 잠시 쉬어.','우리집 지붕은 돌판으로 덮었지. 세상이 잿빛이라도 모양까지 같을 필요는 없잖아.']}
 ]);
 const ABRAM_BUILDINGS=Object.freeze([
  {id:'abram_forge',name:'하겐의 강철 대장간',town:'abram',kind:'forge',x:89,z:-219,w:17,d:14},
  {id:'abram_shop',name:'에다의 교역소',town:'abram',kind:'shop',x:136,z:-219,w:16,d:12},
- {id:'abram_library',name:'아브람 기록탑',town:'abram',kind:'library',x:123,z:-174,w:18,d:14},
+ {id:'abram_library',name:'아브람 도서관',town:'abram',kind:'library',x:123,z:-174,w:18,d:14},
  {id:'abram_sauna',name:'아브람 돌샘욕장',town:'abram',kind:'sauna',x:87,z:-168,w:16,d:14},
  {id:'abram_herb_house',name:'노엘의 약초집',town:'abram',kind:'home',x:152,z:-178,w:10,d:11},
  {id:'abram_mason_house',name:'루카의 돌집',town:'abram',kind:'home',x:147,z:-151,w:12,d:10},
@@ -1171,17 +1189,17 @@ const TERN_GATE=Object.freeze({side:'south',x:119,z:TERN_BOUNDS.maxZ});
 const TERN_MERCHANT=Object.freeze({id:'tern_merchant',name:'상인 이네스',x:147,z:-624.5,role:'merchant'});
 const TERN_SMITH=Object.freeze({id:'tern_smith',name:'대장장이 케른',x:90,z:-624,yaw:Math.PI/2,anvilX:88,anvilZ:-627,forgeX:84,forgeZ:-624});
 const TERN_CAMP=Object.freeze({x:91.5,z:-591});
-const TERN_LIBRARIAN=Object.freeze({id:'tern_librarian',name:'기록관 사라',x:120,z:-646,role:'librarian'});
+const TERN_LIBRARIAN=Object.freeze({id:'tern_librarian',name:'사서 사라',x:120,z:-646,role:'librarian'});
 const TERN_PEOPLE=Object.freeze([
  {id:'tern_gate_guard',name:'테른 수문장 오르',x:119,z:-582,role:'guard',yaw:0,lines:['붉은 철갑 거인이 쓰러진 뒤로 남쪽 길이 다시 열렸어. 아브람에서 올라왔다면 정말 긴 길을 건넌 셈이군.','능선에서는 발밑만 보지 마. 위를 도는 까마귀가 달리는 소리를 듣고 내려온다네.']},
- {id:'tern_guide',name:'등반가 네아',x:98,z:-603,role:'guide',yaw:Math.PI/2,lines:['여긴 테른이야. 부서진 능선을 넘어온 사냥꾼들이 쉬어 가는 바람막이 마을이지.','검은 갑각충은 몸을 닫았을 때 억지로 베기보다 공격 직후 열린 틈을 노려. 석분 골렘도 내려찍고 난 뒤가 가장 느려.','Tab 지도에서 테른이 해금됐어. 이제 테른·아브람·새벽마을 안에서는 서로 바로 이동할 수 있어. 필드에서는 사용할 수 없으니 먼저 마을로 돌아와.']},
+ {id:'tern_guide',name:'등반가 네아',x:98,z:-603,role:'guide',yaw:Math.PI/2,lines:['여긴 테른이야. 부서진 능선을 넘어온 사냥꾼들이 쉬어 가는 바람막이 마을이지.','검은 갑각충은 몸을 닫았을 때 억지로 베기보다 공격 직후 열린 틈을 노려. 석분 골렘도 내려찍고 난 뒤가 가장 느려.','지도에서 테른이 해금됐어. 이제 테른·아브람·새벽마을 안에서는 서로 바로 이동할 수 있어. 필드에서는 사용할 수 없으니 먼저 마을로 돌아와.']},
  {id:'tern_quarry',name:'석공 바렌',x:151,z:-596,home:'tern_quarry_house',role:'resident',lines:['골렘의 석핵은 평범한 돌과 달라. 금이 가도 안쪽이 가루처럼 무너지지 않지.','폐광은 아직 막아 뒀어. 안쪽 길은 조사대가 준비되기 전에는 열지 않을 생각이야.']},
  {id:'tern_watcher',name:'망보기 루아',x:153,z:-647,home:'tern_watch_house',role:'resident',lines:['안개 골짜기에서는 발소리가 한 번 더 들릴 때가 있어. 그게 메아리인지 망령인지 구분하기 어렵지.','상층 관문에 있던 거인이 사라졌으니 북쪽 하늘도 조금 넓어 보이는군.']}
 ]);
 const TERN_BUILDINGS=Object.freeze([
  {id:'tern_forge',name:'케른의 능선 대장간',town:'tern',kind:'forge',x:90,z:-624,w:17,d:14},
  {id:'tern_shop',name:'이네스의 행상소',town:'tern',kind:'shop',x:147,z:-625,w:16,d:12},
- {id:'tern_library',name:'테른 바람기록소',town:'tern',kind:'library',x:120,z:-647,w:18,d:14},
+ {id:'tern_library',name:'테른 도서관',town:'tern',kind:'library',x:120,z:-647,w:18,d:14},
  {id:'tern_sauna',name:'테른 온석 쉼터',town:'tern',kind:'sauna',x:90,z:-592,w:16,d:12},
  {id:'tern_quarry_house',name:'바렌의 석공집',town:'tern',kind:'home',x:151,z:-596,w:11,d:10},
  {id:'tern_watch_house',name:'루아의 망보기집',town:'tern',kind:'home',x:153,z:-647,w:11,d:10},
@@ -1226,6 +1244,33 @@ const GUARDS=Object.freeze([
 ]);
 const GLYPHS=['달','별','해'];
 const ABRAM_CAVE=Object.freeze({entry:Object.freeze({x:0,z:42}),boss:Object.freeze({x:0,z:-78}),bounds:Object.freeze({minX:-56,maxX:56,minZ:-94,maxZ:50})});
+const MINI_BOSS_RESPAWN_MS=3600000;
+const DUNGEON_POTION_CHESTS=Object.freeze({
+ dungeon:Object.freeze([{id:'forest-0',x:-28,z:16},{id:'forest-1',x:12,z:28},{id:'forest-2',x:28,z:-44}].map(Object.freeze)),
+ abramDungeon:Object.freeze([{id:'abram-0',x:-40,z:42},{id:'abram-1',x:-4,z:2},{id:'abram-2',x:32,z:-50}].map(Object.freeze))
+});
+const DAILY_REWARD_RULES=Object.freeze({offsetMs:9*3600000,seoulOffsetMs:9*3600000,goldCycle:Object.freeze([15,20,25]),goldCap:30,xpDivisor:15,xpCap:2000});
+function seoulDayKey(now=TIME_SOURCE.now()){return Math.floor((Number(now)+DAILY_REWARD_RULES.seoulOffsetMs)/86400000);}
+function dailyRewardAvailable(now=TIME_SOURCE.now()){return seoulDayKey(now)>Number(state.town?.dailyReward?.lastDay??-1);}
+function dailyRewardMaterialCandidates(){
+ const out=[];for(const id of hero.defeatedArchetypes||[]){const m=MONSTERS[id];if(!m||m.boss||m.rarity==='boss'||id==='werewolf'||id==='ironGiant'||id==='townThug')continue;for(const [item,,exact] of m.drops||[]){const it=ITEMS[item];if(exact||!it||/Core$/.test(item)||/코어|붉은 보석/.test(it.rarity||'')||item==='redGem')continue;out.push(item);}}return [...new Set(out)];
+}
+function claimDailyReward(now=TIME_SOURCE.now()){
+ if(!dailyRewardAvailable(now)){openDialogue('낡은 보급 상자','오늘은 이미 안쪽을 살펴봤다.<small>숨겨진 보급은 한국 시간 00:00에 다시 채워지는 것 같다.</small>');return false;}
+ const day=seoulDayKey(now),prev=Number(state.town.dailyReward?.lastDay??-999999),streak=prev===day-1?Math.max(1,Number(state.town.dailyReward?.streak)||0)+1:1;
+ const gold=Math.min(DAILY_REWARD_RULES.goldCap,DAILY_REWARD_RULES.goldCycle[(streak-1)%DAILY_REWARD_RULES.goldCycle.length]);
+ const remaining=hero.level>=BALANCE.maxLevel?0:Math.max(0,xpRequired(hero.level)-hero.xp),xp=Math.min(DAILY_REWARD_RULES.xpCap,Math.max(0,Math.floor(remaining/DAILY_REWARD_RULES.xpDivisor)));
+ const mats=dailyRewardMaterialCandidates(),item=mats.length?mats[Math.floor(Math.random()*mats.length)]:null;changeGold(gold);if(xp>0)addXP(xp);if(item)hero.inventory[item]=(hero.inventory[item]||0)+1;
+ state.town.dailyReward={lastDay:day,streak};saveGame();SOUND.effect('coin');
+ const parts=[moneyText(gold),xp>0?'EXP +'+xp:null,item?ITEMS[item].name+' ×1':'부산물 없음 · 아직 사냥 기록이 부족함'].filter(Boolean);
+ openDialogue('낡은 보급 상자','상자 바닥의 이중판 아래에 작은 보급품이 숨겨져 있었다.<br><br><b>'+parts.join(' · ')+'</b><small>연속 발견 '+streak+'일 · 골드 보상은 15 → 20 → 25 G 뒤 다시 15 G로 순환한다. 한국 시간 00:00 갱신.</small>');return true;
+}
+function nearbyDungeonPotionChest(){const list=DUNGEON_POTION_CHESTS[state.scene]||[];return list.find(c=>!(state.lootChests||[]).includes(c.id)&&dist(player,c)<2.4)||null;}
+function openDungeonPotionChest(chest){if(!chest||(state.lootChests||[]).includes(chest.id))return false;if(player.heals>=BALANCE.maxPotions){toast('회복약 보관 공간이 부족하다.',2.5);return false;}state.lootChests.push(chest.id);player.heals++;saveGame();SOUND.effect('coin');burst(chest.x,.5,chest.z,C.light,8,1.2);toast('미궁 상자 · 하급 회복약 1개 획득',3);return true;}
+function renderLootChest(c,opened=false){const y=state.scene==='field'?(ridgeRawHeight(c.x,c.z)??0):0;draw(cube,trs(c.x,y+.38,c.z,.78,.42,.58,0,.08,0),opened?C.dark:C.wood,1);draw(cube,trs(c.x,y+.73,c.z-.02,.82,.12,.61,opened?.35:-.08,0,0),opened?C.dark:C.light,1);if(!opened)draw(cube,trs(c.x,y+.46,c.z-.59,.14,.22,.05),C.armor,1);}
+function renderDungeonPotionChests(){for(const c of DUNGEON_POTION_CHESTS[state.scene]||[])renderLootChest(c,(state.lootChests||[]).includes(c.id));}
+function dailyChestPoint(){const b=ROOM_BY_ID.get('storehouse');return b?{x:b.x-b.rw/2+1.7,z:b.z-b.rd/2+1.8}:null;}
+
 const DUNGEON_ACCESS=Object.freeze({forest:Object.freeze({id:'forest',name:'숲의 미궁',minLevel:10,recommended:'Lv.10~12'}),abram:Object.freeze({id:'abram',name:'아브람 종유석 미궁',minLevel:20,recommended:'Lv.22~26'})});
 const scenes={field:{objects:[],colliders:[],rects:[],batches:[],bounds:WORLD,grid:new Map()},dungeon:{objects:[],colliders:[],rects:[],batches:[],bounds:{minX:-51,maxX:61,minZ:-95,maxZ:51},grid:new Map()},abramDungeon:{objects:[],colliders:[],rects:[],batches:[],bounds:ABRAM_CAVE.bounds,grid:new Map()}};
 let building=scenes.field,seed=71521;
@@ -1531,6 +1576,7 @@ const TRACK_MARKS=Object.freeze([
 ]);
 const FLOOR_TRACK_ORDER=Object.freeze([0,1,2]);
 const MAZE={size:25,cell:4,grid:[],entry:{c:1,r:23},exit:{c:23,r:1},runes:[],pages:[],plates:[{x:24,z:-57,id:0},{x:36,z:-57,id:1},{x:48,z:-57,id:2}]};
+MAZE.supplyChests=DUNGEON_POTION_CHESTS.dungeon;const ABRAM_SUPPLY_CHESTS=DUNGEON_POTION_CHESTS.abramDungeon;
 function trackMark(id){return TRACK_MARKS[id]||TRACK_MARKS[0];}
 function buildTrackPlate(s){
  prop(cylinder,s.x,.035,s.z,2.6,.07,2.6,C.dark);
@@ -1733,7 +1779,7 @@ function heal(){
 }
 
 
-function initialHero(){return {respecGrantRevision:RESPEC_GRANT_REVISION,firstSlimeRewarded:false,gearInstances:[],equippedInstances:{weapon:'starter',artifact:null,armor:null,shield:null},gearSerial:0,bonusPoints:0,bonusStats:emptyStatBonus(),level:1,xp:0,points:BALANCE.initialPoints,stats:{vitality:5,strength:5,magic:5,luck:5,wisdom:5},manualStats:{vitality:0,strength:0,magic:0,luck:0,wisdom:0},gold:0,inventory:{statResetTicket:1},learned:['slash'],slots:['slash',null,null,null],cooldowns:[0,0,0,0],mp:50,kills:0,equipment:{},gear:{weapon:'starterSword',artifact:null,armor:null,shield:null},craft:null,specialCompleted:[]};}
+function initialHero(){return {respecGrantRevision:RESPEC_GRANT_REVISION,firstSlimeRewarded:false,gearInstances:[],equippedInstances:{weapon:'starter',artifact:null,armor:null,shield:null},gearSerial:0,bonusPoints:0,bonusStats:emptyStatBonus(),level:1,xp:0,points:BALANCE.initialPoints,stats:{vitality:5,strength:5,magic:5,luck:5,wisdom:5},manualStats:{vitality:0,strength:0,magic:0,luck:0,wisdom:0},gold:0,inventory:{statResetTicket:1},learned:['slash'],slots:['slash',null,null,null],cooldowns:[0,0,0,0],mp:50,kills:0,defeatedArchetypes:[],equipment:{},gear:{weapon:'starterSword',artifact:null,armor:null,shield:null},craft:null,specialCompleted:[]};}
 const hero=initialHero();
 let skillEffects=[],combatTexts=[],floatingId=0,lastReward='';
 function investedStat(id){return Math.max(0,hero.stats[id]-BALANCE.initialStat);}
@@ -1777,7 +1823,7 @@ function requestStatRespec(){
  if(!tickets){toast('무료 능력치 재분배권이 없습니다.',2);return false;}
  if(!count){toast('회수할 직접 분배 포인트가 없습니다.',2);return false;}
  $('statusPanel').classList.add('hidden');
- openDialogue('무료 능력치 재분배권',`<h3>직접 분배한 ${count}P만 되돌립니다.</h3><p>처음부터 가진 <b>모든 능력치 5</b>, 레벨업 때 자동으로 오른 <b>모든 능력치 +1</b>, 의뢰에서 받은 <b>지정 고정 능력치</b>는 그대로 남습니다.</p><p>회수되는 것은 시작 자유 포인트·레벨업 자유 포인트·의뢰의 자유 포인트를 직접 배분한 기록뿐입니다.</p><p class="workshop-danger">무료 재분배권 1장을 사용합니다. 회수된 포인트는 E 상태창에서 다시 원하는 능력치에 배분할 수 있습니다.</p>`,[
+ openDialogue('무료 능력치 재분배권',`<h3>직접 분배한 ${count}P만 되돌립니다.</h3><p>처음부터 가진 <b>모든 능력치 5</b>, 레벨업 때 자동으로 오른 <b>모든 능력치 +1</b>, 의뢰에서 받은 <b>지정 고정 능력치</b>는 그대로 남습니다.</p><p>회수되는 것은 시작 자유 포인트·레벨업 자유 포인트·의뢰의 자유 포인트를 직접 배분한 기록뿐입니다.</p><p class="workshop-danger">무료 재분배권 1장을 사용합니다. 회수된 포인트는 상태 화면에서 다시 원하는 능력치에 배분할 수 있습니다.</p>`,[
   {label:'취소 · 그대로 유지',run:reopenStatus},
   {label:`재분배권 사용 · ${count}P 회수`,run:commitStatRespec}
  ]);return true;
@@ -1811,13 +1857,13 @@ function addXP(amount){
  }
  if(hero.level===BALANCE.maxLevel)hero.xp=0;
  if(ups)enforceWeaponEligibility(true);
- if(ups){toast(`레벨 ${hero.level} · 모든 능력치 +${ups} · 자유 포인트 +${ups*BALANCE.pointsPerLevel} / E로 분배`,5);tone(520,.24,'sine',.022,880);burst(player.x,1,player.z,C.light,20,2.8);}
+ if(ups){toast(`레벨 ${hero.level} · 모든 능력치 +${ups} · 자유 포인트 +${ups*BALANCE.pointsPerLevel} / 상태에서 분배`,5);tone(520,.24,'sine',.022,880);burst(player.x,1,player.z,C.light,20,2.8);}
  return ups;
 }
 function learnCleave(){learnSkill('cleave');}
 function rewardEnemy(e){
  if(e.rewarded)return;if(e.type==='thug'){defeatThug(e);return;}
- e.rewarded=true;hero.kills++;recordBoardKill(e);recordBoarQuestKill(e);
+ e.rewarded=true;hero.kills++;if(e.archetype&&e.archetype!=='townThug'&&!hero.defeatedArchetypes.includes(e.archetype))hero.defeatedArchetypes.push(e.archetype);recordBoardKill(e);recordBoarQuestKill(e);
  const firstSlime=e.type==='slime'&&!hero.firstSlimeRewarded;
  if(firstSlime)hero.firstSlimeRewarded=true;
  const xp=xpFor(e),gold=killGoldFor(e),drops=[];addXP(xp);if(gold>0)changeGold(gold);
@@ -1908,7 +1954,7 @@ function tickProgression(dt,regenerateMana=true){
  }
  for(let i=0;i<4;i++)if((keys.has('Digit'+(i+1))||keys.has('Numpad'+(i+1)))&&hero.cooldowns[i]<1e-7)castSkill(i,false);
 }
-function packHero(){return {respecGrantRevision:hero.respecGrantRevision,firstSlimeRewarded:hero.firstSlimeRewarded,workshopRevision:1,gearInstances:hero.gearInstances.map(x=>({...x})),equippedInstances:{...hero.equippedInstances},gearSerial:hero.gearSerial,specialCompleted:[...hero.specialCompleted],bonusPoints:hero.bonusPoints,bonusStats:{...hero.bonusStats},level:hero.level,xp:hero.xp,points:hero.points,stats:{...hero.stats},manualStats:{...hero.manualStats},progressionRevision:BALANCE.progressionRevision,gold:goldAmount(hero.gold),inventory:{...hero.inventory},learned:[...hero.learned],slots:[...hero.slots],cooldowns:[...hero.cooldowns],mp:hero.mp,kills:hero.kills,equipment:{...hero.equipment},gear:{...hero.gear},craft:hero.craft?{...hero.craft}:null};}
+function packHero(){return {respecGrantRevision:hero.respecGrantRevision,firstSlimeRewarded:hero.firstSlimeRewarded,workshopRevision:1,gearInstances:hero.gearInstances.map(x=>({...x})),equippedInstances:{...hero.equippedInstances},gearSerial:hero.gearSerial,specialCompleted:[...hero.specialCompleted],bonusPoints:hero.bonusPoints,bonusStats:{...hero.bonusStats},level:hero.level,xp:hero.xp,points:hero.points,stats:{...hero.stats},manualStats:{...hero.manualStats},progressionRevision:BALANCE.progressionRevision,gold:goldAmount(hero.gold),inventory:{...hero.inventory},learned:[...hero.learned],slots:[...hero.slots],cooldowns:[...hero.cooldowns],mp:hero.mp,kills:hero.kills,defeatedArchetypes:[...(hero.defeatedArchetypes||[])],equipment:{...hero.equipment},gear:{...hero.gear},craft:hero.craft?{...hero.craft}:null};}
 function applyHero(saved){
  const num=(v,def,min,max)=>Number.isFinite(v)?Math.max(min,Math.min(max,Math.floor(v))):def;
  Object.assign(hero,initialHero());if(!saved){if(state.cleared)learnCleave();return;}
@@ -1923,7 +1969,7 @@ function applyHero(saved){
  const pointBudget=BALANCE.initialPoints+BALANCE.pointsPerLevel*autoGain+hero.bonusPoints;
  hero.points=Math.max(0,pointBudget-legacySpent);hero.xp=num(saved.xp,0,0,hero.level===BALANCE.maxLevel?0:xpRequired(hero.level)-1);
  // Loot sales and salvage yield tenths of gold. Preserve them across saves.
- hero.gold=goldAmount(Number.isFinite(saved.gold)?Math.min(100000000,saved.gold):0);hero.kills=num(saved.kills,0,0,10000000);
+ hero.gold=goldAmount(Number.isFinite(saved.gold)?Math.min(100000000,saved.gold):0);hero.kills=num(saved.kills,0,0,10000000);hero.defeatedArchetypes=Array.isArray(saved.defeatedArchetypes)?[...new Set(saved.defeatedArchetypes.filter(id=>MONSTERS[id]&&id!=='townThug'))]:[];
  hero.firstSlimeRewarded=saved.firstSlimeRewarded===true;
  hero.gearInstances=Array.isArray(saved.gearInstances)?saved.gearInstances.filter(x=>x&&GEAR[x.gearId]&&typeof x.uid==='string').map(x=>({uid:x.uid,gearId:x.gearId,enhancement:Number.isInteger(x.enhancement)?Math.max(0,Math.min(10,x.enhancement)):0,broken:x.broken===true,locked:x.locked===true,commission:x.gearId===RIO_QUEST_RULES.gearId&&x.commission===RIO_QUEST_RULES.id?RIO_QUEST_RULES.id:null})):[];
  hero.equippedInstances=saved.equippedInstances&&typeof saved.equippedInstances==='object'?{...saved.equippedInstances}:{};
@@ -1988,7 +2034,7 @@ function gearEffectText(g){
  if(g.attackPct)a.push('공격력 +'+fmt(g.attackPct*100)+'%');if(g.rangePct)a.push('사거리 '+(g.rangePct>0?'+':'')+fmt(g.rangePct*100)+'%');if(g.crit)a.push('치명타 +'+fmt(g.crit*100)+'%p');if(g.attackSpeedPct)a.push('공격 동작 -'+fmt(g.attackSpeedPct*100)+'%');
  if(g.damageReduction)a.push('받는 피해 -'+fmt(g.damageReduction*100)+'%');if(g.maxHpFlat)a.push('최대 HP +'+fmt(g.maxHpFlat));if(g.maxHpPct)a.push('최대 HP +'+fmt(g.maxHpPct*100)+'%');if(g.maxMpPct)a.push('최대 MP +'+fmt(g.maxMpPct*100)+'%');if(g.manaRegenPct)a.push('MP 회복 +'+fmt(g.manaRegenPct*100)+'%');
  if(g.wolfBonus)a.push('늑대 계열 피해 +'+fmt(g.wolfBonus*100)+'% (늑대인간 포함)');
- if(g.slot==='shield')a.push(`G 방어 · 일반 공격 1회 완전 방어 / 보스 ${fmt((g.bossBlock||.5)*100)}% 경감`);
+ if(g.slot==='shield')a.push(`방어 버튼 · 일반 공격 1회 완전 방어 / 보스 ${fmt((g.bossBlock||.5)*100)}% 경감`);
  return a.join(' · ')||'추가 효과 없음';
 }
 function recipeMaterialsText(g,html=false){return Object.entries(g.materials||{}).map(([id,n])=>{const own=hero.inventory[id]||0,t=`${ITEMS[id]?.name||id} ${own}/${n}`;return html?`<span class="${own<n?'lack':''}">${escapeText(t)}</span>`:t;}).join(html?' · ':' / ');}
@@ -2016,7 +2062,7 @@ function claimCraft(){
  const job=hero.craft,g=craftRecipe(job?.gearId);if(!job||!g||!craftReadyHere()||!['play','dialogue'].includes(state.mode))return false;
  if(!finishCraftToInventory(job))return false;hero.craft=null;
  if(job.introCommission&&state.introQuest.stage==='craft'){state.introQuest.craftedSword=true;state.introQuest.stage='rest';mapChoice='quest';toast(`${g.name} 수령 완료 · 이제 돌샘 온천에서 쉬자`,5);}
- else toast(`${g.name} 수령 완료 · ${g.slot==='misc'?'가방에 보관됨':'E → 장비에서 확인'}`,5);
+ else toast(`${g.name} 수령 완료 · ${g.slot==='misc'?'가방에 보관됨':'상태 → 장비에서 확인'}`,5);
  saveGame();return true;
 }
 function openCraftClaimDialogue(){
@@ -2043,7 +2089,7 @@ function updateCrafting(notify=true){
  // when normal play resumes; the smith's ! marker remains until collection.
  if(!hero.craft.readyNotified&&notify&&state.mode==='play'){
   hero.craft.readyNotified=true;const g=craftRecipe(hero.craft.gearId),smith=craftSmith(hero.craft);
-  toast(`제작 완료! ${g?.name||'제작품'} · ${smith.name}에게 돌아가 R로 수령`,7);SOUND.effect('craftReady');saveGame();
+  toast(`제작 완료! ${g?.name||'제작품'} · ${smith.name}에게 돌아가 상호작용으로 수령`,7);SOUND.effect('craftReady');saveGame();
  }
  return true;
 }
@@ -2087,10 +2133,10 @@ function renderForge(){
  $('forgeGold').textContent=`보유 ${moneyText(hero.gold)} · ${currencyRuleText()}`;
  for(const b of $('forgeTabs').children)b.classList.toggle('selected',b.dataset.forgeTab===forgeTab);
  const job=$('forgeJob');
- if(hero.craft){const g=craftRecipe(hero.craft.gearId),ready=craftReady(hero.craft),smith=craftSmith(hero.craft);job.className='forge-job '+(ready?'ready':'');job.innerHTML=ready?`<span class="forge-scene-tag">제작 완료 · 수령 대기</span><br><strong>${escapeText(g?.name||'장비')}</strong><br><small>${escapeText(smith.name)}에게 R로 말 걸어 직접 수령하세요.</small>`:`<span class="forge-scene-tag">제작 중</span><br><strong>${escapeText(g?.name||'장비')}</strong> · 남은 시간 <b>${fmt(craftRemaining())}초</b><br><small>플레이 중 시간이 흐름 · 메뉴/대화 중 일시정지 · 파일을 종료한 시간은 다음 실행 때 반영</small>`;}
- else{job.className='forge-job';job.innerHTML='<span class="forge-scene-tag">'+escapeText(activeBlacksmith().name)+'의 제작대</span><br><small>제작은 한 번에 하나 · 무기 강화/복구/전승은 방 안의 모루에 R</small>';}
+ if(hero.craft){const g=craftRecipe(hero.craft.gearId),ready=craftReady(hero.craft),smith=craftSmith(hero.craft);job.className='forge-job '+(ready?'ready':'');job.innerHTML=ready?`<span class="forge-scene-tag">제작 완료 · 수령 대기</span><br><strong>${escapeText(g?.name||'장비')}</strong><br><small>${escapeText(smith.name)}에게 상호작용해 직접 수령하세요.</small>`:`<span class="forge-scene-tag">제작 중</span><br><strong>${escapeText(g?.name||'장비')}</strong> · 남은 시간 <b>${fmt(craftRemaining())}초</b><br><small>플레이 중 시간이 흐름 · 메뉴/대화 중 일시정지 · 파일을 종료한 시간은 다음 실행 때 반영</small>`;}
+ else{job.className='forge-job';job.innerHTML='<span class="forge-scene-tag">'+escapeText(activeBlacksmith().name)+'의 제작대</span><br><small>제작은 한 번에 하나 · 무기 강화/복구/전승은 방 안의 모루에서 상호작용</small>';}
  let out='';
- if(forgeTab==='owned')out=equippedSlotsHTML()+'<div class="forge-sale-note"><b>사용하지 않는 장비 판매</b><br>현재 장착 중인 장비와 잠근 장비는 판매할 수 없습니다. <b>보스가 떨어뜨린 재료를 사용한 장비도 판매 불가</b>입니다. 장착 변경은 <b>E → 장비 장착</b>에서 하세요.</div>'+gearRowsHTML(true);
+ if(forgeTab==='owned')out=equippedSlotsHTML()+'<div class="forge-sale-note"><b>사용하지 않는 장비 판매</b><br>현재 장착 중인 장비와 잠근 장비는 판매할 수 없습니다. <b>보스가 떨어뜨린 재료를 사용한 장비도 판매 불가</b>입니다. 장착 변경은 <b>상태 → 장비 장착</b>에서 하세요.</div>'+gearRowsHTML(true);
  else{
   const category=forgeTab==='craft'?'weapon':forgeTab;
   const list=category==='misc'?Object.values(MISC_RECIPES):Object.values(GEAR).filter(g=>craftRecipeAvailableHere(g)).filter(g=>g.id!=='starterSword'&&(category==='armor'?['armor','shield'].includes(g.slot):g.slot===category));
@@ -2108,7 +2154,7 @@ function renderForge(){
 const state={mode:'title',scene:'field',interior:null,time:0,kills:0,quest:'none',cleared:false,runActive:false,dead:false,
  rune:[1,2,0],gate:false,floorOpen:false,floorStep:0,lastPlate:-1,visited:Array(625).fill(false),
  guideStep:0,guideFlags:{},guideMove:0,guideRun:0,guideLook:0,guideHidden:false,guardChats:{},town:initialTown(),introQuest:initialIntroQuest(),exploration:initialExploration(),
- restored:false,wave:-100,toast:0,toastText:'',hitstop:0,shake:0,saveTimer:0,mapTimer:0,region:'',bossRespawnAt:0,ironGiantRespawnAt:0,ironGiantLastDefeatedAt:0};
+ restored:false,lootChests:[],wave:-100,toast:0,toastText:'',hitstop:0,shake:0,saveTimer:0,mapTimer:0,region:'',bossRespawnAt:0,ironGiantRespawnAt:0,ironGiantLastDefeatedAt:0};
 function initialPlayer(){return {x:WORLD.spawnX,y:0,z:WORLD.spawnZ,yaw:0,hp:100,stamina:100,heals:3,guardActive:false,guardCD:0,
  sprinting:false,sprintExhausted:false,sprintDebit:0,
  vx:0,vz:0,vy:0,grounded:true,coyote:.10,jumpBuffer:0,airDashUsed:false,land:0,
@@ -2122,6 +2168,10 @@ let audio=null,soundOn=true,testFrozen=false,dialogueChoices=[],helpReturn='play
 const SAVE_KEY='musaek-v04-world01'; // Legacy import only; no v0.5 account writes here.
 const RIDGE_ENEMY_TYPES=new Set(['goat','cat','crow','beetle','golem','wraith','giant']);
 const SOUTH_ENEMY_TYPES=new Set(['goblin','goblinShaman','slimeQueen']);
+function isHourlyMiniBoss(e){return !!e&&['slimeQueen','goblinShaman'].includes(e.archetype);}
+function refreshHourlyMiniBosses(now=TIME_SOURCE.now()){
+ let changed=false;for(const e of enemies){if(!isHourlyMiniBoss(e)||e.hp>0||!Number.isFinite(e.respawnAt)||now<e.respawnAt)continue;if(e.scene===state.scene&&dist(e.home,player)<=14)continue;Object.assign(e,freshEnemy(e.type,e.home.x,e.home.z,e.id,e.scene,e.archetype));changed=true;}if(changed)saveGame();return changed;
+}
 function rollRespawnDelay(spec,rng=Math.random){const raw=spec?.respawn;if(Array.isArray(raw)){const lo=Math.floor(Math.min(...raw)),hi=Math.floor(Math.max(...raw));return Math.floor(lo+clamp(rng(),0,1-Number.EPSILON)*(hi-lo+1));}return Number(raw)||0;}
 function enemyRadius(type,scale=1){return type==='boss'?1.68:type==='wolf'?.64*scale:type==='boar'?.83:type==='goblin'?.58*scale:type==='goblinShaman'?.68*scale:type==='slimeQueen'?1.08*scale:type==='goat'?.78*scale:type==='cat'?.63*scale:type==='crow'?.52*scale:type==='beetle'?.82*scale:type==='golem'?1.18*scale:type==='wraith'?.72*scale:type==='giant'?1.62*scale:.57;}
 function enemyBodyHeight(e){return e.type==='boss'?4.5*e.scale:e.type==='slime'?1.15:e.type==='slimeQueen'?2.75*e.scale:e.type==='boar'?1.65*e.scale:e.type==='goblin'?1.65*e.scale:e.type==='goblinShaman'?1.95*e.scale:e.type==='goat'?1.72*e.scale:e.type==='cat'?1.35*e.scale:e.type==='crow'?1.05*e.scale:e.type==='beetle'?1.12*e.scale:e.type==='golem'?2.65*e.scale:e.type==='wraith'?1.95*e.scale:e.type==='giant'?3.35*e.scale:1.6*e.scale;}
@@ -2329,9 +2379,9 @@ function damageEnemy(e,amount,hitInfo=null){
  if(e.hp<=0){
   rewardEnemy(e);
   recordIntroSlimeKill(e);
-  e.mode='dead';e.deadTime=0;if(!RIDGE_ENEMY_TYPES.has(e.type))e.y=0;e.hitSlow=0;if(lockId===e.id)lockId=null;
+  e.mode='dead';e.deadTime=0;if(isHourlyMiniBoss(e))e.respawnAt=TIME_SOURCE.now()+3600000;if(!RIDGE_ENEMY_TYPES.has(e.type))e.y=0;e.hitSlow=0;if(lockId===e.id)lockId=null;
   if(e.type==='slime'&&state.quest==='active'){
-   state.kills=Math.min(MAIN_HUNT_TARGET,state.kills+1);if(state.kills===MAIN_HUNT_TARGET){state.quest='report';toast(`슬라임 ${MAIN_HUNT_TARGET}마리 처치 완료! 새벽마을의 로안에게 R키로 보고하자.`,6);tone(630,.3,'sine',.025);}
+   state.kills=Math.min(MAIN_HUNT_TARGET,state.kills+1);if(state.kills===MAIN_HUNT_TARGET){state.quest='report';toast(`슬라임 ${MAIN_HUNT_TARGET}마리 처치 완료! 새벽마을의 로안에게 상호작용해 보고하자.`,6);tone(630,.3,'sine',.025);}
    else if(state.kills%5===0)toast(`슬라임 ${state.kills} / ${MAIN_HUNT_TARGET} · 로안의 의뢰`,2);
    saveGame();
   }
@@ -2373,6 +2423,7 @@ function enterDungeon(){
  if(!state.exploration.accepted&&!state.cleared){toast('숲길의 길손 이안에게 붉은 빛의 소문을 들어야 한다.',4);return false;}
  if(hero.level<DUNGEON_ACCESS.forest.minLevel){toast(`숲의 미궁은 Lv.${DUNGEON_ACCESS.forest.minLevel}부터 입장할 수 있습니다. · 현재 Lv.${hero.level}`,5);return false;}
  if(!consumeDungeonTicket())return false;
+ state.lootChests=[];
  state.exploration.discovered=true;state.exploration.entered=true;if(!state.cleared&&!state.runActive)resetDungeon();
  state.scene='dungeon';state.runActive=!state.cleared;state.dead=false;state.hitstop=0;state.shake=0;particles=[];clearMotion();
  Object.assign(player,{x:-44,z:44,y:0,vy:0,grounded:true,inv:1});state.mode='play';snapCamera();hideDialog();
@@ -2388,6 +2439,7 @@ function enterAbramDungeon(){
  if(!abramGateOpen()){toast('먼저 아브람 북문을 개방해야 합니다.',4);return false;}
  if(hero.level<DUNGEON_ACCESS.abram.minLevel){toast(`아브람 종유석 미궁은 Lv.${DUNGEON_ACCESS.abram.minLevel}부터 입장할 수 있습니다. · 현재 Lv.${hero.level}`,5);return false;}
  if(!consumeDungeonTicket())return false;
+ state.lootChests=[];
  if(!abramCaveCleared())resetAbramDungeon();
  state.scene='abramDungeon';state.runActive=false;state.dead=false;state.hitstop=0;state.shake=0;particles=[];clearMotion();
  Object.assign(player,{x:ABRAM_CAVE.entry.x,z:ABRAM_CAVE.entry.z,y:0,vy:0,grounded:true,inv:1});state.mode='play';snapCamera();hideDialog();
@@ -2420,7 +2472,7 @@ function advanceDeathTransition(dt){
 function openDialogue(title,text,choices=[{label:'알겠어',run:()=>hideDialog()}]){
  $('dialog').classList.remove('transfer-dialog');
  pauseInput();clearGuideEmphasis();dialogueReturn=state.mode==='dialogue'?dialogueReturn:state.mode;state.mode='dialogue';dialogueChoices=choices;$('dialogTitle').textContent=title;$('dialogText').innerHTML=text;
- $('dialogActions').replaceChildren();choices.forEach((c,i)=>{const b=document.createElement('button');b.textContent=(i===0?'R  ':'')+c.label;b.className=i?'secondary':'';b.addEventListener('click',()=>chooseDialogue(i));$('dialogActions').append(b);});
+ $('dialogActions').replaceChildren();choices.forEach((c,i)=>{const b=document.createElement('button');b.textContent=(MOBILE_BUILD?'':(i===0?'R  ':''))+c.label;b.className=i?'secondary':'';b.addEventListener('click',()=>chooseDialogue(i));$('dialogActions').append(b);});
  $('dialog').classList.remove('hidden');
 }
 function chooseDialogue(i=0){const c=dialogueChoices[i];if(!c)return;dialogueChoices=[];hideDialog();c.run();}
@@ -2435,16 +2487,16 @@ function hideDialog(){
 function talkNPC(){
  state.guideFlags.talk=true;
  if(needsIntroGate()){
-  openDialogue(NPC.name,`숲에 나가려면 먼저 살아 돌아오는 법부터 배워야 하네.<br><br>광장의 <b>길잡이 세라</b>에게 <b>「사냥꾼의 첫걸음」</b>을 배우고 오게. 마나와 기력, 슬라임 사냥, 전리품 판매, 첫 장비 제작과 휴식을 알려줄 거야.<small>입문 의뢰 완료 보고 후, 내 슬라임 ${MAIN_HUNT_TARGET}마리 의뢰를 받을 수 있다.</small>`,[{label:'지도에 세라 표시',run:()=>{selectMapTarget('guide');toast('광장의 길잡이 세라에게 R키로 대화하자.',4);}},{label:'알겠어',run:()=>{}}]);return;
+  openDialogue(NPC.name,`숲에 나가려면 먼저 살아 돌아오는 법부터 배워야 하네.<br><br>광장의 <b>길잡이 세라</b>에게 <b>「사냥꾼의 첫걸음」</b>을 배우고 오게. 마나와 기력, 슬라임 사냥, 전리품 판매, 첫 장비 제작과 휴식을 알려줄 거야.<small>입문 의뢰 완료 보고 후, 내 슬라임 ${MAIN_HUNT_TARGET}마리 의뢰를 받을 수 있다.</small>`,[{label:'지도에 세라 표시',run:()=>{selectMapTarget('guide');toast('광장의 길잡이 세라에게 다가가 상호작용하자.',4);}},{label:'알겠어',run:()=>{}}]);return;
  }
- if(state.quest==='none')openDialogue(NPC.name,`이곳은 <b>새벽마을</b>이야. 처음이라면 안전한 광장에서 몸을 풀어 봐.<br><br>동쪽 길을 쭉 따라가면 <b>잿빛 늪</b>이 나온다. 그 길과 늪에 슬라임이 늘었어. <b>${MAIN_HUNT_TARGET}마리</b>를 처리하고 나에게 돌아와 줄 수 있겠나?<small>수락한 이후의 처치만 집계된다. R키로 수락하고, 완료 보고도 반드시 나에게 해 줘.</small>`,[{label:`슬라임 ${MAIN_HUNT_TARGET}마리 퇴치 의뢰 수락`,run:()=>{state.quest='active';state.kills=0;saveGame();toast(`의뢰 수락 · 동쪽 길과 잿빛 늪의 슬라임 ${MAIN_HUNT_TARGET}마리`,5);}},{label:'아직 준비가 필요해',run:()=>{}}]);
- else if(state.quest==='active')openDialogue(NPC.name,`현재 <b>${state.kills} / ${MAIN_HUNT_TARGET}마리</b>야. 동쪽 길을 따라가면 늪에 더 많이 있을 거야.<br><br>체력이 부족하면 서쪽 돌샘 온천에서 R키로 쉬어 가게.<small>슬라임은 시간이 지나면 다시 나타난다.</small>`);
+ if(state.quest==='none')openDialogue(NPC.name,`이곳은 <b>새벽마을</b>이야. 처음이라면 안전한 광장에서 몸을 풀어 봐.<br><br>동쪽 길을 쭉 따라가면 <b>잿빛 늪</b>이 나온다. 그 길과 늪에 슬라임이 늘었어. <b>${MAIN_HUNT_TARGET}마리</b>를 처리하고 나에게 돌아와 줄 수 있겠나?<small>수락한 이후의 처치만 집계된다. 대화창에서 수락하고, 완료 보고도 반드시 나에게 해 줘.</small>`,[{label:`슬라임 ${MAIN_HUNT_TARGET}마리 퇴치 의뢰 수락`,run:()=>{state.quest='active';state.kills=0;saveGame();toast(`의뢰 수락 · 동쪽 길과 잿빛 늪의 슬라임 ${MAIN_HUNT_TARGET}마리`,5);}},{label:'아직 준비가 필요해',run:()=>{}}]);
+ else if(state.quest==='active')openDialogue(NPC.name,`현재 <b>${state.kills} / ${MAIN_HUNT_TARGET}마리</b>야. 동쪽 길을 따라가면 늪에 더 많이 있을 거야.<br><br>체력이 부족하면 서쪽 돌샘 온천에서 상호작용해 쉬어 가게.<small>슬라임은 시간이 지나면 다시 나타난다.</small>`);
  else if(state.quest==='report')openDialogue(NPC.name,`슬라임 <b>${MAIN_HUNT_TARGET}마리</b>를 모두 처리했군! 수고했네.<br><br>의뢰 완료를 보고하면 자네에게 맡길 이야기가 있어.`,[{label:'의뢰 완료 보고',run:()=>{
   state.quest='unlocked';player.heals=Math.max(3,player.heals);player.hp=maxHP();hero.mp=maxMP();saveGame();
   mapChoice='quest';
   openDialogue(NPC.name,'수고했네. 이 표식은 오래된 봉인에 접근할 <b>입장 자격</b>을 증명해 줄 거야. 대장간의 <b>기타</b> 탭에서 <b>미궁 입장권</b>도 만들어 가게.<br><br><b>동쪽 숲 안쪽 길의 길손 이안</b>이 붉은 빛과 오래된 유적에 관해 할 말이 있다더군. 먼저 그에게 직접 소문을 듣게.<small>이안과 대화하기 전에는 미궁 위치가 지도에 표시되지 않는다. 소문을 들으면 지도에 ?가 생기고, 직접 발견하면 미궁 이름으로 바뀐다.</small>');
  }},{label:'잠깐만',run:()=>{}}]);
- else openDialogue(NPC.name,state.cleared?'등의 붉은 보석을 품은 늑대인간을 쓰러뜨렸다고? 잘 돌아왔네.<br><br>그 파편에는 빼앗긴 색의 기운이 남아 있어. 미궁의 봉인이 사라졌으니 이제 출구로 자유롭게 나올 수 있어. 다시 입장할 때는 입장권을 챙기게.<small>첫 미궁은 해방됐다. 대장간에서는 이제 모아 둔 부산물로 더 좋은 장비를 만들 수 있다. 용 사냥은 아직 시작되지 않았다.</small>':'아브람 교역로는 숲을 지나지만 유적에 닿지는 않아. <b>동쪽 숲 안쪽 길의 길손 이안</b>에게 먼저 소문을 듣게.<br><br>이안과 이야기한 뒤 지도(Tab)에 <b>?</b>가 생기면, 길을 벗어나 직접 살펴보게. 그곳을 발견하면 이름이 기록될 거야.<small>온천에서 회복하고, 상인에게 필요한 하급 회복약을 준비해 가게.</small>');
+ else openDialogue(NPC.name,state.cleared?'등의 붉은 보석을 품은 늑대인간을 쓰러뜨렸다고? 잘 돌아왔네.<br><br>그 파편에는 빼앗긴 색의 기운이 남아 있어. 미궁의 봉인이 사라졌으니 이제 출구로 자유롭게 나올 수 있어. 다시 입장할 때는 입장권을 챙기게.<small>첫 미궁은 해방됐다. 대장간에서는 이제 모아 둔 부산물로 더 좋은 장비를 만들 수 있다. 용 사냥은 아직 시작되지 않았다.</small>':'아브람 교역로는 숲을 지나지만 유적에 닿지는 않아. <b>동쪽 숲 안쪽 길의 길손 이안</b>에게 먼저 소문을 듣게.<br><br>이안과 이야기한 뒤 지도에 <b>?</b>가 생기면, 길을 벗어나 직접 살펴보게. 그곳을 발견하면 이름이 기록될 거야.<small>온천에서 회복하고, 상인에게 필요한 하급 회복약을 준비해 가게.</small>');
 }
 function restAtCamp(){
  if(state.mode!=='play'||state.scene!=='field'||!player.grounded||dist(player,activeCamp())>=2.8||!inTownBuilding('sauna'))return false;
@@ -2479,11 +2531,12 @@ function interactionTarget(){
   if(dist(player,NPC)<3.2)return {kind:'npc',label:'경비대장 로안과 대화'};
   const guard=GUARDS.find(g=>dist(player,g)<3.2);if(guard)return {kind:'guard',guard,label:guard.name+'과 대화'};
   if(dist(player,activeCamp())<2.8&&inTownBuilding('sauna'))return {kind:'camp',label:'돌샘 온천 · HP/MP/기력 회복 · 회복약 없으면 1개'};
-  if(abramGateOpen()&&dist(player,ABRAM_CAVE_ENTRANCE)<6.5)return {kind:'abramCaveEntrance',label:`아브람 종유석 미궁 · ${hero.level<DUNGEON_ACCESS.abram.minLevel?'Lv.'+DUNGEON_ACCESS.abram.minLevel+' 필요':'입장 R'}`};
+  if(abramGateOpen()&&dist(player,ABRAM_CAVE_ENTRANCE)<6.5)return {kind:'abramCaveEntrance',label:`아브람 종유석 미궁 · ${hero.level<DUNGEON_ACCESS.abram.minLevel?'Lv.'+DUNGEON_ACCESS.abram.minLevel+' 필요':'상호작용'}`};
   if(dist(player,ENTRANCE)<6)return {kind:'entrance',label:state.quest==='unlocked'?'숲의 미궁에 입장':'봉인된 미궁 · 상호작용'};
   const sign=signs.find(s=>dist(s,player)<3);if(sign)return {kind:'sign',sign,label:'이정표 읽기'};
   if(Math.hypot(player.x+59,player.z-62)<2.8)return {kind:'dummy',label:'훈련 허수아비 안내'};
  }else if(state.scene==='dungeon'){
+  const potionChest=nearbyDungeonPotionChest();if(potionChest)return {kind:'potionChest',chest:potionChest,label:'미궁 상자 · 열기'};
   const page=MAZE.pages.find(p=>!hasJournalPage(p.id)&&dist(player,p)<2.3&&lineOfSight(player,p));
   if(page)return {kind:'journalPage',page,label:'찢어진 모험 기록 '+page.number+' · 줍기'};
   if(Math.hypot(player.x+44,player.z-44)<2.8)return {kind:'exit',label:state.cleared?'미궁에서 나가기':'봉인된 입구 · 상호작용'};
@@ -2493,12 +2546,13 @@ function interactionTarget(){
   if(Math.hypot(player.x-36,player.z+52)<3)return {kind:'floorClue',label:'변이 흔적의 비문 읽기'};
   if(state.cleared&&Math.hypot(player.x-36,player.z+80)<5)return {kind:'return',label:'해방된 출구로 돌아가기'};
  }else if(state.scene==='abramDungeon'){
+  const potionChest=nearbyDungeonPotionChest();if(potionChest)return {kind:'potionChest',chest:potionChest,label:'미궁 상자 · 열기'};
   if(dist(player,ABRAM_CAVE.entry)<3.7)return {kind:'abramCaveExit',label:abramCaveCleared()?'종유석 미궁에서 나가기':'봉인된 동굴 입구 · 붉은 철갑 거인 처치 필요'};
  }
  return null;
 }
 function interact(){
- if(state.mode!=='play'||!player.grounded)return;const t=interactionTarget();if(!t){toast('인물이나 장치 가까이에서 R키를 누르자.',1.5);return;}
+ if(state.mode!=='play'||!player.grounded)return;const t=interactionTarget();if(!t){toast('인물이나 장치 가까이에서 상호작용 버튼을 사용하자.',1.5);return;}
  switch(t.kind){
  case 'abramGate':talkAbramGuard();break;
  case 'abramPerson':talkAbramPerson(t.resident.id);break;
@@ -2513,6 +2567,8 @@ function interact(){
  case 'roomEnter':requestRoomTransition(t.room.id);break;
  case 'roomExit':requestRoomTransition(null);break;
  case 'roomInspect':inspectRoom();break;
+ case 'dailyReward':claimDailyReward();break;
+ case 'potionChest':openDungeonPotionChest(t.chest);break;
  case 'scout':talkFrightenedScout();break;
  case 'board':openBoard();break;
  case 'librarian':talkLibrarian();break;
@@ -2527,23 +2583,23 @@ function interact(){
   case 'anvil':openAnvil();break;
  case 'merchant':openShop();break;
  case 'camp':restAtCamp();break;
- case 'dummy':openDialogue('훈련 허수아비','마우스로 방향을 정하고 <b>좌클릭</b>으로 장검을 휘둘러 봐.<br><b>우클릭</b>은 강공격, <b>F</b>는 대시, <b>Space</b>는 점프야.<small>1~4는 장착한 스킬, Q는 하급 회복약, E는 상태창이다. 마우스 가운데 버튼으로 적을 고정할 수 있다.</small>');break;
- case 'sign':openDialogue('낡은 이정표',`<b>${t.sign.label}</b><br><br>서쪽 ← 새벽마을<br>동쪽 → 잿빛 늪<br>북쪽 ↑ 회색 숲<small>Tab: 지도 · H: 조작 안내</small>`);break;
+ case 'dummy':openDialogue('훈련 허수아비','공격 버튼으로 약공격을 해 봐.<br><b>강공</b>은 더 강하지만 느리고 자원 소모가 커. <b>대시</b>와 <b>점프</b>도 오른쪽 버튼을 사용해.<small>스킬은 하단 슬롯을 터치하고, 회복은 회복 버튼, 능력치와 장비는 상태 버튼에서 확인할 수 있다.</small>');break;
+ case 'sign':openDialogue('낡은 이정표',`<b>${t.sign.label}</b><br><br>서쪽 ← 새벽마을<br>동쪽 → 잿빛 늪<br>북쪽 ↑ 회색 숲<small>지도는 위쪽 지도 버튼 · 조작 안내는 메뉴에서 확인</small>`);break;
  case 'entrance':
   discoverEntrance(true);
   if(state.quest!=='unlocked')openDialogue('미궁의 문',`차가운 봉인이 길을 막고 있다.<br><br>새벽마을의 <b>경비대장 로안</b>에게 의뢰를 받고, 슬라임 ${MAIN_HUNT_TARGET}마리를 처치한 뒤 <b>같은 인물에게 완료 보고</b>를 해야 한다.`);
-  else if(!state.exploration.accepted&&!state.cleared)openDialogue('붉은 빛이 새어 나오는 틈','교역로에서 벗어난 숲 안쪽에서 낯선 유적을 발견했다.<br><br>동쪽 숲 안쪽 길에 있는 <b>길손 이안</b>이 무언가 알고 있을지도 모른다.<small>이안에게 R로 소문을 들으면 메인 퀘스트 「미궁 탐사」를 얻는다.</small>');
+  else if(!state.exploration.accepted&&!state.cleared)openDialogue('붉은 빛이 새어 나오는 틈','교역로에서 벗어난 숲 안쪽에서 낯선 유적을 발견했다.<br><br>동쪽 숲 안쪽 길에 있는 <b>길손 이안</b>이 무언가 알고 있을지도 모른다.<small>이안에게 상호작용해 소문을 들으면 메인 퀘스트 「미궁 탐사」를 얻는다.</small>');
   else if((hero.inventory.dungeonTicket||0)<1)showTicketRequirement();
    else if(state.cleared)confirmDungeonEntry();
-  else openDialogue('숲의 미궁 · 첫 번째 도전','<b>입장권 1개를 사용한다. 들어가면 입구가 봉인된다.</b><br>보스를 처치하거나, 쓰러져 마을에서 깨어나기 전까지 나올 수 없다.<br><br>내부에는 거대한 미로, 두 단계의 퍼즐, 늑대 무리와 <b>등에 붉은 보석이 박힌 늑대인간</b>이 기다린다.<small>제보당의 붉은 괴수: Lv.12 / HP 2,100. 최소 입장 Lv.10 · 권장 Lv.10~12. 레벨 조건을 충족한 뒤 E에서 능력치를 분배하고 하급 회복약을 준비하자. 일시정지 및 내부 저장 가능.</small>',[{label:'입장권 1개 사용 · 미궁에 들어간다',run:enterDungeon},{label:'아직 들어가지 않는다',run:()=>{}}]);break;
- case 'exit':if(state.cleared)exitDungeon();else openDialogue('봉인된 입구','문은 안쪽에서 열리지 않는다.<br><br><b>늑대인간을 쓰러뜨려야 미궁이 해방된다.</b><small>찢어진 기록 2장을 모으면 J키 모험 기록이 열린다. 비문은 현장에서 R로 읽을 수 있다.</small>');break;
- case 'clue':openDialogue('해와 달과 별의 비문','<b>첫째, 하루를 비추던 빛이 저문다.<br>둘째, 밤의 둥근 눈이 떠오른다.<br>셋째, 작은 빛들이 하늘에 남는다.</b><br><br>세 룬 기둥의 문양을 맞춘 뒤, 북동쪽 끝의 문에서 R키로 확인하라.<small>기둥은 R키를 누를 때마다 달 → 별 → 해 순서로 회전한다.</small>');break;
+  else openDialogue('숲의 미궁 · 첫 번째 도전','<b>입장권 1개를 사용한다. 들어가면 입구가 봉인된다.</b><br>보스를 처치하거나, 쓰러져 마을에서 깨어나기 전까지 나올 수 없다.<br><br>내부에는 거대한 미로, 두 단계의 퍼즐, 늑대 무리와 <b>등에 붉은 보석이 박힌 늑대인간</b>이 기다린다.<small>제보당의 붉은 괴수: Lv.12 / HP 2,100. 최소 입장 Lv.10 · 권장 Lv.10~12. 레벨 조건을 충족한 뒤 상태 화면에서 능력치를 분배하고 하급 회복약을 준비하자. 일시정지 및 내부 저장 가능.</small>',[{label:'입장권 1개 사용 · 미궁에 들어간다',run:enterDungeon},{label:'아직 들어가지 않는다',run:()=>{}}]);break;
+ case 'exit':if(state.cleared)exitDungeon();else openDialogue('봉인된 입구','문은 안쪽에서 열리지 않는다.<br><br><b>늑대인간을 쓰러뜨려야 미궁이 해방된다.</b><small>찢어진 기록 2장을 모으면 모험 기록을 열 수 있다. 비문은 현장에서 상호작용해 읽을 수 있다.</small>');break;
+ case 'clue':openDialogue('해와 달과 별의 비문','<b>첫째, 하루를 비추던 빛이 저문다.<br>둘째, 밤의 둥근 눈이 떠오른다.<br>셋째, 작은 빛들이 하늘에 남는다.</b><br><br>세 룬 기둥의 문양을 맞춘 뒤, 북동쪽 끝의 문에서 상호작용해 확인하라.<small>기둥은 상호작용할 때마다 달 → 별 → 해 순서로 회전한다.</small>');break;
  case 'rune':if(state.gate){toast('이미 룬 봉인이 해제되었다.',2);break;}state.rune[t.rune.id]=(state.rune[t.rune.id]+1)%3;tone(330+state.rune[t.rune.id]*140,.16,'sine',.02);toast(`${t.rune.id+1}번 기둥 · ${GLYPHS[state.rune[t.rune.id]]}`,2);saveGame();break;
  case 'gate':
   if(state.rune.every((v,i)=>v===[2,0,1][i])){state.gate=true;toast('세 문양이 맞물렸다. 문 너머의 변이 흔적과 상호작용해 보자.',4);saveGame();}
   else{
    const current=state.rune.map((v,i)=>`${i+1}번 ${GLYPHS[v]}`).join(' / ');
-   openDialogue('맞물리지 않는 봉인',journalUnlocked()?`세 기둥의 문양이 아직 맞물리지 않는다.<br><br>복원한 <b>모험 기록</b>이나 미궁의 비문을 다시 확인해 보자.<small>J: 모험 기록 · 현재 정렬: ${current}</small>`:`세 기둥의 문양이 아직 맞물리지 않는다.<br><br>봉인문은 올바른 순서를 알려 주지 않는다. 미궁에 흩어진 <b>찢어진 기록과 비문</b>에서 단서를 찾아야 한다.<small>현재 정렬: ${current}</small>`);
+   openDialogue('맞물리지 않는 봉인',journalUnlocked()?`세 기둥의 문양이 아직 맞물리지 않는다.<br><br>복원한 <b>모험 기록</b>이나 미궁의 비문을 다시 확인해 보자.<small>위쪽 기록 버튼에서 모험 기록 확인 · 현재 정렬: ${current}</small>`:`세 기둥의 문양이 아직 맞물리지 않는다.<br><br>봉인문은 올바른 순서를 알려 주지 않는다. 미궁에 흩어진 <b>찢어진 기록과 비문</b>에서 단서를 찾아야 한다.<small>현재 정렬: ${current}</small>`);
   }break;
  case 'floorClue':
   if(!journalUnlocked())openDialogue('변이 흔적의 비문','세 개의 석판에는 서로 다른 흔적이 새겨져 있다. 하나는 짐승의 발, 하나는 두 발로 선 자의 흔적, 하나는 돌을 긁은 발톱 자국처럼 보인다.<br><br><b>하지만 어느 것이 먼저였는지는 이 비문만으로 알 수 없다.</b><small>미궁에 흩어진 찢어진 모험 기록 2장을 복원하면 이 흔적이 생긴 순서를 추리할 수 있다.</small>');
@@ -2865,8 +2921,8 @@ function updateEnemy(e,dt){
 // Saved progress never converts an active dungeon run into an outdoor spawn.
 function packV4Save(){return {version:4,hero:packHero(),quest:state.quest,kills:state.kills,cleared:state.cleared,scene:state.scene,runActive:state.runActive,dead:state.dead,
  rune:state.rune,gate:state.gate,floorOpen:state.floorOpen,floorStep:state.floorStep,visited:state.visited,
- guideStep:state.guideStep,guideFlags:state.guideFlags,guideHidden:state.guideHidden,player:{x:player.x,z:player.z,hp:player.hp,heals:player.heals,healCD:player.healCD,stamina:player.stamina},
- enemies:enemies.map(e=>({id:e.id,x:e.x,z:e.z,hp:e.hp,deadTime:e.deadTime}))};}
+ guideStep:state.guideStep,guideFlags:state.guideFlags,guideHidden:state.guideHidden,lootChests:[...(state.lootChests||[])],player:{x:player.x,z:player.z,hp:player.hp,heals:player.heals,healCD:player.healCD,stamina:player.stamina},
+ enemies:enemies.map(e=>({id:e.id,x:e.x,z:e.z,hp:e.hp,deadTime:e.deadTime,respawnAt:Number.isFinite(e.respawnAt)?e.respawnAt:0}))};}
 function applyV4Save(data){
  if(!data||![3,4,5].includes(data.version)||!['none','active','report','unlocked'].includes(data.quest)||!data.player||!Array.isArray(data.rune)||data.rune.length!==3)throw Error('무색 v0.3 또는 v0.4 저장 파일이 아닙니다.');
  makeEnemies();skillEffects=[];combatTexts=[];
@@ -2877,11 +2933,11 @@ function applyV4Save(data){
  state.scene=data.scene==='dungeon'&&state.quest==='unlocked'?'dungeon':data.scene==='abramDungeon'?'abramDungeon':'field';state.runActive=state.scene==='dungeon'&&!state.cleared;state.dead=!!data.dead;
  state.rune=data.rune.map(v=>clamp(Math.floor(finite(v,0)),0,2));state.gate=state.cleared||!!data.gate;state.floorOpen=state.cleared||state.gate&&!!data.floorOpen;state.floorStep=clamp(Math.floor(finite(data.floorStep,0)),0,3);state.lastPlate=-1;
  state.visited=Array.from({length:625},(_,i)=>!!data.visited?.[i]);state.guideStep=clamp(Math.floor(finite(data.guideStep,0)),0,7);state.guideHidden=!!data.guideHidden;
- state.guideFlags={};for(const k of ['jump','dash','attack','talk'])state.guideFlags[k]=!!data.guideFlags?.[k];
+ state.guideFlags={};for(const k of ['jump','dash','attack','talk'])state.guideFlags[k]=!!data.guideFlags?.[k];state.lootChests=Array.isArray(data.lootChests)?[...new Set(data.lootChests.filter(id=>typeof id==='string'&&/^(forest|abram)-[0-2]$/.test(id)))]:[];
  applyHero(data.version>=4?data.hero:null);Object.assign(player,initialPlayer());const bounds=scenes[state.scene].bounds;
  player.x=clamp(finite(data.player.x,WORLD.spawnX),bounds.minX+1,bounds.maxX-1);player.z=clamp(finite(data.player.z,WORLD.spawnZ),bounds.minZ+1,bounds.maxZ-1);player.hp=clamp(finite(data.player.hp,maxHP()),0,maxHP());player.heals=clamp(Math.floor(finite(data.player.heals,3)),0,BALANCE.maxPotions);player.healCD=clamp(finite(data.player.healCD,0),0,8);player.stamina=clamp(finite(data.player.stamina,100),0,maxStamina());
  if(player.hp<=0)state.dead=true;
- if(Array.isArray(data.enemies))for(const e of enemies){const saved=data.enemies.find(v=>v?.id===e.id);if(!saved)continue;const b=scenes[e.scene].bounds;e.x=clamp(finite(saved.x,e.home.x),b.minX+1,b.maxX-1);e.z=clamp(finite(saved.z,e.home.z),b.minZ+1,b.maxZ-1);const oldMax=e.type==='slime'?32:e.type==='boss'?620:48;e.hp=clamp(finite(saved.hp,e.maxHP)*(data.version===3?e.maxHP/oldMax:1),0,e.maxHP);e.rewarded=e.hp<=0;e.deadTime=clamp(finite(saved.deadTime,0),0,100);e.mode=e.hp<=0?'dead':'idle';e.timer=.5;}
+ if(Array.isArray(data.enemies))for(const e of enemies){const saved=data.enemies.find(v=>v?.id===e.id);if(!saved)continue;const b=scenes[e.scene].bounds;e.x=clamp(finite(saved.x,e.home.x),b.minX+1,b.maxX-1);e.z=clamp(finite(saved.z,e.home.z),b.minZ+1,b.maxZ-1);const oldMax=e.type==='slime'?32:e.type==='boss'?620:48;e.hp=clamp(finite(saved.hp,e.maxHP)*(data.version===3?e.maxHP/oldMax:1),0,e.maxHP);e.rewarded=e.hp<=0;e.deadTime=clamp(finite(saved.deadTime,0),0,3600);e.respawnAt=isHourlyMiniBoss(e)&&e.hp<=0?(Number.isFinite(saved.respawnAt)&&saved.respawnAt>0?saved.respawnAt:TIME_SOURCE.now()+Math.max(0,3600-e.deadTime)*1000):0;e.mode=e.hp<=0?'dead':'idle';e.timer=.5;}
  if(state.cleared&&data.version<5){boss().hp=0;boss().mode='dead';boss().deadTime=2;}state.restored=state.cleared;clearMotion();snapCamera();return true;
 }
 
@@ -3602,7 +3658,7 @@ const SOUND=(()=>{
 })();
 function initAudio(){return SOUND.activate();}
 function tone(...args){SOUND.tone(...args);}
-function toggleSound(){SOUND.mute(soundOn);toast(soundOn?'소리를 켰다. B키로 BGM·효과음 크기를 조절할 수 있다.':'전체 소리 꺼짐',2);}
+function toggleSound(){SOUND.mute(soundOn);toast(soundOn?'소리를 켰다. 소리 설정에서 BGM·효과음 크기를 조절할 수 있다.':'전체 소리 꺼짐',2);}
 let audioPanelReturn='title';
 function openAudioPanel(){
  if(newJourneyDecision||menuBusy)return;
@@ -3715,11 +3771,11 @@ function showIntroStatTask(){
  if(introStatTaskReady()){
   guideDialogue(GUIDE_NPC.name,'<div class="lesson-kicker">준비 의뢰 · 완료</div><h3 class="lesson-title">미분배 포인트를 모두 썼구나!</h3><p class="sera-tip">네가 고른 능력치가 바로 적용됐어.<br>이제 <b>슬라임 5마리 사냥</b>을 알려줄게.</p>',[
    {label:'다음 · 슬라임 사냥',run:()=>showGuideLesson(3,false)},
-   {label:'E 상태창 다시 보기',run:previewGuideStatus}
+   {label:'상태창 다시 보기',run:previewGuideStatus}
   ]);
  }else{
   guideDialogue(GUIDE_NPC.name,stateLessonHTML(),[
-   {label:'E 상태창 열기 · 포인트 분배',run:previewGuideStatus},
+   {label:'상태창 열기 · 포인트 분배',run:previewGuideStatus},
    {label:'닫기 · 직접 해 볼게',run:()=>{mapChoice='quest';}}
   ]);
  }
@@ -3780,28 +3836,28 @@ function resourceLessonHTML(){
  <p class="sera-next">평소에는 공격 버튼으로 빠르게 싸우고, 적의 공격이 끝난 빈틈이나 여러 적을 노릴 때 강공을 써. 강공은 더 느리고 자원을 훨씬 많이 사용해.</p>
  <h3 class="lesson-title">왼쪽 아래, 세 막대가 보여?</h3>
  <div class="sera-resources">
-  <div class="sera-resource hp"><b>체력 <span>HP</span></b><p>0이 되면 쓰러져. <kbd>Q</kbd>로 회복해.</p></div>
+  <div class="sera-resource hp"><b>체력 <span>HP</span></b><p>0이 되면 쓰러져. 회복 버튼으로 회복해.</p></div>
   <div class="sera-resource mp"><b>마나 <span>MP</span></b><p>일반·강공격·스킬·달리기에 사용해.</p></div>
-  <div class="sera-resource vigor"><b>기력</b><p>일반·강공격과 <kbd>F</kbd> 대시에 사용해.</p></div>
+  <div class="sera-resource vigor"><b>기력</b><p>일반·강공격과 대시에 사용해.</p></div>
  </div>
  <p class="sera-tip">일반 공격은 <b>마나와 기력을 함께</b> 써.<br>부족할 땐 잠깐 걷거나 멈춰 봐.</p>
  <details class="sera-details"><summary>소모량·회복 규칙 자세히</summary>
  <p>현재 ${weaponProfile('light').name}: 일반 MP ${fmt(BALANCE.basicMana)} · 기력 ${fmt(light.stamina)}, 강공격 MP ${fmt(BALANCE.heavyMana)} · 기력 ${fmt(heavy.stamina)}.<br>베기 MP ${fmt(SKILLS.slash.mana)}, 대시 기력 ${fmt(CONFIG.dodgeCost)}.</p>
- <p>달리기 MP는 초당 ${fmt(BALANCE.sprintManaPerSecond)}. 달리는 동안 마나는 회복되지 않아. 고갈되면 회복 후 Shift를 떼었다가 다시 눌러.</p>
+ <p>달리기 MP는 초당 ${fmt(BALANCE.sprintManaPerSecond)}. 달리는 동안 마나는 회복되지 않아. 고갈되면 이동 스틱을 중앙에 놓았다가 다시 바깥쪽으로 밀어.</p>
  <p>기력은 일반·강공격과 대시를 멈추면 회복돼. 스킬과 달리기는 기력을 쓰지 않아.<br>하급 회복약은 HP 30 회복, 재사용 ${BALANCE.potionCooldown}초. MP·기력은 회복하지 않아.</p></details>`;
 }
 function uiLessonHTML(){return `
  <div class="lesson-kicker">첫걸음 2 / 4 · 메뉴</div>
  <h3 class="lesson-title">세 가지 키만 기억하자.</h3>
  <div class="guide-keycards sera-keycards">
-  <section><kbd>H</kbd><div><b>조작 방법</b><p>모르는 키가 있으면 여기서 확인해.</p></div></section>
-  <section><kbd>Tab</kbd><div><b>지도</b><p>목적지를 고르면 방향을 알려 줘.</p></div></section>
-  <section><kbd>E</kbd><div><b>상태창 · 능력치 분배</b><p>미분배 포인트 <strong>${hero.points}개</strong>가 있어.<br><b>능력치 옆 +</b>로 원하는 곳에 투자해.</p></div></section>
+  <section><kbd>도움말</kbd><div><b>조작 방법</b><p>메뉴의 조작 안내에서 다시 확인해.</p></div></section>
+  <section><kbd>지도</kbd><div><b>탐험 지도</b><p>위쪽 지도 버튼에서 목적지를 고르면 방향을 알려 줘.</p></div></section>
+  <section><kbd>상태</kbd><div><b>상태창 · 능력치 분배</b><p>미분배 포인트 <strong>${hero.points}개</strong>가 있어.<br><b>능력치 옆 +</b>로 원하는 곳에 투자해.</p></div></section>
  </div>
  <p class="sera-tip">대화를 마친 뒤 눌러 봐. <b>같은 키로 닫을 수 있어.</b><br>창이 열린 동안 게임은 멈춰.</p>
  <details class="sera-details"><summary>다른 화면과 메뉴</summary>
  <p>왼쪽 위는 현재 의뢰, 아래 중앙은 스킬과 남은 쿨타임이야. EXP는 경험치, G는 골드야. 금액은 <b>0.1 G</b> 단위까지 표시돼.<br>지도 오른쪽에서 목적지를 선택하고, 마을 확대·전체 지역으로 범위를 바꿔. 자동 이동은 아니야.</p>
- <p>E에서 스킬·장비·전리품·사냥 도감도 볼 수 있어.<br>Esc는 저장 메뉴, B는 소리 설정, K는 게시판 의뢰야. J 모험 기록은 숲의 미궁 안에서만 보이고, 찢어진 기록 2장을 모으면 복원돼.</p></details>`;}
+ <p>상태 버튼에서 스킬·장비·전리품·사냥 도감을 볼 수 있어.<br>저장과 소리 설정은 메뉴에서, 게시판 의뢰는 광장의 게시판에서 확인해. 모험 기록은 숲의 미궁 안에서만 보이고, 찢어진 기록 2장을 모으면 위쪽 <b>기록</b> 버튼으로 열 수 있어.</p></details>`;}
 function huntLessonHTML(){return `
  <div class="lesson-kicker">첫걸음 4 / 4 · 첫 사냥</div>
  <h3 class="lesson-title">슬라임 ${INTRO_RULES.slimes}마리를 잡아 와.</h3>
@@ -3811,7 +3867,7 @@ function huntLessonHTML(){return `
 function restLessonHTML(){return `
  <div class="lesson-kicker">다음 할 일 · 휴식</div>
  <h3 class="lesson-title">온천 안에서 쉬고 와.</h3>
- <div class="sera-task"><span>어디서</span><b>마을 서쪽 아래 · 돌샘 온천</b><span>할 일</span><b>안쪽 회복 자리에서 R</b></div>
+ <div class="sera-task"><span>어디서</span><b>마을 서쪽 아래 · 돌샘 온천</b><span>할 일</span><b>안쪽 회복 자리에서 상호작용</b></div>
  <p class="sera-tip"><b>체력·마나·기력이 모두 회복돼.</b><br>회복약이 하나도 없으면 하급 1개를 줄 거야.</p>
  <p class="sera-next">쉬고 나면 세라에게 돌아와 완료 보고.</p>
  <details class="sera-details"><summary>회복약 지원 규칙</summary><p>어느 종류든 회복약을 하나 이상 가지고 있으면 추가로 주지 않아. 가진 약을 줄이지도 않고, 반복해서 쉬어도 약이 쌓이지 않아.</p></details>`;}
@@ -3820,11 +3876,11 @@ function showGuideLesson(page=0,review=false){
  if(page===0){
   guideDialogue(GUIDE_NPC.name,resourceLessonHTML(),[{label:'다음 · 메뉴 키',run:()=>{state.introQuest.resourceRead=true;saveGame();showGuideLesson(1,review);}},{label:'나중에 이어서 듣기',run:()=>{}}],true);
  }else if(page===1){
-  guideDialogue(GUIDE_NPC.name,uiLessonHTML(),[{label:'다음 · E 상태창',run:()=>{state.introQuest.uiRead=true;saveGame();showGuideLesson(2,review);}},{label:'마나·기력 다시 보기',run:()=>showGuideLesson(0,review)}]);
+  guideDialogue(GUIDE_NPC.name,uiLessonHTML(),[{label:'다음 · 상태창',run:()=>{state.introQuest.uiRead=true;saveGame();showGuideLesson(2,review);}},{label:'마나·기력 다시 보기',run:()=>showGuideLesson(0,review)}]);
  }else if(page===2){
     if(!review&&state.introQuest.stage==='stats')return showIntroStatTask();
     guideDialogue(GUIDE_NPC.name,stateLessonHTML(),review?[
-     {label:'설명 마치기',run:talkGuide},{label:'E 상태창 열어보기',run:previewGuideStatus}
+     {label:'설명 마치기',run:talkGuide},{label:'상태창 열어보기',run:previewGuideStatus}
     ]:[
      {label:'퀘스트 수락 · 포인트 분배하기',run:beginIntroStatTask},{label:'나중에 이어서 할게',run:()=>{}}
     ]);
@@ -3853,7 +3909,7 @@ function showTradeLesson(newReward=false){
  <h3 class="lesson-title">${buying?'이제 회복약 1개를 사 봐.':'팔고, 회복약 1개를 사 봐.'}</h3>
  <p class="sera-tip">상점에서 <b>몬스터 부산물을 팔아 골드를 얻고,</b><br><b>${BALANCE.potionName}을 1개 구매해 봐.</b></p>
  <p class="sera-next">${newReward?`자, 여기 <b>${goldIncomeText(INTRO_RULES.rewardGold)}</b>야!`:q.huntRewardClaimed?`사냥 보상 ${goldIncomeText(INTRO_RULES.rewardGold)}는 이미 지급했어. 회복약을 준비하렴.`:`사냥 보고 보상 ${goldIncomeText(INTRO_RULES.rewardGold)}로 회복약을 준비하렴.`}</p>
- <div class="sera-task"><span>어디서</span><b>광장 동쪽 · 모르의 잡화점 안</b><span>${buying?'다음':'순서'}</span><b>${buying?'하급 회복약 1개 구매':'모르에게 R → 전리품 판매 → 회복약 구매'}</b></div>
+ <div class="sera-task"><span>어디서</span><b>광장 동쪽 · 모르의 잡화점 안</b><span>${buying?'다음':'순서'}</span><b>${buying?'하급 회복약 1개 구매':'모르에게 상호작용 → 전리품 판매 → 회복약 구매'}</b></div>
  <p class="sera-tip">구매하면 <b>세라에게 돌아와</b>. 대장간을 소개하고 온천 위치도 알려줄게.</p>
  ${q.sampleGranted&&!buying?'<p class="sera-next">판매할 연습용 점액 1개도 가방에 넣어 뒀어.</p>':''}
  <details class="sera-details"><summary>구매할 때 기억해</summary><p>가방에 이미 있는 약이나 온천에서 받은 약은 구매로 세지 않아. 판매한 뒤 상점의 구매 버튼을 눌러야 해.<br>회복약은 18 G. 사냥 보상 ${goldIncomeText(INTRO_RULES.rewardGold)}는 한 번만 지급돼. 필요한 제작 재료는 남겨 둬.</p></details>`,[{label:'잡화점으로 가기',run:()=>{mapChoice='quest';}},{label:'자원 설명 다시 보기',run:()=>showGuideLesson(0,true)}]);
@@ -3891,7 +3947,7 @@ function finishIntroQuest(){
  if(q.stage!=='report'||q.kills<INTRO_RULES.slimes||q.sold<1||!introPurchaseSatisfied(q)||!q.rested||q.rewardClaimed||state.scene!=='field'||dist(player,GUIDE_NPC)>=3.2)return false;
  q.stage='done';q.rewardClaimed=true;mapChoice='quest';saveGame();
  toast(`사냥꾼의 첫걸음 완료 · 로안의 메인 의뢰 수락 가능`,6);tone(560,.3,'sine',.025,820);
- guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">첫걸음 완료</div><h3 class="lesson-title">좋아. 이제 로안을 찾아가.</h3><p class="sera-tip"><b>광장의 경비대장 로안에게 R로 대화</b>하면 다음 의뢰를 받을 수 있어.</p><p class="sera-next">설명이 필요하면 H. 살아서 돌아와.</p>`);
+ guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">첫걸음 완료</div><h3 class="lesson-title">좋아. 이제 로안을 찾아가.</h3><p class="sera-tip"><b>광장의 경비대장 로안에게 상호작용</b>하면 다음 의뢰를 받을 수 있어.</p><p class="sera-next">설명이 필요하면 메뉴의 조작 안내를 다시 봐. 살아서 돌아와.</p>`);
  return true;
 }
 function talkGuide(){
@@ -3904,32 +3960,32 @@ function talkGuide(){
  if(q.stage==='hunt')guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">진행 중 · 슬라임 사냥</div><h3 class="lesson-title">${q.kills} / ${INTRO_RULES.slimes}마리</h3><p class="sera-tip"><b>동쪽 길·잿빛 늪</b>에서 사냥해.<br>${INTRO_RULES.slimes}마리를 잡으면 내게 돌아와.</p>`,[{label:'사냥 계속하기',run:()=>{mapChoice='quest';}},review]);
  else if(q.stage==='return')guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">사냥 완료 · 5 / 5</div><h3 class="lesson-title">잘했어. 사냥 보상 ${goldIncomeText(INTRO_RULES.rewardGold)}를 받으렴.</h3><p class="sera-tip">보고하면 상점이 열려. 전리품 판매와 회복약 구매를 마친 뒤 대장간을 소개할게.</p>`,[{label:'보고 · 판매 배우기',run:prepareIntroSale},review]);
  else if(q.stage==='sell'||q.stage==='buy')showTradeLesson();
- else if(q.stage==='craft')guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">진행 중 · 첫 장비 제작</div><h3 class="lesson-title">수습 장검을 브란에게 맡기고 수령해.</h3><p class="sera-tip">서쪽 브란의 대장간에서 <b>수습 장검</b>을 제작해. 시간이 끝나면 브란 머리 위에 <b>!</b>가 떠.<br>완성품은 자동 지급되지 않으니 브란에게 다시 R로 말을 걸어 받아야 해.</p>`,[{label:'브란의 대장간으로',run:()=>{mapChoice='quest';}},review]);
+ else if(q.stage==='craft')guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">진행 중 · 첫 장비 제작</div><h3 class="lesson-title">수습 장검을 브란에게 맡기고 수령해.</h3><p class="sera-tip">서쪽 브란의 대장간에서 <b>수습 장검</b>을 제작해. 시간이 끝나면 브란 머리 위에 <b>!</b>가 떠.<br>완성품은 자동 지급되지 않으니 브란에게 다시 상호작용해 받아야 해.</p>`,[{label:'브란의 대장간으로',run:()=>{mapChoice='quest';}},review]);
  else if(q.stage==='rest')guideDialogue(GUIDE_NPC.name,restLessonHTML(),[{label:'온천으로 가기',run:()=>{mapChoice='quest';}},review]);
  else if(q.stage==='report')guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">첫걸음 · 완료 보고</div><h3 class="lesson-title">사냥부터 첫 장비 제작과 휴식까지 끝났네.</h3><div class="sera-checks"><span>✓ 슬라임 5마리</span><span>✓ 전리품 판매</span>${q.purchaseWaived?'':'<span>✓ 회복약 구매</span>'}<span>✓ 수습 장검 제작·수령</span><span>✓ 온천 휴식</span></div><p class="sera-tip">사냥 보상 ${goldIncomeText(INTRO_RULES.rewardGold)}는 이미 받았지? 이제 로안에게 소개해 줄게.</p>`,[{label:'최종 보고 · 로안 만나기',run:finishIntroQuest},review]);
- else guideDialogue(GUIDE_NPC.name,'<div class="lesson-kicker">길잡이 세라</div><h3 class="lesson-title">돌아왔구나. 궁금한 게 있어?</h3><p class="sera-tip">기본 설명은 <kbd>H</kbd>에서도 다시 볼 수 있어.</p>',[{label:'설명 다시 보기',run:()=>showGuideLesson(0,true)},{label:'다음에 올게',run:()=>{}}]);
+ else guideDialogue(GUIDE_NPC.name,'<div class="lesson-kicker">길잡이 세라</div><h3 class="lesson-title">돌아왔구나. 궁금한 게 있어?</h3><p class="sera-tip">기본 설명은 메뉴의 조작 안내에서도 다시 볼 수 있어.</p>',[{label:'설명 다시 보기',run:()=>showGuideLesson(0,true)},{label:'다음에 올게',run:()=>{}}]);
  return true;
 }
 function introHUD(){
  const q=state.introQuest,s=q.stage;
  if(s==='stats')return {title:'미분배 스탯 모두 사용하기',lines:hero.points>0?
-  [`<span class="gold">남은 포인트 ${hero.points}개</span>`,'<kbd>E</kbd> 상태창 → 능력치 옆 <b>+</b>','모두 쓰고 세라에게 <kbd>R</kbd>로 확인']:
-  ['<span class="gold">미분배 0개 · 준비 완료</span>','세라에게 <kbd>R</kbd> → 슬라임 사냥 의뢰']};
- if(s==='forge')return {title:'세라의 대장간 안내',lines:['구매 실습 완료 · 세라에게 R','수습 장검 제작 실습을 시작하자']};
- if(s==='craft')return {title:'첫 장비 제작 · 수습 장검',lines:hero.craft?.introCommission?[craftReady(hero.craft)?'<span class="gold">제작 완료 · 브란에게 R로 수령</span>':`브란 제작 중 · ${fmt(craftRemaining())}초`, '수령해야 온천 실습으로 진행']:['브란의 대장간 → 무기 → 수습 장검','첫 제작비 8 G는 세라 실습 지원']};
- const lines=s==='none'?['광장의 길잡이 세라에게 <kbd>R</kbd>','상태창 설명 후 미분배 포인트 모두 사용','조작 연습·사냥 의뢰 수락 후 외출']:
+  [`<span class="gold">남은 포인트 ${hero.points}개</span>`,'상태 버튼 → 능력치 옆 <b>+</b>','모두 쓰고 세라에게 상호작용해 확인']:
+  ['<span class="gold">미분배 0개 · 준비 완료</span>','세라에게 상호작용 → 슬라임 사냥 의뢰']};
+ if(s==='forge')return {title:'세라의 대장간 안내',lines:['구매 실습 완료 · 세라에게 상호작용','수습 장검 제작 실습을 시작하자']};
+ if(s==='craft')return {title:'첫 장비 제작 · 수습 장검',lines:hero.craft?.introCommission?[craftReady(hero.craft)?'<span class="gold">제작 완료 · 브란에게 상호작용해 수령</span>':`브란 제작 중 · ${fmt(craftRemaining())}초`, '수령해야 온천 실습으로 진행']:['브란의 대장간 → 무기 → 수습 장검','첫 제작비 8 G는 세라 실습 지원']};
+ const lines=s==='none'?['광장의 길잡이 세라에게 상호작용','상태창 설명 후 미분배 포인트 모두 사용','조작 연습·사냥 의뢰 수락 후 외출']:
  s==='hunt'?[`<span class="gold">슬라임 ${q.kills} / ${INTRO_RULES.slimes}</span>`,'동쪽 길 · 잿빛 늪 → 세라에게 보고']:
- s==='return'?['<span class="gold">슬라임 5 / 5 · 사냥 보고</span>','세라에게 R · 판매와 구매 배우기']:
- s==='sell'?['상인 모르에게 R · 전리품 1개 판매','그다음 하급 회복약 1개 구매']:
+ s==='return'?['<span class="gold">슬라임 5 / 5 · 사냥 보고</span>','세라에게 상호작용 · 판매와 구매 배우기']:
+ s==='sell'?['상인 모르에게 상호작용 · 전리품 1개 판매','그다음 하급 회복약 1개 구매']:
  s==='buy'?['<span class="gold">전리품 판매 완료</span>','같은 상점에서 하급 회복약 1개 구매','가진 약이 아니라 직접 구매해야 해']:
- s==='rest'?[`<span class="gold">${q.purchaseWaived?'전리품 판매 완료':'판매·구매 완료'}</span>`,'온천 R · HP·MP·기력 회복','회복약 없을 때만 하급 1개 지원']:
- ['<span class="gold">생존 실습 완료</span>','세라에게 R · 최종 완료 보고'];
+ s==='rest'?[`<span class="gold">${q.purchaseWaived?'전리품 판매 완료':'판매·구매 완료'}</span>`,'온천에서 상호작용 · HP·MP·기력 회복','회복약 없을 때만 하급 1개 지원']:
+ ['<span class="gold">생존 실습 완료</span>','세라에게 상호작용 · 최종 완료 보고'];
  return {title:s==='hunt'?'슬라임 사냥하기':'입문 · 사냥꾼의 첫걸음',lines};
 }
 function introJournalHTML(){
  const q=state.introQuest;
  const label={none:'세라의 설명 듣기',stats:hero.points>0?`능력치 분배 · 남은 ${hero.points}개`:'능력치 분배 완료 · 세라에게 확인',hunt:`사냥 중 ${q.kills}/5`,return:'사냥 완료 · 세라에게 보고',sell:'전리품 판매 실습',buy:'하급 회복약 구매 실습',forge:'세라의 대장간 안내',craft:hero.craft?.introCommission?(craftReady(hero.craft)?'수습 장검 완성 · 브란에게 수령':'수습 장검 제작 중'):'수습 장검 제작',rest:'온천 휴식 실습',report:'세라에게 최종 완료 보고',done:'완료'}[q.stage];
- return `<h3>입문 의뢰 · 사냥꾼의 첫걸음</h3><p><b>${label}</b><br>세라의 설명 → E에서 미분배 스탯 모두 사용 → 세라에게 확인 → 슬라임 5마리 → 사냥 보고 / ${goldIncomeText(INTRO_RULES.rewardGold)} → 전리품 1개 판매 → 하급 회복약 1개 구매 → 세라의 대장간 안내 → 수습 장검 제작·브란에게 수령 → 온천 휴식 → 최종 보고.<br>사냥 보상은 한 번만 지급해. 로안의 ${MAIN_HUNT_TARGET}마리와는 별도 집계.${q.purchaseWaived?'<br>이전 저장에서 판매를 마쳐 새 구매 실습은 생략됐어.':''}</p><details class="resource-notes"><summary>자원·메뉴 / 판매·구매·휴식 다시 읽기</summary>${resourceLessonHTML()}${uiLessonHTML()}${stateLessonHTML()}<h3>판매·구매·휴식</h3><p>E → 전리품: 가방 확인. 모르에게 R → 부산물 판매 → 하급 회복약 1개 구매. 가진 약과 온천 보급은 구매 실적으로 세지 않아.<br>온천 R: HP·MP·기력 전부 회복. 회복약이 전혀 없을 때만 하급 1개 지원.<br>Q 하급 회복약: HP 30 고정 회복 / 재사용 ${BALANCE.potionCooldown}초. 마나와 기력은 회복하지 않아.</p></details>`;
+ return `<h3>입문 의뢰 · 사냥꾼의 첫걸음</h3><p><b>${label}</b><br>세라의 설명 → 상태에서 미분배 스탯 모두 사용 → 세라에게 확인 → 슬라임 5마리 → 사냥 보고 / ${goldIncomeText(INTRO_RULES.rewardGold)} → 전리품 1개 판매 → 하급 회복약 1개 구매 → 세라의 대장간 안내 → 수습 장검 제작·브란에게 수령 → 온천 휴식 → 최종 보고.<br>사냥 보상은 한 번만 지급해. 로안의 ${MAIN_HUNT_TARGET}마리와는 별도 집계.${q.purchaseWaived?'<br>이전 저장에서 판매를 마쳐 새 구매 실습은 생략됐어.':''}</p><details class="resource-notes"><summary>자원·메뉴 / 판매·구매·휴식 다시 읽기</summary>${resourceLessonHTML()}${uiLessonHTML()}${stateLessonHTML()}<h3>판매·구매·휴식</h3><p>상태 → 전리품: 가방 확인. 모르에게 상호작용 → 부산물 판매 → 하급 회복약 1개 구매. 가진 약과 온천 보급은 구매 실적으로 세지 않아.<br>온천에서 상호작용: HP·MP·기력 전부 회복. 회복약이 전혀 없을 때만 하급 1개 지원.<br>회복 버튼: HP 30 고정 회복 / 재사용 ${BALANCE.potionCooldown}초. 마나와 기력은 회복하지 않아.</p></details>`;
 }
 
 
@@ -4021,24 +4077,24 @@ function collectJournalPage(id){
  state.exploration.pages.push(id);if(!state.exploration.seenPages.includes(id))state.exploration.seenPages.push(id);state.exploration.entered=true;
  const complete=updateExplorationCompletion();saveGame();
  burst(p.x,.6,p.z,C.light,12,1.4);tone(journalUnlocked()?620:370,.32,'sine',.025,820);
- toast(journalUnlocked()?`모험 기록 복원 · J로 읽기${complete?' · 미궁 탐사 완료':''}`:`찢어진 모험 기록 ${state.exploration.pages.length} / 2 · 한 장을 더 찾아야 한다.`,6);
+ toast(journalUnlocked()?`모험 기록 복원 · 위쪽 기록 버튼으로 읽기${complete?' · 미궁 탐사 완료':''}`:`찢어진 모험 기록 ${state.exploration.pages.length} / 2 · 한 장을 더 찾아야 한다.`,6);
  return true;
 }
 function explorationHUD(){
  const q=state.exploration,count=q.pages.length;
- if(!q.accepted)return {title:'새로운 소문',lines:['동쪽 숲 안쪽 길의 길손 이안에게 <kbd>R</kbd>','로안의 표식은 입장 자격일 뿐','붉은 빛에 관한 이야기를 들어 보자']};
- if(q.completed)return {title:'미궁 탐사 · 완료',lines:state.scene==='dungeon'?['<span class="gold">기록 복원 · 괴수 처치 완료</span>','미궁 자유 출입 · <kbd>J</kbd> 모험 기록','일반 늑대는 일정 시간이 지나면 다시 출현']:['<span class="gold">괴수 처치 · 미궁 탐사 완료</span>','미궁은 자유롭게 다시 입장할 수 있다','모험 기록과 퍼즐 힌트는 미궁 안에서만 표시']};
- if(state.scene==='field')return {title:'메인 · 미궁 탐사',lines:q.discovered?['<span class="gold">숲속 미궁 발견</span>',q.entered?'미궁 입구로 돌아가 내부 탐사 계속':'미궁 입구에서 R · 내부 탐사',state.cleared?'보스 처치 완료 · 기록을 마저 찾자':'입장 후에는 보스 처치 전 귀환 불가']:['<span class="gold">깊은 숲의 붉은 빛을 찾아라</span>','교역로 옆 숲에서 붉은 빛 탐색',state.quest==='unlocked'?'Tab 지도 · ? 미확인 유적 · 상호작용':'로안에게 완료 보고 후 지도 ? 표시']};
- return {title:'메인 · 미궁 탐사',lines:[journalUnlocked()?'✓ 모험 기록 복원 · <kbd>J</kbd>':`<span class="gold">찢어진 모험 기록 ${count} / 2</span>`,state.gate?'✓ 룬 봉인 해제':'세 룬 기둥을 맞추고 문에서 확인',state.floorOpen?'✓ 변이 흔적 퍼즐 해제':journalUnlocked()?`변이 흔적 진행 ${state.floorStep} / 3 · 틀리면 0 / 3 초기화`:'기록 2장을 복원해 변이 흔적의 순서를 해독',state.cleared?'괴수 처치 완료 · 기록도 모두 모으자':'제보당의 붉은 괴수 처치']};
+ if(!q.accepted)return {title:'새로운 소문',lines:['동쪽 숲 안쪽 길의 길손 이안에게 상호작용','로안의 표식은 입장 자격일 뿐','붉은 빛에 관한 이야기를 들어 보자']};
+ if(q.completed)return {title:'미궁 탐사 · 완료',lines:state.scene==='dungeon'?['<span class="gold">기록 복원 · 괴수 처치 완료</span>','미궁 자유 출입 · 위쪽 기록 버튼','일반 늑대는 일정 시간이 지나면 다시 출현']:['<span class="gold">괴수 처치 · 미궁 탐사 완료</span>','미궁은 자유롭게 다시 입장할 수 있다','모험 기록과 퍼즐 힌트는 미궁 안에서만 표시']};
+ if(state.scene==='field')return {title:'메인 · 미궁 탐사',lines:q.discovered?['<span class="gold">숲속 미궁 발견</span>',q.entered?'미궁 입구로 돌아가 내부 탐사 계속':'미궁 입구에서 상호작용 · 내부 탐사',state.cleared?'보스 처치 완료 · 기록을 마저 찾자':'입장 후에는 보스 처치 전 귀환 불가']:['<span class="gold">깊은 숲의 붉은 빛을 찾아라</span>','교역로 옆 숲에서 붉은 빛 탐색',state.quest==='unlocked'?'지도 · ? 미확인 유적 · 상호작용':'로안에게 완료 보고 후 지도 ? 표시']};
+ return {title:'메인 · 미궁 탐사',lines:[journalUnlocked()?'✓ 모험 기록 복원 · 위쪽 기록 버튼':`<span class="gold">찢어진 모험 기록 ${count} / 2</span>`,state.gate?'✓ 룬 봉인 해제':'세 룬 기둥을 맞추고 문에서 확인',state.floorOpen?'✓ 변이 흔적 퍼즐 해제':journalUnlocked()?`변이 흔적 진행 ${state.floorStep} / 3 · 틀리면 0 / 3 초기화`:'기록 2장을 복원해 변이 흔적의 순서를 해독',state.cleared?'괴수 처치 완료 · 기록도 모두 모으자':'제보당의 붉은 괴수 처치']};
 }
 function journalHTML(){
  if(!dungeonJournalVisible())return '';
  const q=state.exploration;
  const pieces='<div class="torn-slots">'+MAZE.pages.map(p=>`<div class="torn-slot ${hasJournalPage(p.id)?'found':''}"><b>${hasJournalPage(p.id)?'▤':'?'}</b>찢어진 기록 ${p.number}<br>${hasJournalPage(p.id)?'수집 완료':'미수집'}</div>`).join('')+'</div>';
- if(!journalUnlocked())return `<div class="journal-seal"><div class="eyebrow">A JOURNAL TORN APART</div><h3>아직 읽을 수 없는 기록</h3><p>미궁에 흩어진 <b>서로 다른 두 장</b>을 모두 모으면<br>하나의 모험 기록으로 복원할 수 있다.</p>${pieces}<p>수집 ${q.pages.length} / 2 · 조각 가까이에서 <kbd>R</kbd><br>비문은 현장에서 R로 읽고, 마나·기력 설명은 <kbd>H</kbd>에서 확인.</p></div>`;
- return `<div class="lesson-kicker">RESTORED JOURNAL · 2 / 2</div><h3>이름 없는 모험가의 마지막 기록</h3><p class="panel-note">서로 다른 구석에서 발견한 두 장의 글이 이어진다. 가장자리는 젖고 그을렸지만, 글은 아직 남아 있다.</p><article class="restored-entry"><h3>첫 번째 장 · 색이 사라진 숲</h3><p>“용이 모든 색을 가져갔다고 들었다. 그런데 길이 끊긴 숲에서 붉은 빛을 보았다. 나무 사이를 헤치자 돌문이 나타났다. 지도에는 없는 곳이었다.”</p><p>“입구는 들어오는 자에게만 열린다. 벽 사이의 늑대들은 죽어도 다시 일어났다. 쓰러뜨렸다고 그 길이 영원히 안전해지는 것은 아니다.”</p><h3>해와 달과 별의 비문</h3><p>첫째, 하루를 비추던 빛이 저문다.<br>둘째, 밤의 둥근 눈이 떠오른다.<br>셋째, 작은 빛들이 하늘에 남는다.</p><small>세 룬 기둥을 맞춘 뒤 북동쪽 봉인문에서 R로 정렬을 확인한다.</small></article><article class="restored-entry"><h3>두 번째 장 · 붉은 등의 그림자</h3><p>“보통 늑대의 몸에는 보석이 없다. 두 발로 선 그 괴수만 등에 붉은 보석을 품고 있었다. 돌진을 피하고 돌아섰을 때, 그 등에 틈이 보였다.”</p><p>“룬 봉인 너머부터 녀석의 흔적이 이상하게 변했다. 처음에는 네 발로 달린 늑대의 발자국이었다. 더 안쪽에서는 앞발 흔적이 사라지고, 사람처럼 길쭉한 두 발자국만 깊게 남았다. 봉인실 문 앞에서는 발자국이 끊기고 돌바닥에 세 갈래 발톱 자국이 패여 있었다.”</p><h3>변이의 흔적</h3><p>전실의 세 석판은 <b>늑대 발자국</b>, <b>두 발로 선 흔적</b>, <b>세 갈래 발톱 자국</b>을 본떠 만든 듯하다. 비문은 ‘흔적이 남겨진 흐름을 거슬러 섞지 말라’고 경고한다.</p><small>세 발판의 무늬를 실제 흔적이 변해 간 순서와 연결하자. 지면을 울리는 충격파는 점프로 넘을 수 있다.</small></article><p class="panel-note">메인 · 미궁 탐사: ${q.completed?'완료':state.cleared?'괴수 처치 완료':'붉은 빛의 정체를 확인할 것'}<br>수집한 기록은 사망해도 남으며, 전리품으로 판매되지 않는다. 생존 안내는 H.</p>`;
+ if(!journalUnlocked())return `<div class="journal-seal"><div class="eyebrow">A JOURNAL TORN APART</div><h3>아직 읽을 수 없는 기록</h3><p>미궁에 흩어진 <b>서로 다른 두 장</b>을 모두 모으면<br>하나의 모험 기록으로 복원할 수 있다.</p>${pieces}<p>수집 ${q.pages.length} / 2 · 조각 가까이에서 상호작용<br>비문은 현장에서 상호작용하고, 마나·기력 설명은 메뉴의 조작 안내에서 확인.</p></div>`;
+ return `<div class="lesson-kicker">RESTORED JOURNAL · 2 / 2</div><h3>이름 없는 모험가의 마지막 기록</h3><p class="panel-note">서로 다른 구석에서 발견한 두 장의 글이 이어진다. 가장자리는 젖고 그을렸지만, 글은 아직 남아 있다.</p><article class="restored-entry"><h3>첫 번째 장 · 색이 사라진 숲</h3><p>“용이 모든 색을 가져갔다고 들었다. 그런데 길이 끊긴 숲에서 붉은 빛을 보았다. 나무 사이를 헤치자 돌문이 나타났다. 지도에는 없는 곳이었다.”</p><p>“입구는 들어오는 자에게만 열린다. 벽 사이의 늑대들은 죽어도 다시 일어났다. 쓰러뜨렸다고 그 길이 영원히 안전해지는 것은 아니다.”</p><h3>해와 달과 별의 비문</h3><p>첫째, 하루를 비추던 빛이 저문다.<br>둘째, 밤의 둥근 눈이 떠오른다.<br>셋째, 작은 빛들이 하늘에 남는다.</p><small>세 룬 기둥을 맞춘 뒤 북동쪽 봉인문에서 상호작용해 정렬을 확인한다.</small></article><article class="restored-entry"><h3>두 번째 장 · 붉은 등의 그림자</h3><p>“보통 늑대의 몸에는 보석이 없다. 두 발로 선 그 괴수만 등에 붉은 보석을 품고 있었다. 돌진을 피하고 돌아섰을 때, 그 등에 틈이 보였다.”</p><p>“룬 봉인 너머부터 녀석의 흔적이 이상하게 변했다. 처음에는 네 발로 달린 늑대의 발자국이었다. 더 안쪽에서는 앞발 흔적이 사라지고, 사람처럼 길쭉한 두 발자국만 깊게 남았다. 봉인실 문 앞에서는 발자국이 끊기고 돌바닥에 세 갈래 발톱 자국이 패여 있었다.”</p><h3>변이의 흔적</h3><p>전실의 세 석판은 <b>늑대 발자국</b>, <b>두 발로 선 흔적</b>, <b>세 갈래 발톱 자국</b>을 본떠 만든 듯하다. 비문은 ‘흔적이 남겨진 흐름을 거슬러 섞지 말라’고 경고한다.</p><small>세 발판의 무늬를 실제 흔적이 변해 간 순서와 연결하자. 지면을 울리는 충격파는 점프로 넘을 수 있다.</small></article><p class="panel-note">메인 · 미궁 탐사: ${q.completed?'완료':state.cleared?'괴수 처치 완료':'붉은 빛의 정체를 확인할 것'}<br>수집한 기록은 사망해도 남으며, 전리품으로 판매되지 않는다. 생존 안내는 메뉴의 조작 안내에서 확인.</p>`;
 }
-function journalInventoryHTML(){if(!dungeonJournalVisible())return '';return `<div class="journal-quest-item"><b>${journalUnlocked()?'복원된 모험 기록':'찢어진 모험 기록'} · ${state.exploration.pages.length} / 2</b><small>미궁 안에서만 보이는 탐사 기록 · 판매 불가 · ${journalUnlocked()?'J로 읽기':'서로 다른 두 장을 모으면 J 기록 해금'}</small></div>`;}
+function journalInventoryHTML(){if(!dungeonJournalVisible())return '';return `<div class="journal-quest-item"><b>${journalUnlocked()?'복원된 모험 기록':'찢어진 모험 기록'} · ${state.exploration.pages.length} / 2</b><small>미궁 안에서만 보이는 탐사 기록 · 판매 불가 · ${journalUnlocked()?'위쪽 기록 버튼으로 읽기':'서로 다른 두 장을 모으면 기록 버튼 해금'}</small></div>`;}
 function dungeonPopulation(){
  const list=enemies.filter(e=>e.scene==='dungeon'&&e.type!=='boss');
  return {capacity:DUNGEON_RULES.population,alive:list.filter(e=>e.hp>0).length,waiting:list.filter(e=>e.hp<=0).length,total:list.length};
@@ -4050,6 +4106,7 @@ function abramDungeonPopulation(){
 function updateRespawn(e,dt){
  if(e.hp>0||e.scene!==state.scene||state.mode!=='play'||!Number.isFinite(dt)||dt<=0)return false;
  const before=Math.max(0,e.deadTime||0);e.deadTime=Math.min(3600,before+dt);
+ if(isHourlyMiniBoss(e))return refreshHourlyMiniBosses();
  const delay=Number.isFinite(e.respawnDelay)?e.respawnDelay:rollRespawnDelay(MONSTERS[e.archetype]);
  if(e.archetype==='ironGiant'){
   if(respawnScheduledIronGiant(e)){saveGame();return true;}return false;
@@ -4176,7 +4233,7 @@ function updateCamera(dt){
 function updateGame(dt){
  if(state.mode!=='play')return;
  NAV_RUNTIME.requests=0;
- updateWorld(dt);updateTown(dt);refreshBossEncounter();
+ updateWorld(dt);updateTown(dt);refreshHourlyMiniBosses();refreshBossEncounter();
  player.guardCD=Math.max(0,player.guardCD-dt);
  if(!keys.has('KeyG'))player.guardActive=false;
  state.time+=dt;state.toast=Math.max(0,state.toast-dt);state.shake=Math.max(0,state.shake-dt);
@@ -4256,7 +4313,15 @@ function updateGame(dt){
 }
 
 
+
+function renderTimeShadow(x,z,size=1){
+ if(state.scene!=='field'||currentInterior())return;
+ const now=TIME_SOURCE.now(),day=((now+9*3600000)%86400000)/86400000,a=day*TAU-Math.PI/2,len=.28+.22*Math.abs(Math.cos(a)),dx=Math.cos(a)*len*size,dz=Math.sin(a)*len*size;
+ draw(cylinder,trs(x-dx,.011,z-dz,.78*size,.006,.24*size,0,-a,0),[.235,.25,.245],1);
+}
+
 function renderPlayer(){
+ renderTimeShadow(player.x,player.z,.9);
  const t=state.time,a=player.attack,s=CONFIG.playerScale;
  const gait=player.gait,blend=player.moveBlend*(1-player.airBlend)*(1-player.dashBlend);
  const bob=(Math.cos(gait*2)*.025*blend+Math.sin(t*2)*.008*(1-blend))-.07*player.land;
@@ -4589,6 +4654,7 @@ function renderIronGiant(e){
 }
 function renderEnemy(e){
  if(e.type==='thug')return;
+ if(e.hp>0)renderTimeShadow(e.x,e.z,Math.max(.55,e.r));
  if(e.scene===state.scene&&e.hp<=0&&e.respawnCue>0&&dist(e.home,player)<50)renderRespawnWarning(e);
  if(e.scene!==state.scene||dist(e,player)>55||e.hp<=0&&e.deadTime>1.65)return;
  if(e.hp>0&&['rare','elite','boss'].includes(e.rarity)){const gy=e.scene==='field'?(ridgeRawHeight(e.x,e.z)??0):0;ring(e.x,e.z,e.r+(.28+(e.rarity==='elite'?.18:e.rarity==='boss'?.28:0)),e.rarity==='boss'?C.red:C.light,.72,.035,gy);}
@@ -4638,6 +4704,7 @@ function render(){
   // Steam is drawn by renderTown; there is no campfire here.
   if(dist(player,ENTRANCE)<60){drawGlyph(ENTRANCE.x,3.1,ENTRANCE.z+.38,state.quest==='unlocked'?2:0);if(state.quest==='unlocked')ring(ENTRANCE.x,ENTRANCE.z+3,1.5,C.light);}
  }else if(state.scene==='dungeon'){
+  renderDungeonPotionChests();
   for(const p of MAZE.pages)if(!hasJournalPage(p.id)&&dist(player,p)<40)renderJournalPage(p);
   for(const r of MAZE.runes)if(dist(player,r)<48){drawGlyph(r.x,1.75,r.z+.38,state.rune[r.id]);ring(r.x,r.z,1.0,state.gate?C.white:C.light);}
   if(!state.gate)drawBars(44,-49.3,4.0);
@@ -4648,6 +4715,7 @@ function render(){
   for(const s of MAZE.plates)if(state.floorOpen||FLOOR_TRACK_ORDER.slice(0,state.floorStep).includes(s.id))ring(s.x,s.z,1.3,C.white);
   if(state.cleared&&dist(player,{x:36,z:-80})<45){ring(36,-80,2.1,C.white);draw(gem,trs(36,1.1+Math.sin(state.time*2)*.14,-80,.28,.4,.28,0,state.time,0),C.red,1,1);}
  }else if(state.scene==='abramDungeon'){
+  renderDungeonPotionChests();
   if(!abramCaveCleared())drawBars(ABRAM_CAVE.entry.x,ABRAM_CAVE.entry.z+3.5,5.2,3.2);else ring(ABRAM_CAVE.entry.x,ABRAM_CAVE.entry.z,1.8,C.white);
   if(abramCaveCleared()&&dist(player,ABRAM_CAVE.boss)<42){ring(ABRAM_CAVE.boss.x,ABRAM_CAVE.boss.z,2.2,C.white);draw(gem,trs(ABRAM_CAVE.boss.x,1.05+Math.sin(state.time*2)*.12,ABRAM_CAVE.boss.z,.24,.34,.24,0,state.time,0),C.red,1,1);}
  }
@@ -4726,11 +4794,11 @@ let mapChoice='quest',mapOverview=false,mapTownFocus=false,mapZoom=1;
 const MAP_PLACES=[
  {id:'rioQuest',x:ABRAM_PEOPLE[1].x,z:ABRAM_PEOPLE[1].z,label:'파수병 리오 · 새 검의 부탁',short:'리오 · 제작 의뢰',kind:'guard',note:'아브람 일반 의뢰 · 사냥꾼의 검 제작 / 시간 제한 없음'},
  {id:'boarQuest',x:-46,z:59,label:'경비병 다린 · 부러진 검',short:'다린 · 멧돼지 의뢰',kind:'guard',note:`일반 의뢰 · 멧돼지 ${BOAR_QUEST_RULES.target}마리 / 6시간 만료 없음`},
- {id:'abramGate',x:ABRAM_PEOPLE[0].x,z:ABRAM_GATE.z,label:'아브람 관문',short:'아브람 · Lv.10',kind:'gate',note:'붉은 괴수 처치 + Lv.10 · 문지기에게 R'},
+ {id:'abramGate',x:ABRAM_PEOPLE[0].x,z:ABRAM_GATE.z,label:'아브람 관문',short:'아브람 · Lv.10',kind:'gate',note:'붉은 괴수 처치 + Lv.10 · 문지기에게 상호작용'},
  {id:'abramGuide',x:ABRAM_PEOPLE.find(p=>p.id==='abram_guide').x,z:ABRAM_PEOPLE.find(p=>p.id==='abram_guide').z,label:'길잡이 마렌',short:'마렌 · 아브람 안내',kind:'guide',note:'아브람 제작품 / 공중 적 점프 공격 / 마을 빠른 이동 안내'},
  {id:'abramForge',roomId:'abram_forge',x:ABRAM_SMITH.x,z:ABRAM_SMITH.z,label:'하겐의 강철 대장간',short:'아브람 대장간',kind:'merchant',note:'아브람 전용 제작 / 모루에서 강화·복구·전승'},
  {id:'abramShop',roomId:'abram_shop',x:ABRAM_MERCHANT.x,z:ABRAM_MERCHANT.z,label:'에다의 교역소',short:'아브람 상점',kind:'merchant',note:'부산물 판매 / 기술 배우기'},
- {id:'abramLibrary',roomId:'abram_library',x:ABRAM_LIBRARIAN.x,z:ABRAM_LIBRARIAN.z,label:'아브람 기록원',short:'아브람 기록원',kind:'guide',note:'사서 유나 · 세계관 이야기'},
+ {id:'abramLibrary',roomId:'abram_library',x:ABRAM_LIBRARIAN.x,z:ABRAM_LIBRARIAN.z,label:'아브람 도서관',short:'아브람 도서관',kind:'guide',note:'사서 유나 · 세계관 이야기'},
  {id:'abramBath',roomId:'abram_sauna',x:ABRAM_CAMP.x,z:ABRAM_CAMP.z,label:'아브람 돌샘욕장',short:'아브람 욕장',kind:'camp',note:'HP / MP / 기력 회복'},
  {id:'abramNorth',x:ABRAM_NORTH_GATE.x,z:ABRAM_NORTH_GATE.z,label:'아브람 북문 · 부서진 능선',short:'북문 · 능선길',kind:'gate',ridge:true,note:'아브람에서 북쪽으로 이어지는 고지대 교역로'},
  {id:'ridgeMine',x:RIDGE_MINE.x,z:RIDGE_MINE.z,label:'버려진 폐광 입구',short:'막힌 폐광',kind:'unknown',ridge:true,note:'입구가 무너져 있다 · 향후 특별 폐광 탐사 지역'},
@@ -4741,16 +4809,16 @@ const MAP_PLACES=[
  {id:'ternGuide',x:TERN_PEOPLE.find(p=>p.id==='tern_guide').x,z:TERN_PEOPLE.find(p=>p.id==='tern_guide').z,label:'등반가 네아',short:'네아 · 테른 안내',kind:'guide',tern:true,note:'부서진 능선의 몬스터 패턴과 테른 시설 안내'},
  {id:'ternForge',roomId:'tern_forge',x:TERN_SMITH.x,z:TERN_SMITH.z,label:'케른의 능선 대장간',short:'테른 대장간',kind:'merchant',tern:true,note:'능선 재료로 상위 무기·방어구·부적 제작'},
  {id:'ternShop',roomId:'tern_shop',x:TERN_MERCHANT.x,z:TERN_MERCHANT.z,label:'이네스의 행상소',short:'테른 상점',kind:'merchant',tern:true,note:'능선 부산물 판매 / 기존 기술 거래'},
- {id:'ternLibrary',roomId:'tern_library',x:TERN_LIBRARIAN.x,z:TERN_LIBRARIAN.z,label:'테른 바람기록소',short:'테른 기록소',kind:'guide',tern:true,note:'부서진 능선·까마귀·폐광·붉은 철갑 거인의 기록'},
+ {id:'ternLibrary',roomId:'tern_library',x:TERN_LIBRARIAN.x,z:TERN_LIBRARIAN.z,label:'테른 도서관',short:'테른 도서관',kind:'guide',tern:true,note:'부서진 능선·까마귀·폐광·붉은 철갑 거인의 기록'},
  {id:'ternBath',roomId:'tern_sauna',x:TERN_CAMP.x,z:TERN_CAMP.z,label:'테른 온석 쉼터',short:'테른 쉼터',kind:'camp',tern:true,note:'HP / MP / 기력 회복'},
  {id:'board',x:BOARD.x,z:BOARD.z,label:BOARD.name,short:'意뢰 게시판'.replace('意','의'),kind:'quest',note:'6시간마다 3개 · 동시 수행 2개'},
- {id:'library',x:LIBRARIAN.x,z:LIBRARIAN.z,label:'새벽 기록관',short:'기록관',kind:'guide',note:'사서 엘린 · 세계관 이야기 R'},
+ {id:'library',x:LIBRARIAN.x,z:LIBRARIAN.z,label:'새벽 도서관',short:'도서관',kind:'guide',note:'사서 엘린 · 세계관 이야기 · 상호작용'},
  {id:'roan',x:NPC.x,z:NPC.z,label:'경비대장 로안',short:'로안',kind:'quest',note:'의뢰 수락 · 완료 보고'},
  {id:'merchant',x:MERCHANT.x,z:MERCHANT.z,label:'상인 모르',short:'상인 모르',kind:'merchant',note:'부산물 판매 · 하급 회복약 구매'},
  {id:'blacksmith',x:BLACKSMITH.x,z:BLACKSMITH.z,label:BLACKSMITH.name,short:'대장간',kind:'merchant',note:'무기·아티팩트·흉갑 제작 / 장비 판매'},
  {id:'camp',x:CAMP.x,z:CAMP.z,label:'돌샘 온천',short:'온천',kind:'camp',note:'HP·MP·기력 회복 / 회복약이 전혀 없으면 하급 1개'},
  {id:'swamp',x:142,z:55,label:'잿빛 늪',short:'잿빛 늪',kind:'swamp',note:'Lv.3 슬라임 군집 · 동쪽 길 끝에 슬라임 퀸'},
- {id:'slimeQueen',x:SLIME_QUEEN_CLEARING.x,z:SLIME_QUEEN_CLEARING.z,label:'슬라임 퀸의 웅덩이',short:'슬라임 퀸 · Lv.7',kind:'slimeQueen',note:'동쪽 길 끝 · 미니 중간보스 · 약 4분 뒤 재출현'},
+ {id:'slimeQueen',x:SLIME_QUEEN_CLEARING.x,z:SLIME_QUEEN_CLEARING.z,label:'슬라임 퀸의 웅덩이',short:'슬라임 퀸 · Lv.7',kind:'slimeQueen',note:'동쪽 길 끝 · 미니 중간보스 · 처치 후 1시간 뒤 재출현'},
  {id:'southForest',x:-72,z:178,label:'남쪽 숲',short:'남쪽 숲 · Lv.5~10',kind:'goblin',note:'갈라진 활엽수와 노출 뿌리 · 여러 고블린 부락이 흩어진 활동 구역'},
  {id:'goblinCampNorth',x:GOBLIN_CAMPS[0].approach.x,z:GOBLIN_CAMPS[0].approach.z,label:GOBLIN_CAMPS[0].name,short:'앞초소 · Lv.5',kind:'goblin',note:'남쪽 숲 초입의 작은 경계 부락 · 일반 고블린 중심'},
  {id:'goblinCampWest',x:GOBLIN_CAMPS[1].approach.x,z:GOBLIN_CAMPS[1].approach.z,label:GOBLIN_CAMPS[1].name,short:'사냥부락 · Lv.5~7',kind:'goblin',note:'서쪽 갈림길의 사냥 부락 · 고블린 족장 출현'},
@@ -4758,7 +4826,7 @@ const MAP_PLACES=[
  {id:'entrance',x:ENTRANCE.x,z:ENTRANCE.z,label:'숲의 미궁',short:'미궁 입구',kind:'portal',note:'직접 발견한 입구 · 길 밖의 유적'},
  {id:'guide',x:GUIDE_NPC.x,z:GUIDE_NPC.z,label:GUIDE_NPC.name,short:'세라 · 입문',kind:'guide',note:'자원·상태창 안내 · 포인트 분배 후 슬라임 5마리'},
  {id:'rumor',x:RUMOR_NPC.x,z:RUMOR_NPC.z,label:RUMOR_NPC.name,short:'이안 · 소문',kind:'rumor',note:'동쪽 숲 내부의 길 · 붉은 빛의 소문 / 미궁 탐사'},
- ...GUARDS.map(g=>({id:g.id,x:g.x,z:g.z,label:g.name,short:g.name.replace('경비병 ',''),kind:'guard',note:g.post+' · 일상 대화 R'}))
+ ...GUARDS.map(g=>({id:g.id,x:g.x,z:g.z,label:g.name,short:g.name.replace('경비병 ',''),kind:'guard',note:g.post+' · 일상 대화 · 상호작용'}))
 ];
 function runeKnown(r){return state.cleared||!!state.visited[r.r*25+r.c];}
 function mapGateKnown(){return state.gate||state.cleared||!!state.visited[MAZE.exit.r*25+MAZE.exit.c];}
@@ -4766,7 +4834,7 @@ function mapPlaceVisible(p){if(!p)return false;if(p.id==='entrance')return entra
 function rawMapObjective(){
  if(mapChoice==='rioQuest')return rioQuestObjective();
  if(mapChoice==='boarQuest')return boarQuestObjective();
- if(state.scene==='field'&&townDepartureLocked())return {...MAP_PLACES.find(p=>p.id==='guide'),note:state.introQuest.stage==='stats'?(hero.points>0?'E 상태창에서 미분배 포인트를 모두 쓰세요':'세라에게 R로 확인하고 사냥 의뢰를 받으세요'):'조작 연습·포인트 분배 후 세라의 사냥 의뢰를 수락하세요'};
+ if(state.scene==='field'&&townDepartureLocked())return {...MAP_PLACES.find(p=>p.id==='guide'),note:state.introQuest.stage==='stats'?(hero.points>0?'상태창에서 미분배 포인트를 모두 쓰세요':'세라에게 상호작용로 확인하고 사냥 의뢰를 받으세요'):'조작 연습·포인트 분배 후 세라의 사냥 의뢰를 수락하세요'};
  if(mapChoice==='commission'){const c=commissionObjective();if(c)return c;}
  if(state.scene==='field'){
   const chosen=MAP_PLACES.find(p=>p.id===mapChoice&&mapPlaceVisible(p));
@@ -4778,18 +4846,18 @@ function rawMapObjective(){
     return near?{x:near.x,z:near.z,label:'입문 · 가까운 슬라임',short:'슬라임',kind:'slime',note:`세라의 의뢰 ${q.kills}/5 · 수락 이후 별도 집계`}:{...MAP_PLACES.find(p=>p.id==='swamp'),note:'입문 사냥 · 슬라임이 다시 나타나기를 기다리자'};
    }
    if(q.stage==='sell'||q.stage==='buy')return {...MAP_PLACES.find(p=>p.id==='merchant'),note:q.stage==='buy'?'하급 회복약 1개 직접 구매 · 가진 약은 제외':'전리품 1개 판매 후 하급 회복약 1개 구매'};
-   if(q.stage==='rest')return {...MAP_PLACES.find(p=>p.id==='camp'),note:'R로 휴식 후 세라에게 완료 보고'};
-   return {...guide,note:q.stage==='none'?'메인 의뢰 전 · 먼저 마나·기력과 UI 배우기':'R로 보고 · 다음 생존 실습'};
+   if(q.stage==='rest')return {...MAP_PLACES.find(p=>p.id==='camp'),note:'상호작용으로 휴식 후 세라에게 완료 보고'};
+   return {...guide,note:q.stage==='none'?'메인 의뢰 전 · 먼저 마나·기력과 UI 배우기':'상호작용으로 보고 · 다음 생존 실습'};
   }
-  if(state.cleared&&!abramGateOpen())return {...MAP_PLACES.find(p=>p.id==='abramGate'),note:hero.level<10?`아브람 입장에는 Lv.10이 필요합니다 · 현재 Lv.${hero.level}`:'붉은 괴수 처치 완료 · 문지기에게 R로 성문 개방'};
+  if(state.cleared&&!abramGateOpen())return {...MAP_PLACES.find(p=>p.id==='abramGate'),note:hero.level<10?`아브람 입장에는 Lv.10이 필요합니다 · 현재 Lv.${hero.level}`:'붉은 괴수 처치 완료 · 문지기에게 상호작용해 성문 개방'};
   if(state.cleared&&abramGateOpen()&&!ternUnlocked())return {...MAP_PLACES.find(p=>p.id==='abramCave'),note:hero.level<DUNGEON_ACCESS.abram.minLevel?`부서진 능선에서 Lv.${DUNGEON_ACCESS.abram.minLevel}까지 성장 · 현재 Lv.${hero.level}`:'아브람 북문 → 부서진 능선 끝 · 종유석 미궁에 입장해 붉은 철갑 거인을 처치'};
   if(state.cleared&&ternUnlocked())return {...MAP_PLACES.find(p=>p.id==='ternGuide'),note:'테른 도착 · 네아에게 능선과 새 시설의 이야기를 들어보자'};
-  if(state.quest==='none'||state.quest==='report')return {...MAP_PLACES.find(p=>p.id==='roan'),note:state.quest==='report'?`${MAIN_HUNT_TARGET}마리 처치 완료 · R로 보고`:'마을에서 R키로 대화'};
+  if(state.quest==='none'||state.quest==='report')return {...MAP_PLACES.find(p=>p.id==='roan'),note:state.quest==='report'?`${MAIN_HUNT_TARGET}마리 처치 완료 · 상호작용으로 보고`:'마을에서 로안에게 상호작용'};
   if(state.quest==='active'){
    const near=player.x>=65?enemies.filter(e=>e.scene==='field'&&e.type==='slime'&&e.hp>0).sort((a,b)=>dist(player,a)-dist(player,b))[0]:null;
    return near?{x:near.x,z:near.z,label:'가까운 슬라임',short:'슬라임',kind:'slime',note:`처치 ${state.kills} / ${MAIN_HUNT_TARGET} · 완료 후 로안에게 보고`}:{...MAP_PLACES.find(p=>p.id==='swamp'),note:`처치 ${state.kills} / ${MAIN_HUNT_TARGET} · 동쪽 길을 따라 이동`};
   }
-  if(!state.exploration.accepted)return {...MAP_PLACES.find(p=>p.id==='rumor'),note:'길손에게 R · 붉은 빛의 소문을 들으면 미궁 탐사 시작'};
+  if(!state.exploration.accepted)return {...MAP_PLACES.find(p=>p.id==='rumor'),note:'길손에게 상호작용 · 붉은 빛의 소문을 들으면 미궁 탐사 시작'};
   if(entranceHinted())return {...mapPlacePresentation(MAP_PLACES.find(p=>p.id==='entrance'))};
   if(!entranceKnown())return {x:null,z:null,label:'깊은 숲의 붉은 빛을 찾아라',short:'길 밖의 숲 탐색',kind:'search',note:'길은 유적으로 이어지지 않는다. 아브람 교역로를 따라가다 서쪽 숲을 살펴보자. 유적으로 이어지는 길은 없다.'};
   return {...MAP_PLACES.find(p=>p.id==='entrance')};
@@ -4797,19 +4865,19 @@ function rawMapObjective(){
  if(state.scene==='abramDungeon'){
   const g=ironGiantBoss();
   if(!abramCaveCleared()&&g?.hp>0)return {x:g.x,z:g.z,label:'종유석 심층 · 붉은 철갑 거인',short:'붉은 철갑 거인',kind:'boss',note:`Lv.${g.level} 중간보스 · 처치 시 테른 해금 + 붉은 보석 파편 1개`};
-  if(abramCaveCleared())return {x:ABRAM_CAVE.entry.x,z:ABRAM_CAVE.entry.z,label:'해방된 종유석 미궁 출구',short:'출구',kind:'portal',note:g?.hp>0?'R키 · 자유롭게 출입 가능 · 거인은 선택 재도전 가능':`R키 · 자유 출입 · 거인 다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`};
+  if(abramCaveCleared())return {x:ABRAM_CAVE.entry.x,z:ABRAM_CAVE.entry.z,label:'해방된 종유석 미궁 출구',short:'출구',kind:'portal',note:g?.hp>0?'상호작용 · 자유롭게 출입 가능 · 거인은 선택 재도전 가능':`상호작용 · 자유 출입 · 거인 다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`};
   return {x:ABRAM_CAVE.boss.x,z:ABRAM_CAVE.boss.z,label:'종유석 심층으로 내려가라',short:'심층',kind:'boss',note:'붉은 철갑 거인을 처치하기 전에는 입구가 봉인된다'};
  }
  if(!journalUnlocked()){
   const seen=MAZE.pages.find(p=>state.exploration.seenPages.includes(p.id)&&!hasJournalPage(p.id));
-  return seen?{x:seen.x,z:seen.z,label:'발견한 찢어진 모험 기록',short:'기록 '+seen.number,kind:'page',note:`수집 ${state.exploration.pages.length} / 2 · 가까이에서 R로 줍기`}:{x:null,z:null,label:'찢어진 모험 기록을 찾아라',short:'기록 '+state.exploration.pages.length+'/2',kind:'page',note:'미로의 두 구석에 흩어져 있다. 두 장 모두 봉인문 이전 구역에 있다.'};
+  return seen?{x:seen.x,z:seen.z,label:'발견한 찢어진 모험 기록',short:'기록 '+seen.number,kind:'page',note:`수집 ${state.exploration.pages.length} / 2 · 가까이에서 상호작용`}:{x:null,z:null,label:'찢어진 모험 기록을 찾아라',short:'기록 '+state.exploration.pages.length+'/2',kind:'page',note:'미로의 두 구석에 흩어져 있다. 두 장 모두 봉인문 이전 구역에 있다.'};
  }
- if(state.cleared)return {x:-44,z:44,label:'해방된 출구',short:'출구',kind:'portal',note:'R키 · 자유롭게 출입 가능'};
+ if(state.cleared)return {x:-44,z:44,label:'해방된 출구',short:'출구',kind:'portal',note:'상호작용 · 자유롭게 출입 가능'};
  if(state.floorOpen)return {x:36,z:-80,label:'괴수의 봉인실',short:'중간 보스',kind:'boss',note:'제보당의 붉은 괴수 · 처치 전 귀환 불가'};
- if(state.gate)return {x:36,z:-57,label:'변이 흔적의 전실',short:'흔적 퍼즐',kind:'rune',note:journalUnlocked()?'세 흔적의 변이 순서는 J 모험 기록과 현장 비문에서 추리':'찢어진 모험 기록 2장을 먼저 복원'};
+ if(state.gate)return {x:36,z:-57,label:'변이 흔적의 전실',short:'흔적 퍼즐',kind:'rune',note:journalUnlocked()?'세 흔적의 변이 순서는 기록 버튼의 모험 기록과 현장 비문에서 추리':'찢어진 모험 기록 2장을 먼저 복원'};
  const discovered=MAZE.runes.filter(runeKnown).length;
- if(discovered===3&&mapGateKnown())return {x:44,z:-48,label:'북동쪽 룬 봉인문',short:'봉인문',kind:'portal',note:'룬을 맞춘 뒤 문 앞에서 R로 확인'};
- return {x:null,z:null,label:'미궁의 룬을 찾아라',short:'미발견 구역 탐험',kind:'rune',note:`룬 ${discovered} / 3 발견 · J키로 비문 확인`};
+ if(discovered===3&&mapGateKnown())return {x:44,z:-48,label:'북동쪽 룬 봉인문',short:'봉인문',kind:'portal',note:'룬을 맞춘 뒤 문 앞에서 상호작용해 확인'};
+ return {x:null,z:null,label:'미궁의 룬을 찾아라',short:'미발견 구역 탐험',kind:'rune',note:`룬 ${discovered} / 3 발견 · 기록과 비문을 함께 확인`};
 }
 function selectMapTarget(id){
  if(state.scene!=='field')return false;
@@ -5039,7 +5107,7 @@ function drawMap(c,w,h,full=false){
  c.restore();
  // Fixed chrome remains crisp regardless of viewport aspect ratio.
  c.fillStyle='#10191ef5';c.fillRect(0,0,w,top);c.fillRect(0,h-bottom,w,bottom);c.strokeStyle='#56605a';c.lineWidth=1;c.strokeRect(.5,.5,w-1,h-1);
- c.font='600 '+(full?11:10)+'px system-ui,sans-serif';c.textBaseline='middle';c.fillStyle=P.ink;c.textAlign='left';c.fillText('N ↑  북쪽',10,top/2);c.textAlign='right';c.fillText('동쪽  E →',w-10,top/2);
+ c.font='600 '+(full?11:10)+'px system-ui,sans-serif';c.textBaseline='middle';c.fillStyle=P.ink;c.textAlign='left';c.fillText('북쪽 ↑',10,top/2);c.textAlign='right';c.fillText('동쪽 →',w-10,top/2);
  c.fillStyle=P.quest;c.textAlign='left';c.font='500 '+(full?11:10)+'px system-ui,sans-serif';
  const caption=hasTarget?`${o.short} · ${fmt(dist(player,o))}m`:(m.field?o.short:m.cave?'종유석 동굴 · 심층 탐사':`기록 ${state.exploration.pages.length}/2 · 룬 ${m.discovered}/3`);
  c.fillText(full?(state.scene==='field'?'지형과 위치 안내 · 자동 이동 아님':m.cave?(abramCaveCleared()?'종유석 미궁 해방 · 자유 출입':'종유석 심층 · 붉은 철갑 거인 처치 전 봉인'):(state.cleared?'미궁 해방 · 자유 출입':'밝은 길 = 통로  /  어두운 부분 = 벽·미발견')):caption,10,h-bottom/2);
@@ -5064,17 +5132,17 @@ function drawFullMap(){
   }
  }else if(m.cave){
   const population=abramDungeonPopulation(),g=ironGiantBoss();
-  cards=`<div class="map-stage"><b>아브람 종유석 미궁 · Lv.${DUNGEON_ACCESS.abram.minLevel}+</b><small>권장 ${DUNGEON_ACCESS.abram.recommended} · 일반 몬스터 Lv.22→24→26</small></div><div class="map-stage"><b>일반 몬스터 ${population.alive} / ${population.capacity}</b><small>갑각충 9 · 석순 골렘 7 · 동굴 안개 망령 4</small></div><div class="map-stage"><b>${abramCaveCleared()?'미궁 해방':'출구 봉인'}</b><small>${abramCaveCleared()?'입구에서 R · 자유 출입':'붉은 철갑 거인 Lv.28 처치 전 귀환 불가'}</small></div><div class="map-stage"><b>붉은 철갑 거인 · ${g?.hp>0?'출현 중':'재등장 대기'}</b><small>${g?.hp>0?'붉은 보석 파편 1개 확정 · 첫 처치 시 테른 해금':`다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`}</small></div>`;
+  cards=`<div class="map-stage"><b>아브람 종유석 미궁 · Lv.${DUNGEON_ACCESS.abram.minLevel}+</b><small>권장 ${DUNGEON_ACCESS.abram.recommended} · 일반 몬스터 Lv.22→24→26</small></div><div class="map-stage"><b>일반 몬스터 ${population.alive} / ${population.capacity}</b><small>갑각충 9 · 석순 골렘 7 · 동굴 안개 망령 4</small></div><div class="map-stage"><b>${abramCaveCleared()?'미궁 해방':'출구 봉인'}</b><small>${abramCaveCleared()?'입구에서 상호작용 · 자유 출입':'붉은 철갑 거인 Lv.28 처치 전 귀환 불가'}</small></div><div class="map-stage"><b>붉은 철갑 거인 · ${g?.hp>0?'출현 중':'재등장 대기'}</b><small>${g?.hp>0?'붉은 보석 파편 1개 확정 · 첫 처치 시 테른 해금':`다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`}</small></div>`;
  }else{
   const population=dungeonPopulation();
-  cards=`<div class="map-stage"><b>찢어진 기록 ${state.exploration.pages.length} / 2</b><small>${journalUnlocked()?'복원 완료 · J로 열기':'직접 발견한 조각만 지도에 표시'}</small></div><div class="map-stage"><b>일반 몬스터 ${population.alive} / ${population.capacity}</b><small>재생성 대기 ${population.waiting} · 보스는 별도 1마리</small></div><div class="map-stage"><b>${state.cleared?'미궁 해방':'출구 봉인'}</b><small>${state.cleared?'출구에서 R · 자유 출입':'죽거나 보스를 처치해야 귀환'}</small></div>`;
-  for(const r of MAZE.runes)cards+=`<div class="map-stage"><b>${r.id+1}번 룬 ${runeKnown(r)?'· '+GLYPHS[state.rune[r.id]]:'· 미발견'}</b><small>${runeKnown(r)?'현재 문양 · R로 회전':'탐험 후 지도에 표시'}</small></div>`;
-  cards+=`<div class="map-stage"><b>룬 봉인 ${state.gate?'해제':'잠김'} / 변이 흔적 ${state.floorOpen?'완료':'대기'}</b><small>흔적 퍼즐은 기록 2장 복원 후 J와 전실 비문을 함께 확인</small></div>`;
+  cards=`<div class="map-stage"><b>찢어진 기록 ${state.exploration.pages.length} / 2</b><small>${journalUnlocked()?'복원 완료 · 위쪽 기록 버튼':'직접 발견한 조각만 지도에 표시'}</small></div><div class="map-stage"><b>일반 몬스터 ${population.alive} / ${population.capacity}</b><small>재생성 대기 ${population.waiting} · 보스는 별도 1마리</small></div><div class="map-stage"><b>${state.cleared?'미궁 해방':'출구 봉인'}</b><small>${state.cleared?'출구에서 상호작용 · 자유 출입':'죽거나 보스를 처치해야 귀환'}</small></div>`;
+  for(const r of MAZE.runes)cards+=`<div class="map-stage"><b>${r.id+1}번 룬 ${runeKnown(r)?'· '+GLYPHS[state.rune[r.id]]:'· 미발견'}</b><small>${runeKnown(r)?'현재 문양 · 상호작용으로 회전':'탐험 후 지도에 표시'}</small></div>`;
+  cards+=`<div class="map-stage"><b>룬 봉인 ${state.gate?'해제':'잠김'} / 변이 흔적 ${state.floorOpen?'완료':'대기'}</b><small>흔적 퍼즐은 기록 2장 복원 후 기록 버튼과 전실 비문을 함께 확인</small></div>`;
  }
  if($('mapPlaces').innerHTML!==cards)$('mapPlaces').innerHTML=cards;
  const legend=m.field?'◎ 내 위치　? 미확인 유적　… 이안·소문　▤ 세라·입문　◆ 의뢰　▣ 상인　△ 온천　▥ 미궁　회색 방패: 경비병　● 슬라임　◇ 고블린　▲ 늑대　■ 멧돼지':m.cave?'◎ 내 위치　▥ 출입구　◆ 붉은 표식: 중간보스　주변 적만 표시':'◎ 내 위치　▤ 기록 조각　◆ 숫자: 발견한 룬　▣ 발판　▲ 늑대　◆ 붉은 표식: 보스';
  $('mapLegend').textContent=legend;
- $('mapHintText').textContent=m.field?'목적지를 고르면 미니맵 화살표가 바뀝니다. +/− 또는 지도 위 마우스 휠로 확대·축소할 수 있습니다. 빠른 이동은 마을 안에서 다른 해금 마을로만 사용할 수 있습니다.':m.cave?'종유석과 석순 사이의 통로를 표시합니다. +/− 또는 마우스 휠로 확대·축소할 수 있습니다.':'미발견 미로·룬·기록 조각은 공개하지 않습니다. +/− 또는 마우스 휠로 확대·축소할 수 있습니다.';
+ $('mapHintText').textContent=m.field?'목적지를 고르면 미니맵 화살표가 바뀝니다. +/− 버튼 또는 두 손가락으로 확대·축소할 수 있습니다. 빠른 이동은 마을 안에서 다른 해금 마을로만 사용할 수 있습니다.':m.cave?'종유석과 석순 사이의 통로를 표시합니다. +/− 버튼 또는 두 손가락으로 확대·축소할 수 있습니다.':'미발견 미로·룬·기록 조각은 공개하지 않습니다. +/− 버튼 또는 두 손가락으로 확대·축소할 수 있습니다.';
 }
 
 
@@ -5120,7 +5188,7 @@ function renderStatus(){
  $('statusLevel').textContent=`Lv.${hero.level}  /  ${hero.level>=50?'최대 레벨':`EXP ${hero.xp} / ${xpRequired(hero.level)}`}`;
  $('statusPoints').textContent=`미분배 포인트 ${hero.points} · ${moneyText(hero.gold)}`;
  const task=$('statTaskHint');task.classList.toggle('hidden',state.introQuest.stage!=='stats');
- if(state.introQuest.stage==='stats')task.textContent=hero.points>0?'세라의 준비 의뢰 · 능력치 옆 +로 남은 포인트를 모두 사용하세요.':'준비 완료 · E로 닫고 세라에게 확인하면 첫 사냥 의뢰를 받을 수 있어요.';
+ if(state.introQuest.stage==='stats')task.textContent=hero.points>0?'세라의 준비 의뢰 · 능력치 옆 +로 남은 포인트를 모두 사용하세요.':'준비 완료 · 상태창을 닫고 세라에게 확인하면 첫 사냥 의뢰를 받을 수 있어요.';
  for(const b of $('statusTabs').children)b.classList.toggle('selected',b.dataset.tab===statusTab);
  let html='';
  if(statusTab==='stats'){
@@ -5130,7 +5198,7 @@ function renderStatus(){
  }else if(statusTab==='skills'){
   html='<div class="status-equip-note"><b>스킬 장착</b><br>1~4번 칸의 선택 메뉴에서 배운 스킬을 고르면 즉시 장착됩니다. 비우기를 선택하면 해당 칸을 해제합니다.</div><p class="panel-note">한 스킬을 여러 칸에 중복 장착할 수 없습니다. 장착한 스킬은 숫자 1~4로 사용합니다. 쿨타임 중에는 장착을 변경할 수 없습니다.</p><div class="equipped-grid">';
   const slots=unlockedSlots();for(let i=0;i<4;i++){
-   html+=`<div class="equipped"><kbd>${i+1}</kbd><b>${slots[i]?'스킬 칸 '+(i+1):'잠김'}</b>`;
+   html+=`<div class="equipped"><b>${slots[i]?'스킬 칸 '+(i+1):'잠김'}</b>`;
    if(slots[i])html+=`<select aria-label="${i+1}번 스킬 장착" data-slot="${i}"><option value="">비우기</option>${hero.learned.map(id=>`<option value="${id}" ${hero.slots[i]===id?'selected':''} ${hero.slots.some((s,j)=>j!==i&&s===id)?'disabled':''}>${SKILLS[id].name}</option>`).join('')}</select>`;
    else html+=`<small>${i===1?'Lv.5 또는 괴수 처치':`Lv.${BALANCE.slotLevels[i]}`}</small>`;
    html+='</div>';
@@ -5142,7 +5210,7 @@ function renderStatus(){
   updateCrafting();syncGearInstances();html=equippedSlotsHTML()+
    '<div class="status-equip-note"><b>장비 장착</b><br>아래 보유 장비에서 <b>장착</b>을 누르면 무기·아티팩트·흉갑·방패를 여기서 바로 교체할 수 있습니다. 아티팩트·흉갑·방패는 위 슬롯의 <b>해제</b>로 벗을 수 있습니다.</div><p class="panel-note">각 장비 슬롯은 1개씩만 적용됩니다. 무기는 표시된 레벨 구간에서만 착용 가능하며 파손 시 사용할 수 없습니다. 같은 종류도 개별 보관합니다.</p>'+gearRowsHTML(false);
  }else if(statusTab==='loot'){
-  html=`<p class="panel-note">부산물은 처치 시 자동으로 가방에 들어옵니다. 새벽마을의 <b>상인 모르</b> 근처에서 R키로 거래하세요.</p>${inventoryTable(false)}${journalInventoryHTML()}<p class="panel-note">하급 회복약 ${player.heals}개 · Q 사용 · HP +30 (고정) · 재사용 8초<br>대장간의 아티팩트·무기·갑옷 제작에 사용됩니다. 부산물마다 독립적으로 드롭되므로 한 몬스터가 여러 물건을 줄 수 있습니다.</p>`;
+  html=`<p class="panel-note">부산물은 처치 시 자동으로 가방에 들어옵니다. 새벽마을의 <b>상인 모르</b> 가까이에서 상호작용해 거래하세요.</p>${inventoryTable(false)}${journalInventoryHTML()}<p class="panel-note">하급 회복약 ${player.heals}개 · 회복 버튼 · HP +30 (고정) · 재사용 8초<br>대장간의 아티팩트·무기·갑옷 제작에 사용됩니다. 부산물마다 독립적으로 드롭되므로 한 몬스터가 여러 물건을 줄 수 있습니다.</p>`;
  }else{
   html='<div class="table-scroll"><table class="game-table"><thead><tr><th>몬스터</th><th>희귀도</th><th>Lv</th><th>HP</th><th>공격</th><th>기본 EXP</th><th>처치 골드</th><th>리젠</th></tr></thead><tbody>';
   for(const m of Object.values(MONSTERS).filter(m=>m.type!=='thug')){const ri=monsterRarityInfo(m.rarity),scheduled=m.type==='boss'||m===MONSTERS.ironGiant,resp=scheduled?'서울 3시간 슬롯':m.unique?'없음':Array.isArray(m.respawn)?`${Math.min(...m.respawn)}~${Math.max(...m.respawn)}초 난수`:m.respawn?fmt(m.respawn)+'초':'없음',attackText=scheduled?[m.claw||m.attack,m.rush||m.attack,m.slam||m.attack].map(fmt).join(' / '):m.slam?fmt(m.attack)+' / 강공 '+fmt(m.slam):fmt(m.attack);html+=`<tr><td>${ri.mark?ri.mark+' ':''}${m.name}</td><td>${ri.name}</td><td>${m.level}</td><td>${fmt(m.hp)}</td><td>${attackText}</td><td>${fmt(m.xp)}</td><td>${m.gold?moneyText(goldIncomeAmount(m.gold))+' <small>레벨차 ≤ '+MONSTER_GOLD_LEVEL_GAP+'</small>':'—'}</td><td>${resp}</td></tr>`;}
@@ -5167,12 +5235,12 @@ function openShop(){if(!beginnerServicesUnlocked())return false;if(state.mode!==
 function renderShop(){
  $('shopPanel').querySelector('h2').textContent=activeMerchant().name;
  const note=$('shopLesson'),stage=state.introQuest.stage;note.classList.toggle('hidden',!['sell','buy','forge','rest'].includes(stage));
- note.textContent=stage==='forge'?'회복약 구매 완료 · 세라에게 돌아가 대장간 안내를 들으세요.':stage==='sell'?'입문 실습 1/2 · 전리품 1개를 팔고, 하급 회복약 1개를 구매하세요.':stage==='buy'?'입문 실습 2/2 · 판매 완료! 아래 하급 회복약 구매 버튼을 누르세요.':stage==='rest'?'상점 실습 완료 · 마을 서쪽 아래 돌샘 온천에서 R로 휴식하세요.':'';
+ note.textContent=stage==='forge'?'회복약 구매 완료 · 세라에게 돌아가 대장간 안내를 들으세요.':stage==='sell'?'입문 실습 1/2 · 전리품 1개를 팔고, 하급 회복약 1개를 구매하세요.':stage==='buy'?'입문 실습 2/2 · 판매 완료! 아래 하급 회복약 구매 버튼을 누르세요.':stage==='rest'?'상점 실습 완료 · 마을 서쪽 아래 돌샘 온천에서 상호작용해 휴식하세요.':'';
  $('shopGold').textContent=`보유 ${moneyText(hero.gold)}`;
  $('shopGold').title='붉은 보석 파편은 판매 불가 · 괴수 코어 판매 '+moneyText(itemSaleGold('werewolfCore',1));
  $('shopBody').innerHTML=`<nav class="shop-tabs"><button data-shop-tab="loot" class="${shopTab==='loot'?'selected':''}">부산물 판매</button><button data-shop-tab="skills" class="${shopTab==='skills'?'selected':''}">기술 배우기</button></nav>`;
  if(shopTab==='loot')$('shopBody').insertAdjacentHTML('beforeend',inventoryTable(true));
- else $('shopBody').insertAdjacentHTML('beforeend','<p class="panel-note">구매 즉시 습득합니다. 빈 열린 칸에 자동 장착 / E에서 변경. 같은 기술은 한 번만 구매할 수 있습니다.</p><div class="skill-shop">'+Object.values(SKILLS).filter(s=>s.price).map(s=>{const own=hero.learned.includes(s.id),ok=tutorialSpendingUnlocked()&&hero.level>=s.level&&hero.gold>=s.price&&!own;return `<article class="skill-sale"><h3>${s.icon} ${s.name} <small>Lv.${s.level}</small></h3><p>${s.description}</p><p>위력 ${s.power} · MP ${fmt(s.mana)} · ${fmt(s.cooldown)}초</p><button data-buy-skill="${s.id}" ${ok?'':'disabled'}>${own?'습득함':!tutorialSpendingUnlocked()?'구매 실습·세라 안내 후':hero.level<s.level?'Lv.'+s.level+' 필요':moneyText(s.price)+' · 배우기'}</button></article>`;}).join('')+'</div><p class="panel-note">특수 퀘스트 전용 기술은 판매하지 않습니다. 해당 NPC 의뢰는 추후 추가 예정입니다.</p>');
+ else $('shopBody').insertAdjacentHTML('beforeend','<p class="panel-note">구매 즉시 습득합니다. 빈 열린 칸에 자동 장착 / 상태에서 변경. 같은 기술은 한 번만 구매할 수 있습니다.</p><div class="skill-shop">'+Object.values(SKILLS).filter(s=>s.price).map(s=>{const own=hero.learned.includes(s.id),ok=tutorialSpendingUnlocked()&&hero.level>=s.level&&hero.gold>=s.price&&!own;return `<article class="skill-sale"><h3>${s.icon} ${s.name} <small>Lv.${s.level}</small></h3><p>${s.description}</p><p>위력 ${s.power} · MP ${fmt(s.mana)} · ${fmt(s.cooldown)}초</p><button data-buy-skill="${s.id}" ${ok?'':'disabled'}>${own?'습득함':!tutorialSpendingUnlocked()?'구매 실습·세라 안내 후':hero.level<s.level?'Lv.'+s.level+' 필요':moneyText(s.price)+' · 배우기'}</button></article>`;}).join('')+'</div><p class="panel-note">특수 퀘스트 전용 기술은 판매하지 않습니다. 해당 NPC 의뢰는 추후 추가 예정입니다.</p>');
  for(const b of $('shopBody').querySelectorAll('[data-shop-tab]'))b.onclick=()=>{shopTab=b.dataset.shopTab;renderShop();};
  for(const b of $('shopBody').querySelectorAll('[data-sell]'))b.onclick=()=>{sellItem(b.dataset.sell);renderShop();};
  for(const b of $('shopBody').querySelectorAll('[data-sellall]'))b.onclick=()=>{sellItem(b.dataset.sellall,true);renderShop();};
@@ -5185,7 +5253,7 @@ function renderShop(){
 }
 function renderProgressHUD(){
  renderResourceHUD();renderStatAlert();
- if($('guardStatus')){$('guardStatus').classList.toggle('hidden',!equippedGear('shield'));$('guardStatus').textContent=player.guardActive?'G · 방어 중 (1회)':player.guardCD>0?'G · 방패 '+fmt(player.guardCD)+'초':'G · 방패 준비';}
+ if($('guardStatus')){$('guardStatus').classList.toggle('hidden',!equippedGear('shield'));$('guardStatus').textContent=player.guardActive?'방어 중 · 1회':player.guardCD>0?'방패 '+fmt(player.guardCD)+'초':'방패 준비';}
  $('heroLevel').textContent=`Lv.${hero.level}`;$('xpFill').style.width=hero.level>=50?'100%':hero.xp/xpRequired(hero.level)*100+'%';
  $('xpText').textContent=`${hero.level>=50?'MAX':hero.xp+' / '+xpRequired(hero.level)} EXP`;
  $('hudGold').textContent=moneyText(hero.gold);$('statHint').textContent=MOBILE_BUILD?(hero.points>0?`상태 · 미분배 ${hero.points}P`:'상태'):(hero.points>0?`E · 미분배 ${hero.points}P`:'E · 상태');
@@ -5210,8 +5278,8 @@ function renderProgressHUD(){
   texts.append(node);
  }
  {const hb=state.scene==='abramDungeon'?ironGiantBoss():boss(),respawnAt=state.scene==='abramDungeon'?state.ironGiantRespawnAt:state.bossRespawnAt;$('bossHP').textContent=hb?.hp>0?`Lv.${hb.level} · ${fmt(hb.hp)} / ${fmt(hb.maxHP)} HP`:(respawnAt?`다음 출현 ${seoulClockLabel(respawnAt)}`:'처치됨');}
- if(state.scene==='field'&&state.mode==='play'&&dist(player,activeBlacksmith())<25)placeLabel('blacksmith',craftReady(hero.craft)&&craftSmith(hero.craft).id===activeBlacksmith().id?'! '+activeBlacksmith().name+' · 제작품 수령 R':activeBlacksmith().name+' · 제작 R',activeBlacksmith().x,3.2,activeBlacksmith().z,true);
- if(state.scene==='field'&&state.mode==='play'&&dist(player,activeMerchant())<25)placeLabel('merchant',activeMerchant().name+' · R',activeMerchant().x,3.2,activeMerchant().z,true);
+ if(state.scene==='field'&&state.mode==='play'&&dist(player,activeBlacksmith())<25)placeLabel('blacksmith',craftReady(hero.craft)&&craftSmith(hero.craft).id===activeBlacksmith().id?'! '+activeBlacksmith().name+' · 제작품 수령':activeBlacksmith().name+' · 제작',activeBlacksmith().x,3.2,activeBlacksmith().z,true);
+ if(state.scene==='field'&&state.mode==='play'&&dist(player,activeMerchant())<25)placeLabel('merchant',activeMerchant().name,activeMerchant().x,3.2,activeMerchant().z,true);
 }
 
 
@@ -5263,14 +5331,14 @@ function placeLabel(id,text,x,y,z,npc=false){
 }
 let uiTick=0,lastMapScene="";
 function ridgeProgressHUD(){
- if(!abramGateOpen())return {title:'메인 · 북쪽 교역로',lines:[`<span class="gold">붉은 괴수 처치 완료</span>`,hero.level<10?`아브람 입장 조건 · Lv.10 / 현재 Lv.${hero.level}`:'아브람 서문 문지기에게 R · 성문 개방','아브람 이후 북문에서 새 지역이 이어진다']};
+ if(!abramGateOpen())return {title:'메인 · 북쪽 교역로',lines:[`<span class="gold">붉은 괴수 처치 완료</span>`,hero.level<10?`아브람 입장 조건 · Lv.10 / 현재 Lv.${hero.level}`:'아브람 서문 문지기에게 상호작용 · 성문 개방','아브람 이후 북문에서 새 지역이 이어진다']};
  if(!ternUnlocked())return {title:'메인 · 부서진 능선 돌파',lines:['아브람 북문 → 몬스터 Lv.13→21',hero.level<DUNGEON_ACCESS.abram.minLevel?`<span class="gold">종유석 미궁 입장 Lv.${DUNGEON_ACCESS.abram.minLevel} · 현재 Lv.${hero.level}</span>`:`<span class="gold">종유석 미궁 입장 가능 · 붉은 철갑 거인 Lv.${MONSTERS.ironGiant.level}</span>`,'거인을 처치하면 테른 남문·빠른 이동 해금']};
- return {title:'메인 · 테른에 도착',lines:['<span class="gold">붉은 철갑 거인 처치 · 테른 해금</span>','등반가 네아에게 R · 능선 안내','케른의 대장간에서 능선 재료 장비 제작 가능']};
+ return {title:'메인 · 테른에 도착',lines:['<span class="gold">붉은 철갑 거인 처치 · 테른 해금</span>','등반가 네아에게 상호작용 · 능선 안내','케른의 대장간에서 능선 재료 장비 제작 가능']};
 }
 function abramCaveHUD(){
  const p=abramDungeonPopulation(),g=ironGiantBoss();
  if(!abramCaveCleared())return {title:'메인 · 아브람 종유석 미궁',lines:[`<span class="gold">일반 몬스터 ${p.alive} / ${p.capacity} · Lv.22→26</span>`,`심층 · 붉은 철갑 거인 Lv.${MONSTERS.ironGiant.level}`,'처치 전 출구 봉인 · 첫 처치 시 테른 해금']};
- return {title:'아브람 종유석 미궁 · 해방됨',lines:[g?.hp>0?`<span class="gold">붉은 철갑 거인 재등장 · Lv.${g.level}</span>`:`붉은 철갑 거인 · 다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`,'입구에서 R · 자유 출입','테른 해금 유지']};
+ return {title:'아브람 종유석 미궁 · 해방됨',lines:[g?.hp>0?`<span class="gold">붉은 철갑 거인 재등장 · Lv.${g.level}</span>`:`붉은 철갑 거인 · 다음 출현 ${seoulClockLabel(state.ironGiantRespawnAt)}`,'입구에서 상호작용 · 자유 출입','테른 해금 유지']};
 }
 function renderHUD(){
  updateMobileControls();renderBoarQuestHUD();renderRioQuestHUD();
@@ -5280,17 +5348,17 @@ function renderHUD(){
  else if(state.scene==='field'&&state.cleared){const q=ridgeProgressHUD();title=q.title;lines=q.lines;}
  else if(state.scene==='dungeon'||state.quest==='unlocked'){const q=explorationHUD();title=q.title;lines=q.lines;}
  else if(introTracked()){const intro=introHUD();title=intro.title;lines=intro.lines;}
- else if(state.quest==='none'){title='로안의 메인 의뢰';lines=['마을의 경비대장 로안과 대화','가까이 다가가 <kbd>R</kbd>'];}
+ else if(state.quest==='none'){title='로안의 메인 의뢰';lines=['마을의 경비대장 로안과 대화','가까이 다가가 상호작용'];}
  else if(state.quest==='active'){title='첫 사냥 · 슬라임 퇴치';lines=[`<span class="gold">슬라임 ${state.kills} / 25</span>`,'동쪽 길 → 잿빛 늪','완료 후 로안에게 다시 보고'];}
- else if(state.quest==='report'){title='로안에게 돌아가자';lines=[`<span class="gold">슬라임 ${MAIN_HUNT_TARGET} / ${MAIN_HUNT_TARGET} · 보고 대기</span>`,'새벽마을의 같은 NPC에게 <kbd>R</kbd>','아직 미궁 입장 자격은 없다'];}
+ else if(state.quest==='report'){title='로안에게 돌아가자';lines=[`<span class="gold">슬라임 ${MAIN_HUNT_TARGET} / ${MAIN_HUNT_TARGET} · 보고 대기</span>`,'새벽마을의 같은 NPC에게 상호작용','아직 미궁 입장 자격은 없다'];}
  else{const q=explorationHUD();title=q.title;lines=q.lines;}
  if(state.exploration.accepted&&state.quest!=='unlocked'&&state.scene==='field')lines.push('<span class="quest-secondary">메인 · 미궁 탐사 수락됨</span>');
  $('questTitle').textContent=title;const q=lines.map(l=>`<p>${l}</p>`).join('');if($('questLines').innerHTML!==q)$('questLines').innerHTML=q;
  const dungeonBoss=boss(),ridgeBoss=ironGiantBoss(),showRidgeBoss=isIronGiantEncounter(),showDungeonBoss=isBossEncounter(),b=showRidgeBoss?ridgeBoss:dungeonBoss,showBoss=showRidgeBoss||showDungeonBoss;
  $('boss').classList.toggle('hidden',!showBoss);$('nav').style.visibility=showBoss?'hidden':'';$('bossFill').style.width=clamp(b.hp/b.maxHP*100,0,100)+'%';const bossTrack=$('bossFill').parentElement;bossTrack.setAttribute('role','progressbar');bossTrack.setAttribute('aria-label',b.name);bossTrack.setAttribute('aria-valuemin','0');bossTrack.setAttribute('aria-valuemax',String(b.maxHP));bossTrack.setAttribute('aria-valuenow',String(Math.max(0,b.hp)));
- $('bossPhase').textContent=showRidgeBoss?(b.mode==='windup'?(b.attackKind==='rush'?'철갑 돌진 준비 · 옆으로 회피':'양손 내려찍기 · Space로 충격을 넘기기'):b.mode==='recover'?'공격 직후 · 지금이 반격 기회':'종유석 심층의 붉은 철갑 거인'):b.mode==='wave'?'붉은 파동 · Space로 충격파를 넘기기':b.gimmickRushes>0?'2연속 돌진 · 옆으로 회피':b.gimmickSlams>0?'연속 균열 강타 · Space로 회피':b.mode==='windup'?({'claw':'발톱 휘두르기 · F 대시로 벗어나기','rush':'돌진 준비 · 옆으로 피하기','slam':'지면 충격파 · Space로 뛰어넘기'}[b.attackKind]):b.phase===2?(b.gimmickMask&16?'최후의 발악 · 공격 간격 단축':'2페이즈 · 광폭화 · 등 보석은 약점'):'붉은 보석은 등에 있다';
+ $('bossPhase').textContent=showRidgeBoss?(b.mode==='windup'?(b.attackKind==='rush'?'철갑 돌진 준비 · 옆으로 회피':'양손 내려찍기 · 점프로 충격을 넘기기'):b.mode==='recover'?'공격 직후 · 지금이 반격 기회':'종유석 심층의 붉은 철갑 거인'):b.mode==='wave'?'붉은 파동 · 점프로 충격파를 넘기기':b.gimmickRushes>0?'2연속 돌진 · 옆으로 회피':b.gimmickSlams>0?'연속 균열 강타 · 점프로 회피':b.mode==='windup'?({'claw':'발톱 휘두르기 · 대시로 벗어나기','rush':'돌진 준비 · 옆으로 피하기','slam':'지면 충격파 · 점프로 뛰어넘기'}[b.attackKind]):b.phase===2?(b.gimmickMask&16?'최후의 발악 · 공격 간격 단축':'2페이즈 · 광폭화 · 등 보석은 약점'):'붉은 보석은 등에 있다';
  const objective=getMapObjective();
- let nav='N ↑　　E →';
+ let nav='북 ↑　　동 →';
  if(Number.isFinite(objective.x)){
   const arrows=['↑','↗','→','↘','↓','↙','←','↖'],i=(Math.round(angle(player,objective)/(Math.PI/4))+8)%8;
   nav+=`<b>${arrows[i]} ${objective.label} · ${fmt(dist(player,objective))}m</b>`;
@@ -5300,7 +5368,7 @@ function renderHUD(){
  $('toast').style.opacity=state.toast>0?1:0;if(state.toastText!==toastLast){$('toast').textContent=state.toastText;toastLast=state.toastText;}
  const it=state.mode==='play'&&player.grounded?interactionTarget():null;$('prompt').classList.toggle('hidden',!it);if(it)$('prompt').innerHTML=MOBILE_BUILD?'상호작용 · '+mobileHintText(it.label):'<kbd>R</kbd> '+it.label;
  const departureLocked=townDepartureLocked();
- const guide=GUIDE[state.guideStep]||(departureLocked?{title:'세라에게 사냥 안내 받기',text:'E에서 미분배 포인트를 모두 사용하고 세라에게 슬라임 사냥 의뢰를 받으세요.'}:null);
+ const guide=GUIDE[state.guideStep]||(departureLocked?{title:'세라에게 사냥 안내 받기',text:'상태에서 미분배 포인트를 모두 사용하고 세라에게 슬라임 사냥 의뢰를 받으세요.'}:null);
  $('tutorial').classList.toggle('hidden',!guide||(!departureLocked&&state.guideHidden)||state.mode!=='play'||state.scene!=='field'||(!departureLocked&&!!nearestEnemy(7)));
  $('skipGuide').classList.toggle('hidden',departureLocked);
  if(guide){$('guideStep').textContent=state.guideStep<GUIDE.length?`조작 ${String(state.guideStep+1).padStart(2,'0')} / 07`:'외출 전 필수 안내';$('guideTitle').textContent=guide.title;$('guideText').textContent=guide.text;$('guideBar').firstElementChild.style.width=Math.min(1,(state.guideStep+1)/7)*100+'%';} 
@@ -5309,20 +5377,20 @@ function renderHUD(){
  for(const n of labelNodes.values())n.style.display='none';
  if(['play','dialogue'].includes(state.mode)){
   if(state.scene==='field'){
-   if(dist(player,RUMOR_NPC)<22)placeLabel('rumor',RUMOR_NPC.name+' · 숲의 소문 R',RUMOR_NPC.x,3.25,RUMOR_NPC.z,true);
-   if(dist(player,GUIDE_NPC)<24)placeLabel('guide',GUIDE_NPC.name+' · '+(state.introQuest.stage==='done'?'생존 수첩':'입문 의뢰 R'),GUIDE_NPC.x,3.25,GUIDE_NPC.z,true);
+   if(dist(player,RUMOR_NPC)<22)placeLabel('rumor',RUMOR_NPC.name+' · 숲의 소문',RUMOR_NPC.x,3.25,RUMOR_NPC.z,true);
+   if(dist(player,GUIDE_NPC)<24)placeLabel('guide',GUIDE_NPC.name+' · '+(state.introQuest.stage==='done'?'생존 수첩':'입문 의뢰'),GUIDE_NPC.x,3.25,GUIDE_NPC.z,true);
    if(dist(player,NPC)<27)placeLabel('npc','경비대장 로안',NPC.x,3.15,NPC.z,true);
    for(const g of GUARDS)if(dist(player,g)<15)placeLabel(g.id,g.name,g.x,2.95,g.z);
-   if(dist(player,activeCamp())<18)placeLabel('camp','휴식 · R',activeCamp().x,1.5,activeCamp().z);
-   if(entranceKnown()&&dist(player,ENTRANCE)<30)placeLabel('entrance',state.quest==='unlocked'?'숲의 미궁 · 입장 R':'숲의 미궁 · 봉인됨',ENTRANCE.x,6.0,ENTRANCE.z);
+   if(dist(player,activeCamp())<18)placeLabel('camp','휴식 · 상호작용',activeCamp().x,1.5,activeCamp().z);
+   if(entranceKnown()&&dist(player,ENTRANCE)<30)placeLabel('entrance',state.quest==='unlocked'?'숲의 미궁 · 상호작용':'숲의 미궁 · 봉인됨',ENTRANCE.x,6.0,ENTRANCE.z);
    for(const s of signs)if(dist(player,s)<20)placeLabel(s.kind,s.label,s.x,2.2,s.z);
   }else if(state.scene==='dungeon'){
-   for(const p of MAZE.pages)if(pageVisible(p))placeLabel(p.id,'찢어진 모험 기록 '+p.number+' · R',p.x,1.3,p.z);
+   for(const p of MAZE.pages)if(pageVisible(p))placeLabel(p.id,'찢어진 모험 기록 '+p.number+' · 상호작용',p.x,1.3,p.z);
    for(const r of MAZE.runes)if(dist(player,r)<20)placeLabel('rune'+r.id,`${r.id+1}번 · ${GLYPHS[state.rune[r.id]]}`,r.x,2.6,r.z);
-   if(Math.hypot(player.x+44,player.z-44)<16)placeLabel('exit',state.cleared?'출구 · R':'봉인된 입구',-44,3.6,47);
-   if(Math.hypot(player.x-44,player.z+48)<17)placeLabel('gate','룬 봉인 확인 · R',44,3.8,-49);
+   if(Math.hypot(player.x+44,player.z-44)<16)placeLabel('exit',state.cleared?'출구 · 상호작용':'봉인된 입구',-44,3.6,47);
+   if(Math.hypot(player.x-44,player.z+48)<17)placeLabel('gate','룬 봉인 확인 · 상호작용',44,3.8,-49);
   }else if(state.scene==='abramDungeon'){
-   if(dist(player,ABRAM_CAVE.entry)<18)placeLabel('abram-cave-exit',abramCaveCleared()?'종유석 미궁 출구 · R':'봉인된 입구',ABRAM_CAVE.entry.x,3.1,ABRAM_CAVE.entry.z);
+   if(dist(player,ABRAM_CAVE.entry)<18)placeLabel('abram-cave-exit',abramCaveCleared()?'종유석 미궁 출구 · 상호작용':'봉인된 입구',ABRAM_CAVE.entry.x,3.1,ABRAM_CAVE.entry.z);
   }
  }
  if(++uiTick%5===0||lastMapScene!==state.scene+':'+(state.interior||'')){drawMiniMap();lastMapScene=state.scene+':'+(state.interior||'');}
@@ -5387,7 +5455,7 @@ function renderMainMenu(mode=state.mode){
  ${paused?'<button id="saveAndTitle" class="menu-secondary"><span>저장하고 시작 메뉴로</span><span>↗</span></button>':latest?'<button id="newGame" type="button" class="menu-secondary"><span>새 모험 시작</span><span>새벽마을</span></button>':''}
  ${ACCOUNT.user?'<button id="exportAccount" class="menu-secondary"><span>계정 백업 파일 받기</span><span>모든 저장 슬롯</span></button>':''}
  <div class="menu-links"><button id="accountLogout" class="menu-link">${ACCOUNT.guest?'로그인 화면으로':'로그아웃'}</button><button id="menuHelp" class="menu-link">조작 안내</button>${ACCOUNT.error&&ACCOUNT.loaded?'<button id="retrySave" class="menu-link">저장 재시도</button>':''}${ACCOUNT.expired&&ACCOUNT.loaded?'<button id="sessionRelogin" class="menu-link">다시 로그인</button>':''}</div>
- <p class="menu-footnote">${ACCOUNT.guest?'게스트 기록은 이 브라우저에만 남습니다.':'이 브라우저의 같은 닉네임으로 이어할 수 있습니다.'}<br>${paused?'F5 빠른 저장 · F9 불러오기 · Esc 계속하기':'자동 저장 1개 · 수동 기록 3개'}${ACCOUNT.guest?'':'<br>파일 이동·브라우저 데이터 삭제 전에 계정 백업을 보관하세요.'}</p>`;
+ <p class="menu-footnote">${ACCOUNT.guest?'게스트 기록은 이 브라우저에만 남습니다.':'이 브라우저의 같은 닉네임으로 이어할 수 있습니다.'}<br>${paused?'메뉴에서 저장 · 불러오기 · 계속하기':'자동 저장 1개 · 수동 기록 3개'}${ACCOUNT.guest?'':'<br>파일 이동·브라우저 데이터 삭제 전에 계정 백업을 보관하세요.'}</p>`;
  if($('start'))$('start').onclick=async()=>{if(ACCOUNT.loaded)start();else if(latest)await withMenuBusy(()=>loadSlot(latest.slot));};
  $('openLoadMenu').onclick=()=>openStoragePanel('load');
  if($('openSaveMenu'))$('openSaveMenu').onclick=()=>openStoragePanel('save');
@@ -5572,15 +5640,28 @@ async function restoreAccountBackup(file){
 
 
 function mobileHintText(text){return MOBILE_BUILD?String(text||'').replace(/\s*·?\s*R(?:키)?\b/g,'').replace(/\s{2,}/g,' ').trim():text;}
+function mobilePrimaryAction(){
+ if(!MOBILE_BUILD||state.mode!=='play')return false;
+ // One large thumb button serves two contexts. Keep normal attack input intact away
+ // from interaction targets, but use the exact same interactionTarget() rule as R
+ // when the player is close enough to an NPC, door, sign, device, or dungeon object.
+ if(player.grounded&&interactionTarget()){interact();return true;}
+ return attack('light');
+}
 function updateMobileControls(){
  if(!MOBILE_BUILD)return;
  const playing=state.mode==='play'&&!document.body.classList.contains('main-menu');
  document.body.classList.toggle('mobile-gameplay',playing);
  $('mobileControls')?.classList.toggle('hidden',!playing);
  if(!playing){mobileInput.moveX=mobileInput.moveZ=0;mobileInput.sprint=false;}
- const interact=$('mobileInteract'),healBtn=$('mobileHeal'),guardBtn=$('mobileGuard');
- const it=playing&&player.grounded?interactionTarget():null;
- if(interact){interact.textContent='상호작용';interact.classList.toggle('ready',!!it);}
+ const primary=$('mobileLight'),healBtn=$('mobileHeal'),guardBtn=$('mobileGuard'),journalBtn=$('mobileJournal');
+ if(journalBtn)journalBtn.classList.toggle('hidden',!playing||!dungeonJournalVisible());
+ const it=playing&&player.grounded?interactionTarget():null,isInteraction=!!it;
+ if(primary){
+  primary.textContent=isInteraction?'상호작용':'공격';
+  primary.classList.toggle('interaction',isInteraction);
+  primary.setAttribute('aria-label',isInteraction?'상호작용':'약공격');
+ }
  if(healBtn)healBtn.textContent=player.healCD>0?fmt(player.healCD):'회복';
  if(guardBtn){const hasShield=!!equippedGear('shield');guardBtn.classList.toggle('hidden',!hasShield);guardBtn.classList.toggle('pressed',hasShield&&!!player.guardActive);}
 }
@@ -5604,12 +5685,13 @@ function installMobileControls(){
  pad?.addEventListener('pointerup',e=>{e.preventDefault();resetStick(e.pointerId);});pad?.addEventListener('pointercancel',e=>resetStick(e.pointerId));
  const tap=(id,fn)=>$(id)?.addEventListener('pointerdown',e=>{if(state.mode!=='play')return;e.preventDefault();e.currentTarget.classList.add('pressed');fn();});
  const release=id=>{const b=$(id);if(!b)return;for(const type of ['pointerup','pointercancel','pointerleave'])b.addEventListener(type,e=>{e.currentTarget.classList.remove('pressed');});};
- tap('mobileLight',()=>attack('light'));tap('mobileHeavy',()=>attack('heavy'));tap('mobileDodge',dodge);tap('mobileJump',jump);tap('mobileInteract',interact);tap('mobileHeal',heal);
- for(const id of ['mobileLight','mobileHeavy','mobileDodge','mobileJump','mobileInteract','mobileHeal'])release(id);
+ tap('mobileLight',mobilePrimaryAction);tap('mobileHeavy',()=>attack('heavy'));tap('mobileDodge',dodge);tap('mobileJump',jump);tap('mobileHeal',heal);
+ for(const id of ['mobileLight','mobileHeavy','mobileDodge','mobileJump','mobileHeal'])release(id);
  const guard=$('mobileGuard');guard?.addEventListener('pointerdown',e=>{if(state.mode!=='play')return;e.preventDefault();guard.setPointerCapture?.(e.pointerId);guard.classList.add('pressed');beginGuard();});
  for(const type of ['pointerup','pointercancel','pointerleave'])guard?.addEventListener(type,e=>{e.preventDefault();guard.classList.remove('pressed');stopGuard();});
  $('mobileMap')?.addEventListener('click',()=>{if(state.mode==='play')togglePanel('mapOverlay','map');});
  $('mobileStatus')?.addEventListener('click',()=>{if(state.mode==='play')openStatus();});
+ $('mobileJournal')?.addEventListener('click',()=>{if(state.mode==='play'&&dungeonJournalVisible())togglePanel('journal','journal');});
  $('mobileMenu')?.addEventListener('click',()=>{if(state.mode==='play')pause();});
  $('map')?.addEventListener('pointerdown',e=>{if(state.mode==='play'){e.preventDefault();togglePanel('mapOverlay','map');}});
  for(let i=0;i<4;i++)$('skill'+i)?.addEventListener('pointerdown',e=>{if(state.mode!=='play')return;e.preventDefault();castSkill(i);});
@@ -5654,7 +5736,7 @@ $('sound').addEventListener('click',openAudioPanel);
  $('clockSync').onclick=()=>connectClock();
  $('clockLocal').onclick=()=>{TIME_SOURCE.disconnect();renderClockPanel();};
 installAudioControls();
-$('skipGuide').addEventListener('click',()=>{if(townDepartureLocked())return;state.guideHidden=true;saveGame();toast(MOBILE_BUILD?'도움말에서 조작 가이드를 다시 펼칠 수 있다.':'H키로 조작 가이드를 다시 펼칠 수 있다.',3);});
+$('skipGuide').addEventListener('click',()=>{if(townDepartureLocked())return;state.guideHidden=true;saveGame();toast(MOBILE_BUILD?'메뉴의 조작 안내에서 가이드를 다시 펼칠 수 있다.':'메뉴의 조작 안내에서 가이드를 다시 펼칠 수 있다.',3);});
 $('showGuide').addEventListener('click',()=>{state.town.introCardDismissed='';state.guideHidden=false;state.guideStep=0;state.guideMove=state.guideRun=state.guideLook=0;state.guideFlags={};togglePanel('help','help');saveGame();});
 $('closeHelp').addEventListener('click',()=>togglePanel('help','help'));$('closeMap').addEventListener('click',()=>togglePanel('mapOverlay','map'));$('closeJournal').addEventListener('click',()=>togglePanel('journal','journal'));
 
@@ -5739,7 +5821,7 @@ canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();pause();$('err
  * and rewards so re-opening a panel never re-rolls a mission.
  */
 function emptyStatBonus(){return {vitality:0,strength:0,magic:0,luck:0,wisdom:0};}
-function initialTown(){return {version:7,rioQuest:initialRioQuest(),boarQuest:initialBoarQuest(),abramUnlocked:false,abramCaveCleared:false,ternUnlocked:false,rewardInbox:[],freeCycles:[],guideDismissed:false,introCardDismissed:'',chats:{},loreRead:[],board:null,clock:0,thugActive:false,thugSeen:false,thugDefeatedUntil:0,thugReward:0};}
+function initialTown(){return {version:7,rioQuest:initialRioQuest(),boarQuest:initialBoarQuest(),abramUnlocked:false,abramCaveCleared:false,ternUnlocked:false,rewardInbox:[],freeCycles:[],guideDismissed:false,introCardDismissed:'',chats:{},loreRead:[],board:null,clock:0,thugActive:false,thugSeen:false,thugDefeatedUntil:0,thugReward:0,thugChallengeLevel:5,dailyReward:{lastDay:-1,streak:0}};}
 function townNow(now=gameNow()){
  const value=Number.isFinite(now)?now:gameNow();state.town.clock=Math.max(state.town.clock||0,value);return state.town.clock;
 }
@@ -5902,7 +5984,7 @@ function renderBoard(){
  if(state.mode!=='board')return;
  const unlocked=boardUnlocked(),near=canUseBoard(),b=unlocked?ensureBoard(TIME_SOURCE.now()):state.town.board;
  updateBoardTimerUI(b,TIME_SOURCE.now());
- $('boardIntro').textContent=!unlocked?'세라 입문 의뢰 완료 + Lv.3부터 게시판 의뢰를 받을 수 있습니다. 메인 퀘스트는 별도입니다.':near?'서울 시각 00:00 / 06:00 / 12:00 / 18:00에 갱신됩니다. 완료 보상은 보관되고 미완료 게시판 의뢰만 만료됩니다.':'조회만 가능합니다. 수락·보상 수령은 게시판 앞에서 R.';
+ $('boardIntro').textContent=!unlocked?'세라 입문 의뢰 완료 + Lv.3부터 게시판 의뢰를 받을 수 있습니다. 메인 퀘스트는 별도입니다.':near?'서울 시각 00:00 / 06:00 / 12:00 / 18:00에 갱신됩니다. 완료 보상은 보관되고 미완료 게시판 의뢰만 만료됩니다.':'조회만 가능합니다. 수락·보상 수령은 게시판 앞에서 상호작용하세요.';
  let html='';
  if(b)for(const q of b.quests){const p=questProgress(q),ready=['active','ready'].includes(q.status)&&p>=q.target;
   const mi=MONSTERS[q.monster],ri=monsterRarityInfo(mi.rarity);const goal=q.type==='hunt'?`${ri.mark?ri.mark+' ':''}[${ri.name}] ${mi.name} ${q.target}마리 처치`:`${ITEMS[q.item].name} ${q.target}개 납품`;
@@ -5935,7 +6017,7 @@ function commissionObjective(){
  const b=state.town.board,q=b?.quests.find(q=>q.id===state.town.trackedQuest&&['active','ready'].includes(q.status));
  if(!q||townNow(TIME_SOURCE.now())>=b.endsAt)return null;
  if((questProgress(q)>=q.target||q.type==='deliver')&&state.scene!=='field')return {x:null,z:null,label:'탈출 후 광장에서 의뢰 보고',short:'게시판 보고 대기',kind:'quest',note:'현재 미궁의 출입 규칙은 그대로 유지됩니다.'};
- if(questProgress(q)>=q.target||q.type==='deliver')return {...BOARD,label:'게시판 · '+q.title,short:'의뢰 보고',kind:'quest',note:q.type==='deliver'?`${ITEMS[q.item].name} ${questProgress(q)}/${q.target} · 납품 시 소모`:'보상 수령 R'};
+ if(questProgress(q)>=q.target||q.type==='deliver')return {...BOARD,label:'게시판 · '+q.title,short:'의뢰 보고',kind:'quest',note:q.type==='deliver'?`${ITEMS[q.item].name} ${questProgress(q)}/${q.target} · 납품 시 소모`:'보상 수령 · 상호작용'};
  const e=enemies.filter(e=>e.scene===state.scene&&e.archetype===q.monster&&e.hp>0).sort((a,b)=>dist(a,player)-dist(b,player))[0];
  if(e)return {x:e.x,z:e.z,label:q.title,short:MONSTERS[q.monster].name,kind:e.type,note:`${q.progress}/${q.target} 처치 · 완료 후 게시판`};
  return {x:null,z:null,label:q.title,short:'대상 지역으로 이동',kind:'quest',note:`${q.progress}/${q.target} · ${MONSTERS[q.monster].name}`};
@@ -5946,7 +6028,7 @@ function restoreTown(raw){
  t.rioQuest=restoreRioQuest(raw.rioQuest);t.boarQuest=restoreBoarQuest(raw.boarQuest);t.abramUnlocked=raw.abramUnlocked===true;t.ternUnlocked=raw.ternUnlocked===true;t.abramCaveCleared=raw.abramCaveCleared===true||t.ternUnlocked;t.guideDismissed=!!raw.guideDismissed;
  t.introCardDismissed=typeof raw.introCardDismissed==='string'&&/^(none:[01]:[01]|hunt|return|sell|rest|report)$/.test(raw.introCardDismissed)?raw.introCardDismissed:'';t.chats=raw.chats&&typeof raw.chats==='object'?{...raw.chats}:{};
  t.loreRead=restoreLoreRead(raw.loreRead);
- t.clock=Math.min(n(raw.clock),gameNow());t.thugSeen=!!raw.thugSeen;t.thugActive=!!raw.thugActive;t.thugDefeatedUntil=n(raw.thugDefeatedUntil);t.thugReward=n(raw.thugReward);t.trackedQuest=String(raw.trackedQuest||'');
+ t.clock=Math.min(n(raw.clock),gameNow());t.thugSeen=!!raw.thugSeen;t.thugActive=!!raw.thugActive;t.thugDefeatedUntil=n(raw.thugDefeatedUntil);t.thugReward=n(raw.thugReward);t.thugChallengeLevel=clamp(n(raw.thugChallengeLevel,5),5,50);if(raw.dailyReward&&typeof raw.dailyReward==='object')t.dailyReward={lastDay:Number.isFinite(raw.dailyReward.lastDay)?Math.floor(raw.dailyReward.lastDay):-1,streak:clamp(n(raw.dailyReward.streak),0,100000)};t.trackedQuest=String(raw.trackedQuest||'');
  const ids=new Set();
  if(Array.isArray(raw.rewardInbox))for(const q of raw.rewardInbox){if(!validBoardQuest(q)||q.status!=='banked'||ids.has(q.id))continue;ids.add(q.id);t.rewardInbox.push(deepCopy(q));}
  t.freeCycles=Array.isArray(raw.freeCycles)?[...new Set(raw.freeCycles.filter(v=>typeof v==='string'&&/^\d+$/.test(v)))]:[];
@@ -5966,7 +6048,7 @@ function talkLibrarian(topic=null){
  if(!inTownBuilding('library')||dist(player,activeLibrarian())>=3.2)return false;
  const library=activeTownId(),texts=libraryStories(library);
  if(topic&&texts[topic]){const key=library+':'+topic;if(!state.town.loreRead.includes(key))state.town.loreRead.push(key);saveGame();openDialogue(activeLibrarian().name+' · '+texts[topic][0],texts[topic][1],[{label:'다른 기록 읽기',run:()=>talkLibrarian()},{label:'그만 읽기',run:()=>{}}]);return true;}
- openDialogue(activeLibrarian().name,library==='tern'?'테른의 기록은 절벽길과 바람, 그리고 건너온 사람들의 발자국을 남겨요.<small>부서진 능선과 붉은 철갑 거인의 기록이 보관되어 있습니다.</small>':library==='abram'?'아브람의 장부는 철과 길, 그리고 돌아오지 못한 사람들을 기억하죠.<small>새벽마을과 다른 기록이 보관되어 있습니다.</small>':'새벽 기록관에는 색을 잃은 날과 마을 사람들의 이야기가 남아 있어요.<small>미궁의 기록 조각과 퍼즐은 현장에서 직접 찾아야 합니다.</small>',Object.entries(texts).map(([id,[title]])=>({label:(state.town.loreRead.includes(library+':'+id)?'✓ ':'')+title,run:()=>talkLibrarian(id)})).concat([{label:'다음에 올게',run:()=>{}}]));return true;
+ openDialogue(activeLibrarian().name,library==='tern'?'테른의 기록은 절벽길과 바람, 그리고 건너온 사람들의 발자국을 남겨요.<small>부서진 능선과 붉은 철갑 거인의 기록이 보관되어 있습니다.</small>':library==='abram'?'아브람의 장부는 철과 길, 그리고 돌아오지 못한 사람들을 기억하죠.<small>새벽마을과 다른 기록이 보관되어 있습니다.</small>':'새벽 도서관에는 색을 잃은 날과 마을 사람들의 이야기가 남아 있어요.<small>미궁의 기록 조각과 퍼즐은 현장에서 직접 찾아야 합니다.</small>',Object.entries(texts).map(([id,[title]])=>({label:(state.town.loreRead.includes(library+':'+id)?'✓ ':'')+title,run:()=>talkLibrarian(id)})).concat([{label:'다음에 올게',run:()=>{}}]));return true;
 }
 function talkResident(id){const r=RESIDENTS.find(v=>v.id===id);if(!r||!inTownBuilding(r.home)||dist(player,r)>=3.2)return false;const i=(state.town.chats[id]||0)%r.lines.length;state.town.chats[id]=(i+1)%r.lines.length;openDialogue(r.name,escapeText(r.lines[i]));saveGame();return true;}
 function thug(){return enemies.find(e=>e.type==='thug');}
@@ -5976,25 +6058,31 @@ function canHitEnemy(e){
  if(e.scene==='field'&&(inVillage(player.x,player.z)||inVillage(e.x,e.z)))return false;
  return true;
 }
+function thugChallengeLevel(){return clamp(Math.floor(hero.level||1),5,50);}
+function thugDuelLevel(level=hero.level){return clamp(Math.floor(level||1),5,50);}
+function thugRewardBase(level=thugChallengeLevel()){const lv=clamp(Math.floor(level),5,50);return goldAmount(5+(lv-5)*(45/45));}
+function thugAttackDamage(level=state.town?.thugChallengeLevel||thugChallengeLevel()){const lv=clamp(Math.floor(level),5,50);return 12+(lv-5)*.22;}
+const thugRewardForLevel=thugRewardBase,thugAttackForLevel=thugAttackDamage;
 function talkThug(){
  if(state.scene!=='field'||dist(player,THUG_HOME)>3.5)return false;state.town.thugSeen=true;
  const e=thug();if(state.town.thugDefeatedUntil>townNow()){openDialogue('골목의 불량배','알았어, 알았다고… 오늘은 조용히 있을게.<small>다시 겨룰 수 있기까지 '+timeLeft(state.town.thugDefeatedUntil-townNow())+'</small>');return true;}
  if(state.town.thugActive)return false;
- openDialogue('골목의 불량배','길을 잘못 들었나, 사냥꾼?<br>그 검이 장식이 아니라면 어디 한번 보여 봐.<small>대결을 수락해야 전투가 시작됩니다. 이 골목을 벗어나면 중단됩니다.<br>승리 보상 '+goldIncomeText(Math.min(70,18+hero.level*4))+' · 보상 후 6시간 동안 재대결 불가</small>',[
+ openDialogue('골목의 불량배','길을 잘못 들었나, 사냥꾼?<br>그 검이 장식이 아니라면 어디 한번 보여 봐.<small>대결을 수락해야 전투가 시작됩니다. 이 골목을 벗어나면 중단됩니다.<br>현재 Lv.'+thugChallengeLevel()+' 기준 승리 보상 '+moneyText(thugRewardBase())+' · 공격력 '+fmt(thugAttackDamage(thugChallengeLevel()))+' · 보상 후 6시간 동안 재대결 불가</small>',[
   {label:'지금은 돌아간다',run:()=>{}},
-  {label:'대결 수락',run:()=>{if(dist(player,THUG_HOME)>5||state.town.thugDefeatedUntil>townNow())return;Object.assign(e,freshEnemy('thug',THUG_HOME.x,THUG_HOME.z,777,'field','townThug'));e.mode='chase';e.timer=.8;state.town.thugActive=true;state.town.thugReward=Math.min(70,18+hero.level*4);saveGame();toast('골목 대결 · 경비대가 개입하지 않는 곳이다.',3);}}
+  {label:'대결 수락',run:()=>{if(dist(player,THUG_HOME)>5||state.town.thugDefeatedUntil>townNow())return;Object.assign(e,freshEnemy('thug',THUG_HOME.x,THUG_HOME.z,777,'field','townThug'));e.mode='chase';e.timer=.8;state.town.thugActive=true;state.town.thugChallengeLevel=thugChallengeLevel();e.level=state.town.thugChallengeLevel;state.town.thugReward=thugRewardBase(state.town.thugChallengeLevel);saveGame();toast('골목 대결 · 경비대가 개입하지 않는 곳이다.',3);}}
  ]);return true;
 }
 function resetThugBody(e){const fresh=freshEnemy('thug',THUG_HOME.x,THUG_HOME.z,777,'field','townThug');Object.assign(e,fresh,{mode:'idle',timer:.5,rewarded:false,nav:[],navAge:0});return e;}
 function defeatThug(e){
  if(!state.town.thugActive||e.rewarded)return;e.rewarded=true;state.town.thugActive=false;
- const gold=state.town.thugReward||Math.min(70,18+hero.level*4);grantGoldIncome(gold);state.town.thugDefeatedUntil=townNow()+BOARD_RULES.thugRewardCooldown;
- toast('불량배를 제압했다 · '+goldIncomeText(gold)+' · 다시 말을 걸 수는 있지만 재대결은 6시간 뒤',5);resetThugBody(e);saveGame();
+ const gold=state.town.thugReward||thugRewardBase(state.town.thugChallengeLevel);changeGold(gold);state.town.thugDefeatedUntil=townNow()+BOARD_RULES.thugRewardCooldown;
+ toast('불량배를 제압했다 · '+moneyText(gold)+' · 다시 말을 걸 수는 있지만 재대결은 6시간 뒤',5);resetThugBody(e);saveGame();
 }
 function updateThug(e,dt){
  e.flash=Math.max(0,e.flash-dt);const slowed=Math.min(dt,Math.max(0,e.hitSlow||0));e.hitSlow=Math.max(0,(e.hitSlow||0)-dt);
  // Old saves may contain the former invisible/dead thug state. Restore the body immediately.
  if(e.hp<=0){resetThugBody(e);return;}
+ if(state.town.thugActive)e.level=state.town.thugChallengeLevel||thugChallengeLevel();
  if(!state.town.thugActive){if(dist(e,THUG_HOME)>.12)pursue(e,THUG_HOME,2.8,dt);return;}
  if(state.scene!=='field'||dist(player,THUG_HOME)>10||dist(e,THUG_HOME)>11||player.hp<=0){state.town.thugActive=false;resetThugBody(e);saveGame();return;}
  const contact=monsterContact(e)?BALANCE.contactAttackSpeed:1;const waiting=['chase','windup','recover'].includes(e.mode);
@@ -6012,7 +6100,7 @@ function updateThug(e,dt){
  }
  if(e.mode==='claw'){
   const f=forward(e.yaw);moveBody(e,f.x*1.9*dt,f.z*1.9*dt,e.r*.82);
-  if(!e.hit&&dist(e,player)<2.35&&lineOfSight(e,player)){e.hit=true;damagePlayer(MONSTERS.townThug.attack,e);}
+  if(!e.hit&&dist(e,player)<2.35&&lineOfSight(e,player)){e.hit=true;damagePlayer(thugAttackDamage(),e);}
   if(e.timer<=0){e.mode='recover';e.timer=.72;}return;
  }
  if(e.mode==='recover'){
@@ -6026,9 +6114,9 @@ function updateThug(e,dt){
 function townInteraction(){
  if(state.scene!=='field')return null;
  if(!currentInterior()){
-  if(dist(player,ABRAM_PEOPLE[0])<3.8)return {kind:'abramGate',label:'아브람 문지기 · R'};
-  const a=ABRAM_PEOPLE.find(v=>!v.home&&v.lines&&dist(player,v)<3.2);if(a)return {kind:'abramPerson',resident:a,label:a.name+' · R'};
-  if(ternUnlocked()){const t=TERN_PEOPLE.find(v=>!v.home&&v.lines&&dist(player,v)<3.2);if(t)return {kind:'ternPerson',resident:t,label:t.name+' · R'};}
+  if(dist(player,ABRAM_PEOPLE[0])<3.8)return {kind:'abramGate',label:'아브람 문지기 · 상호작용'};
+  const a=ABRAM_PEOPLE.find(v=>!v.home&&v.lines&&dist(player,v)<3.2);if(a)return {kind:'abramPerson',resident:a,label:a.name+' · 상호작용'};
+  if(ternUnlocked()){const t=TERN_PEOPLE.find(v=>!v.home&&v.lines&&dist(player,v)<3.2);if(t)return {kind:'ternPerson',resident:t,label:t.name+' · 상호작용'};}
  }
  if(dist(player,FRIGHTENED_SCOUT)<3.2&&lineOfSight(player,FRIGHTENED_SCOUT))return {kind:'scout',label:'겁먹은 정찰병 · 살아남은 이야기'};
  if(dist(player,BOARD)<3.5&&lineOfSight(player,BOARD))return {kind:'board',label:'영지 의뢰 게시판 · 수락 / 보고'};
@@ -6044,6 +6132,7 @@ function updateTown(dt){
 }
 function townBuildingAt(){return currentInterior();}
 function renderTownPerson(p,hostile=false){
+ renderTimeShadow(p.x,p.z,.72);
  const yaw=hostile?p.yaw:dist(player,p)<7?angle(p,player):Math.PI,root=trs(p.x,0,p.z,1,1,1,0,-yaw,0);
  draw(cylinder,trs(p.x,.026,p.z,1.15,.018,.95),C.shadow,1);const coat=hostile?C.dark:p.role==='librarian'?C.stone:C.wood;
  part(cone,root,[0,.95,0],[.85,1.25,.65],coat);part(rock,root,[0,1.87,0],[.29,.32,.26],C.light,[0,0,0],0,0,p.flash?1:0);part(rock,root,[0,2.08,.05],[.35,.16,.31],C.dark);
@@ -6068,20 +6157,20 @@ function renderTownHUD(){
  const welcome=renderIntroGuideCard();
  if(visible&&!currentInterior()&&townDepartureLocked()&&Math.hypot(player.x-TOWN_BOUNDS.maxX,player.z-55)<18)placeLabel('tutorial-road-gate','외출 전 · 왼쪽 조작 연습과 사냥 수락 필요',TOWN_BOUNDS.maxX,2.4,55);
  if(visible||state.mode==='dialogue'){
-  const librarian=activeLibrarian();if(dist(player,librarian)<20)placeLabel('librarian',librarian.name+' · R',librarian.x,3.0,librarian.z,true);
-  if(dist(player,BOARD)<24)placeLabel('town-board','의뢰 게시판 · R',BOARD.x,3.25,BOARD.z,true);
+  const librarian=activeLibrarian();if(dist(player,librarian)<20)placeLabel('librarian',librarian.name+' · 상호작용',librarian.x,3.0,librarian.z,true);
+  if(dist(player,BOARD)<24)placeLabel('town-board','의뢰 게시판 · 상호작용',BOARD.x,3.25,BOARD.z,true);
   for(const p of RESIDENTS)if(dist(player,p)<12)placeLabel(p.id,p.name,p.x,2.8,p.z);
   for(const b of ROOM_DEFS)if((b.town!=='tern'||ternUnlocked())&&dist(player,b)<24)placeLabel('building-'+b.id,b.name+' · 입구',b.x,3.5,b.z+b.d/2+.3);
   const e=thug();if(e&&state.town.thugSeen&&dist(player,e)<10&&e.hp>0)placeLabel('thug',state.town.thugActive?`골목의 불량배 · ${fmt(e.hp)} / ${e.maxHP} HP`:'골목의 불량배',e.x,3,e.z,true);
  }
  const b=state.town.board,active=b?.quests.filter(q=>['active','ready'].includes(q.status))||[];
  $('commissionHUD').classList.toggle('hidden',!visible||active.length===0||welcome);
- if(visible&&active.length){$('commissionHUD').innerHTML='<b>서브 의뢰 '+active.length+'/2 <kbd>K</kbd></b>'+active.map(q=>`<div>${q.type==='hunt'?MONSTERS[q.monster].name:ITEMS[q.item].name} <span>${questProgress(q)}/${q.target}</span></div>`).join('');}
+ if(visible&&active.length){$('commissionHUD').innerHTML='<b>서브 의뢰 '+active.length+'/2</b>'+active.map(q=>`<div>${q.type==='hunt'?MONSTERS[q.monster].name:ITEMS[q.item].name} <span>${questProgress(q)}/${q.target}</span></div>`).join('');}
  if(visible&&!currentInterior()){
-  if(ternUnlocked())for(const p of TERN_PEOPLE.filter(x=>!x.home))if(dist(player,p)<17)placeLabel(p.id,p.name+' · R',p.x,2.8,p.z,true);
+  if(ternUnlocked())for(const p of TERN_PEOPLE.filter(x=>!x.home))if(dist(player,p)<17)placeLabel(p.id,p.name+' · 상호작용',p.x,2.8,p.z,true);
   renderRidgeHUD();
  }
- if(visible&&inVillage(player.x,player.z)){const building=townBuildingAt();$('regionName').textContent=building?building.name:townName();$('regionTag').textContent=state.town.thugActive?'골목 대결 중 · 마을 안의 예외 전투':building?'실내 · R 상호작용':'안전 구역 · 기록관 / 잡화점 / 온천';}
+ if(visible&&inVillage(player.x,player.z)){const building=townBuildingAt();$('regionName').textContent=building?building.name:townName();$('regionTag').textContent=state.town.thugActive?'골목 대결 중 · 마을 안의 예외 전투':building?'실내 · 상호작용':'안전 구역 · 도서관 / 잡화점 / 온천';}
 }
 function setupTownUI(){
  $('rioQuestTrack').onclick=()=>{selectMapTarget('rioQuest');canvas.focus();};
@@ -6209,7 +6298,7 @@ function buySkill(id){if(!beginnerServicesUnlocked())return false;
  if(!tutorialSpendingUnlocked()){toast('먼저 하급 회복약 구매 실습을 마치고 세라에게 보고하세요.',2);return false;}
  const s=SKILLS[id];
  if(state.mode!=='shop'||state.scene!=='field'||!inTownBuilding('shop')||dist(player,activeMerchant())>4||!s?.price||hero.level<s.level||hero.gold<s.price||hero.learned.includes(id))return false;
- if(!changeGold(-s.price))return false;learnSkill(id);saveGame();toast(`${s.name} 습득 · E → 스킬에서 장착`,4);renderShop();return true;
+ if(!changeGold(-s.price))return false;learnSkill(id);saveGame();toast(`${s.name} 습득 · 상태 → 스킬에서 장착`,4);renderShop();return true;
 }
 
 function grantSpecialSkill(questId){
@@ -6255,7 +6344,7 @@ function commitCraft(id){
  const smith=activeBlacksmith(),forge=currentInterior(),supported=introCraftSupport(g),fee=supported?0:weaponCraftGold(g);if(!changeGold(-fee))return false;
  for(const [mat,n] of Object.entries(g.materials)){hero.inventory[mat]-=n;if(hero.inventory[mat]<=0)delete hero.inventory[mat];}
  if(supported)state.introQuest.craftSupportUsed=true;
- const now=gameNow();hero.craft={gearId:id,startedAt:now,finishAt:now+g.craft*1000,goldPaid:fee,commission:id===RIO_QUEST_RULES.gearId&&forge?.id==='abram_forge'&&state.town.rioQuest?.stage==='active'?RIO_QUEST_RULES.id:null,smithId:smith.id,forgeId:forge?.id||inferCraftForgeId({gearId:id,smithId:smith.id}),readyNotified:false,introCommission:supported};saveGame();renderForge();SOUND.effect('hammer',smith);$('forgePanel').classList.add('hidden');openDialogue(smith.name,`<b>${escapeText(g.name)}</b> 제작을 시작했네.<br><br>다 완성되면 부를 테니 기다리게나.<small>제작은 한 번에 하나만 맡길 수 있다. 완성 알림이 뜨면 이 대장장이에게 R로 말 걸어 수령하자.</small>`);return true;
+ const now=gameNow();hero.craft={gearId:id,startedAt:now,finishAt:now+g.craft*1000,goldPaid:fee,commission:id===RIO_QUEST_RULES.gearId&&forge?.id==='abram_forge'&&state.town.rioQuest?.stage==='active'?RIO_QUEST_RULES.id:null,smithId:smith.id,forgeId:forge?.id||inferCraftForgeId({gearId:id,smithId:smith.id}),readyNotified:false,introCommission:supported};saveGame();renderForge();SOUND.effect('hammer',smith);$('forgePanel').classList.add('hidden');openDialogue(smith.name,`<b>${escapeText(g.name)}</b> 제작을 시작했네.<br><br>다 완성되면 부를 테니 기다리게나.<small>제작은 한 번에 하나만 맡길 수 있다. 완성 알림이 뜨면 이 대장장이에게 상호작용해 수령하자.</small>`);return true;
 }
 
 function navClear(scene,a,b,r){
@@ -6680,6 +6769,7 @@ function roomInteraction(){
  if(b.kind==='sauna'&&dist(player,camp)<2.8)return {kind:'camp',label:b.name+' · HP / MP / 기력 회복'};
  const resident=roomPeople(b).find(p=>p.home&&dist(player,p)<3.2&&npcConversationVisible(p));
  if(resident)return {kind:b.town==='tern'?'ternPerson':b.town==='abram'?'abramPerson':'resident',resident,label:resident.name+'과 대화'};
+ if(b.id==='storehouse'){const chest=dailyChestPoint();if(chest&&dist(player,chest)<2.35)return {kind:'dailyReward',label:dailyRewardAvailable()?'낡은 보급 상자 · 무언가 숨겨져 있다':'낡은 보급 상자 · 오늘은 비어 있다'};}
  if(b.kind==='home'&&!roomPeople(b).length&&Math.hypot(player.x-b.x,player.z-b.z)<2)return {kind:'roomInspect',label:'방 안을 살펴보기'};
  return null;
 }
@@ -6710,12 +6800,12 @@ function renderRoomHUD(){
  if(!b)return;
  $('regionName').textContent=b.name;$('regionTag').textContent='실내 · 아래쪽 문으로 나가기';
  $('cameraInfo').textContent='실내 전용 시점 · 60°';
- if(b.kind==='forge'&&['play','dialogue'].includes(state.mode))placeLabel('anvil','모루 · R 강화 / 복구 / 전승',activeBlacksmith().anvilX,1.55,activeBlacksmith().anvilZ,true);
+ if(b.kind==='forge'&&['play','dialogue'].includes(state.mode))placeLabel('anvil','모루 · 상호작용 · 강화 / 복구 / 전승',activeBlacksmith().anvilX,1.55,activeBlacksmith().anvilZ,true);
  if(['play','dialogue'].includes(state.mode)){
   const e=roomExit(b);placeLabel('room-exit','▼ 마을로',e.x,.45,e.z);
   for(const p of roomPeople(b)){
    const id=b.kind==='shop'?'merchant':b.kind==='forge'?'blacksmith':p.id;
-   placeLabel(id,b.kind==='forge'&&p.id===activeBlacksmith().id&&craftReadyHere()?'! 제작품 수령 · '+p.name+' · R':p.name+' · R',p.x,2.95,p.z,true);
+   placeLabel(id,b.kind==='forge'&&p.id===activeBlacksmith().id&&craftReadyHere()?'! 제작품 수령 · '+p.name+' · 상호작용':p.name+' · 상호작용',p.x,2.95,p.z,true);
   }
  }
 }
@@ -6723,8 +6813,8 @@ function doorMapPoint(p){
  const roomId=p.roomId||({merchant:'shop',blacksmith:'forge',library:'library',camp:'sauna'})[p.id];
  const b=ROOM_BY_ID.get(roomId);if(!b)return p;
  if(b.town==='tern'&&!ternUnlocked())return {...ABRAM_CAVE_ENTRANCE,label:'아브람 종유석 미궁',short:'테른으로 가는 길',kind:'portal',note:'종유석 미궁 심층의 붉은 철갑 거인을 처치해야 합니다.'};
- if(b.town==='abram'&&!abramGateOpen())return {...ABRAM_GATE,label:'아브람 관문 · Lv.10 / 괴수 처치',short:'닫힌 성문',kind:'gate',note:'성문 앞 문지기에게 R로 대화하세요.'};
- return {...p,...exteriorDoor(b),label:b.name+' · 입구',note:'문으로 들어간 뒤 R · '+p.note,roomId};
+ if(b.town==='abram'&&!abramGateOpen())return {...ABRAM_GATE,label:'아브람 관문 · Lv.10 / 괴수 처치',short:'닫힌 성문',kind:'gate',note:'성문 앞 문지기에게 상호작용하세요.'};
+ return {...p,...exteriorDoor(b),label:b.name+' · 입구',note:'문으로 들어간 뒤 상호작용 · '+p.note,roomId};
 }
 function getMapObjective(){
  const raw=rawMapObjective(),b=currentInterior();
@@ -6763,7 +6853,7 @@ function drawRoomFullMap(){
  const o=getMapObjective();$('mapObjective').textContent=o.label;$('mapObjectiveNote').textContent=o.note;
  $('mapDistance').textContent=Number.isFinite(o.x)?'거리 '+fmt(dist(player,o))+'m':'';
  $('mapResetTarget').disabled=mapChoice==='quest';
- $('mapPlaces').innerHTML='<div class="map-stage"><b>마을 출구</b><small>아래쪽 문으로 걸어 나가거나 가까이에서 R키를 누르세요.</small></div><div class="map-stage"><b>'+escapeText(b.name)+'</b><small>이 방의 NPC와 가구만 표시합니다. 외부 지도는 밖으로 나가서 확인할 수 있습니다.</small></div>';
+ $('mapPlaces').innerHTML='<div class="map-stage"><b>마을 출구</b><small>아래쪽 문으로 걸어 나가거나 가까이에서 상호작용하세요.</small></div><div class="map-stage"><b>'+escapeText(b.name)+'</b><small>이 방의 NPC와 가구만 표시합니다. 외부 지도는 밖으로 나가서 확인할 수 있습니다.</small></div>';
  $('mapLegend').textContent='▲ 내 위치　▣ 사람·시설　▥ 출구';$('mapHintText').textContent='실내와 마을은 분리된 공간입니다. 벽 너머의 인물에게 말을 걸거나 공격할 수 없습니다.';
 }
 
@@ -6781,7 +6871,7 @@ function grantIntroCraftMaterials(){
 }
 function showForgeLesson(){
  const q=state.introQuest;if(q.stage!=='forge')return false;
- guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">다음 할 일 · 첫 장비 제작</div><h3 class="lesson-title">브란에게 수습 장검을 한 자루 맡겨 봐.</h3><div class="sera-task"><span>제작품</span><b>수습 장검 · 가장 낮은 단계의 제작 검</b><span>새벽마을</span><b>서쪽 브란의 대장간 → R → 무기 → 수습 장검</b></div><p class="sera-tip">처음 한 번은 내가 <b>부족한 점액 재료를 보충</b>하고 브란에게 <b>제작비 8 G를 실습 지원</b>해 둘게.<br>제작 시간이 끝나도 가방에 자동으로 들어오지 않아. <b>브란 머리 위 !</b>가 뜨면 다시 R로 말 걸어 직접 수령해.<br>수령한 뒤에는 서쪽 아래 돌샘 온천에서 쉬고 와.</p>`,[
+ guideDialogue(GUIDE_NPC.name,`<div class="lesson-kicker">다음 할 일 · 첫 장비 제작</div><h3 class="lesson-title">브란에게 수습 장검을 한 자루 맡겨 봐.</h3><div class="sera-task"><span>제작품</span><b>수습 장검 · 가장 낮은 단계의 제작 검</b><span>새벽마을</span><b>서쪽 브란의 대장간 → 상호작용 → 무기 → 수습 장검</b></div><p class="sera-tip">처음 한 번은 내가 <b>부족한 점액 재료를 보충</b>하고 브란에게 <b>제작비 8 G를 실습 지원</b>해 둘게.<br>제작 시간이 끝나도 가방에 자동으로 들어오지 않아. <b>브란 머리 위 !</b>가 뜨면 다시 상호작용해 직접 수령해.<br>수령한 뒤에는 서쪽 아래 돌샘 온천에서 쉬고 와.</p>`,[
  {label:'수습 장검 제작 실습 시작',run:()=>{const added=grantIntroCraftMaterials();q.forgeRead=true;q.stage='craft';mapChoice='quest';saveGame();toast(`제작 실습 시작 · 브란에게 수습 장검을 맡기자${added?` · 점액 ${added}개 보충`:''}`,5);}},
  {label:'잠깐, 다시 읽을게',run:()=>{}}
  ]);return true;
@@ -6794,17 +6884,17 @@ function previewGuideStatus(){
 }
 function stateLessonHTML(){
  const required=['none','stats'].includes(state.introQuest.stage)&&state.quest==='none'&&!state.cleared;
- return `<div class="lesson-kicker">첫걸음 3 / 4 · E 상태창</div><h3 class="lesson-title">${required?'미분배 스탯을 모두 써 보자.':'E 안에서 세 가지만 확인해.'}</h3>
+ return `<div class="lesson-kicker">첫걸음 3 / 4 · 상태창</div><h3 class="lesson-title">${required?'미분배 스탯을 모두 써 보자.':'상태 화면에서 세 가지만 확인해.'}</h3>
  <div class="guide-keycards sera-keycards">
  <section><kbd>+</kbd><div><b>능력치 · 남은 ${hero.points}개</b><p>원하는 능력치 옆 <b>+</b>를 눌러 투자해.${required?'<br><b>미분배 0개</b>가 되면 준비 완료야.':''}</p></div></section>
  <section><kbd>검</kbd><div><b>장비</b><p>장비 탭에서 <b>장착</b>. 레벨 조건과 파손 여부를 확인해.</p></div></section>
  <section><kbd>가방</kbd><div><b>전리품 = 인벤토리</b><p>모은 재료와 입장권 수량을 확인해.</p></div></section>
- </div><p class="sera-tip">${required?(hero.points>0?'어디에 투자할지는 네가 골라. <b>모두 쓰면 첫 사냥</b>을 알려줄게.':'이미 포인트를 모두 썼네. <b>상태창을 확인</b>하고 첫 사냥을 준비하자.'):'미분배가 10개 이상이면 위에 <b>!</b>가 떠.'}<br><kbd>E</kbd>로 열고, 다시 <kbd>E</kbd>로 닫아.</p>`;
+ </div><p class="sera-tip">${required?(hero.points>0?'어디에 투자할지는 네가 골라. <b>모두 쓰면 첫 사냥</b>을 알려줄게.':'이미 포인트를 모두 썼네. <b>상태창을 확인</b>하고 첫 사냥을 준비하자.'):'미분배가 10개 이상이면 위에 <b>!</b>가 떠.'}<br>상태 버튼으로 열고, 닫기 버튼으로 돌아와.</p>`;
 }
 function renderStatAlert(){
  const b=$('statAlert');if(!b)return;
  const on=ACCOUNT.loaded&&hero.points>=10&&state.mode==='play';b.classList.toggle('hidden',!on);
- b.title=`미분배 능력치 ${hero.points}개 · E 상태창`;b.setAttribute('aria-label',b.title);
+ b.title=`미분배 능력치 ${hero.points}개 · 상태창`;b.setAttribute('aria-label',b.title);
 }
 function staminaHelpHTML(){const l=weaponProfile('light'),h=weaponProfile('heavy');return `<b>${l.name} 기준</b> · 기력 ${fmt(player.stamina)} / ${fmt(maxStamina())}<br>일반 공격 <b>−${fmt(l.stamina)}</b> · 강공격 <b>−${fmt(h.stamina)}</b> · F 대시 <b>−${fmt(CONFIG.dodgeCost)}</b><br>스킬·달리기 기력 <b>0</b> · 회복 중 <b>초당 +${fmt(CONFIG.staminaRegen)}</b><br>지혜 1당 최대 기력 <b>+${STAT_GROWTH.staminaPerPoint}</b>. 기력의 시작 최대치는 100.`;}
 function updateHelpNumbers(){const b=$('actualStaminaHelp');if(b)b.innerHTML=staminaHelpHTML();}
@@ -6945,12 +7035,12 @@ function talkTernPerson(id){
 function renderTern(){
  if(currentInterior()||state.scene!=='field')return;
  if(!ternUnlocked()&&dist(TERN_GATE,player)<65){draw(cube,trs(TERN_GATE.x,2.35,TERN_GATE.z,5.9,4.7,.55),C.wood);for(const dx of [-2.4,-1.2,0,1.2,2.4])draw(cube,trs(TERN_GATE.x+dx,2.4,TERN_GATE.z+.35,.16,4.8,.18),C.dark);}
- if(ternUnlocked())for(const p of TERN_PEOPLE.filter(x=>!x.home))if(dist(p,player)<55){renderTownPerson(p);if(dist(p,player)<17)placeLabel(p.id,p.name+' · R',p.x,2.8,p.z,true);}
+ if(ternUnlocked())for(const p of TERN_PEOPLE.filter(x=>!x.home))if(dist(p,player)<55){renderTownPerson(p);if(dist(p,player)<17)placeLabel(p.id,p.name+' · 상호작용',p.x,2.8,p.z,true);}
  if(dist(TERN_GATE,player)<28)placeLabel('tern-gate',ternUnlocked()?'테른 · 열린 남문':'테른 · 종유석 미궁의 붉은 철갑 거인 처치 필요',TERN_GATE.x,6.1,TERN_GATE.z,true);
 }
 function renderRidgeHUD(){
  if(state.scene!=='field'||currentInterior()||!inBrokenRidge())return;
- if(dist(player,RIDGE_MINE)<25)placeLabel('ridge-mine','버려진 폐광 · R 상호작용',RIDGE_MINE.x,RIDGE_MINE.y+4.7,RIDGE_MINE.z,true);
+ if(dist(player,RIDGE_MINE)<25)placeLabel('ridge-mine','버려진 폐광 · 상호작용',RIDGE_MINE.x,RIDGE_MINE.y+4.7,RIDGE_MINE.z,true);
  if(dist(player,ABRAM_NORTH_GATE)<24)placeLabel('abram-north','아브람 북문 · 부서진 능선',ABRAM_NORTH_GATE.x,6.3,ABRAM_NORTH_GATE.z,true);
 }
 
@@ -6961,7 +7051,7 @@ function repairAbramAccess(){
 }
 function renderAbram(){
  if(currentInterior()||state.scene!=='field')return;
- for(const p of ABRAM_PEOPLE.filter(x=>!x.home))if(dist(p,player)<55){renderTownPerson(p);if(dist(p,player)<17)placeLabel(p.id,p.name+' · R',p.x,2.8,p.z,true);}
+ for(const p of ABRAM_PEOPLE.filter(x=>!x.home))if(dist(p,player)<55){renderTownPerson(p);if(dist(p,player)<17)placeLabel(p.id,p.name+' · 상호작용',p.x,2.8,p.z,true);}
  if(!abramGateOpen()&&dist(ABRAM_GATE,player)<65){
   draw(cube,trs(ABRAM_GATE.x,2.3,ABRAM_GATE.z,.55,4.6,5.9),C.wood);for(const dz of [-2.4,-1.2,0,1.2,2.4])draw(cube,trs(ABRAM_GATE.x-.35,2.4,ABRAM_GATE.z+dz,.18,4.8,.16),C.dark);
  }
@@ -7104,7 +7194,7 @@ function rioCraftLesson(){
  if(state.mode!=='play'||!nearRioGuard()||state.town.rioQuest.stage!=='active')return false;
  const g=GEAR[RIO_QUEST_RULES.gearId];
  openDialogue(rioGuard().name+' · 대장간 실습',`<h3>하겐에게 ${escapeText(g.name)}을 맡겨 줘.</h3>
- <div class="rio-steps"><span>1. 제작</span><b>아브람 북서쪽 · 하겐의 강철 대장간 → R → 무기</b><span>2. 확인</span><b>${escapeText(g.name)} → 재료·${moneyText(weaponCraftGold(g))} 확인 → 제작 확정</b><span>3. 기다리기</span><b>메뉴·대화를 닫고 플레이 중 ${g.craft}초. 파일 종료 시간은 다음 실행 때 반영.</b><span>4. 수령·납품</span><b>하겐에게 R로 수령 → 정상 +0 한 자루를 장착하지 말고 내게 가져와.</b></div>
+ <div class="rio-steps"><span>1. 제작</span><b>아브람 북서쪽 · 하겐의 강철 대장간 → 상호작용 → 무기</b><span>2. 확인</span><b>${escapeText(g.name)} → 재료·${moneyText(weaponCraftGold(g))} 확인 → 제작 확정</b><span>3. 기다리기</span><b>메뉴·대화를 닫고 플레이 중 ${g.craft}초. 파일 종료 시간은 다음 실행 때 반영.</b><span>4. 수령·납품</span><b>하겐에게 상호작용해 수령 → 정상 +0 한 자루를 장착하지 말고 내게 가져와.</b></div>
  <p class="rio-note">재료: ${recipeMaterialsText(g)}<br>나를 위한 임시 제작법만 하겐에게 빌려 뒀네. 의뢰를 받은 뒤 여기서 새로 만들어야 해.<br>완료하면 ${goldIncomeText(RIO_QUEST_RULES.rewardGold)}를 지급할게. 잠근 검·강화한 검·파손품은 받지 않아.</p>`,[
   {label:'하겐에게 제작하러 가기',run:()=>{selectMapTarget('rioQuest');}},
   {label:'모루와 전승은 뭐지?',run:showRioWorkshopExtra},
@@ -7113,19 +7203,19 @@ function rioCraftLesson(){
 }
 function showRioWorkshopExtra(){
  if(state.mode!=='play'||!nearRioGuard()||state.town.rioQuest.stage!=='active')return false;
- openDialogue(rioGuard().name+' · 제작과 강화는 달라',`<p><b>대장장이</b>는 재료와 제작비를 받아 새 장비를 만들어.<br><b>모루</b>는 이미 가진 무기를 강화·복구·전승하는 곳이지. 가까이에서 <b>R → 전승</b>을 골라.</p><p>좋은 무기와 높은 강화 단계일수록 더 많은 골드와 부산물이 들어. 실패할 수도 있으니 확률을 먼저 읽게.<br><b>전승</b>은 정해진 다음 무기로 강화를 옮기는 일이고, 결과와 소모품을 확인한 뒤 선택하면 돼.</p><p class="rio-note">이번 부탁은 제작 연습뿐이야. 내 검은 강화하지 말고 <b>정상 +0</b>으로 가져와.<br>E → 장비에서 장착·해제·잠금을 확인할 수 있어.</p>`,[{label:'제작 순서 다시 보기',run:rioCraftLesson},{label:'알겠어',run:()=>{}}]);return true;
+ openDialogue(rioGuard().name+' · 제작과 강화는 달라',`<p><b>대장장이</b>는 재료와 제작비를 받아 새 장비를 만들어.<br><b>모루</b>는 이미 가진 무기를 강화·복구·전승하는 곳이지. 가까이에서 <b>상호작용 → 전승</b>을 골라.</p><p>좋은 무기와 높은 강화 단계일수록 더 많은 골드와 부산물이 들어. 실패할 수도 있으니 확률을 먼저 읽게.<br><b>전승</b>은 정해진 다음 무기로 강화를 옮기는 일이고, 결과와 소모품을 확인한 뒤 선택하면 돼.</p><p class="rio-note">이번 부탁은 제작 연습뿐이야. 내 검은 강화하지 말고 <b>정상 +0</b>으로 가져와.<br>상태 → 장비에서 장착·해제·잠금을 확인할 수 있어.</p>`,[{label:'제작 순서 다시 보기',run:rioCraftLesson},{label:'알겠어',run:()=>{}}]);return true;
 }
 function talkRioQuest(){
  if(state.mode!=='play'||!nearRioGuard())return false;
  const q=state.town.rioQuest,g=GEAR[RIO_QUEST_RULES.gearId];
  if(q.stage==='none'){
   openDialogue(rioGuard().name+' · 새 검의 부탁',`<h3>순찰하다가 검이 부러졌어.</h3><p>비싼 명검까지는 필요 없어. <b>${escapeText(g.name)} +0 한 자루</b>면 충분해.<br>하겐의 대장간에서 직접 만들어 주겠나?</p><p class="rio-note">재료: ${recipeMaterialsText(g)}<br>제작비 ${moneyText(weaponCraftGold(g))} · 제작 ${g.craft}초 · 완료 보상 ${goldIncomeText(RIO_QUEST_RULES.rewardGold)}<br>일반 NPC 의뢰 · 시간 제한 없음 / 게시판 2칸과 별개</p>`,[{label:'의뢰 수락 · 검을 만들어 줄게',run:acceptRioQuest},{label:'지금은 어렵겠네',run:()=>{}}]);
- }else if(q.stage==='done')openDialogue(rioGuard().name,'이제 검을 믿고 교역로를 지킬 수 있겠어. 고맙네.<br>장비를 바꿀 때는 E에서 장착 상태를 확인하는 것도 잊지 말게.');
+ }else if(q.stage==='done')openDialogue(rioGuard().name,'이제 검을 믿고 교역로를 지킬 수 있겠어. 고맙네.<br>장비를 바꿀 때는 상태에서 장착 상태를 확인하는 것도 잊지 말게.');
  else{
   syncGearInstances();const list=rioEligibleItems();
   const choices=list.slice(0,6).map(x=>({label:`${GEAR[x.gearId].name} +0 · ${x.uid} 납품 검토`,run:()=>requestRioDelivery(x.uid)}));
   choices.push({label:'제작 순서 다시 알려 줘',run:rioCraftLesson},{label:'나중에 다시 올게',run:()=>{}});
-  const note=list.length?'검을 가져왔군. <b>낼 검 한 자루</b>를 골라 줘. 확인하기 전에는 가져가지 않아.':hero.craft?.commission===RIO_QUEST_RULES.id?(craftReady(hero.craft)?'검은 완성됐네. 하겐에게 다시 말 걸어 먼저 수령해 오게.':'하겐이 검을 만드는 중이군. 메뉴와 대화를 닫고 플레이하면 제작 시간이 흐른다네.'):'하겐의 대장간에서 의뢰 수락 후 만든 <b>정상 +0 사냥꾼의 검</b>이 필요해. E에서 장착과 잠금을 해제한 뒤 가져와.';
+  const note=list.length?'검을 가져왔군. <b>낼 검 한 자루</b>를 골라 줘. 확인하기 전에는 가져가지 않아.':hero.craft?.commission===RIO_QUEST_RULES.id?(craftReady(hero.craft)?'검은 완성됐네. 하겐에게 다시 말 걸어 먼저 수령해 오게.':'하겐이 검을 만드는 중이군. 메뉴와 대화를 닫고 플레이하면 제작 시간이 흐른다네.'):'하겐의 대장간에서 의뢰 수락 후 만든 <b>정상 +0 사냥꾼의 검</b>이 필요해. 상태에서 장착과 잠금을 해제한 뒤 가져와.';
   openDialogue(rioGuard().name+' · 새 검의 부탁',`<p>${note}</p><p class="rio-note">하겐 → 무기 탭 → 사냥꾼의 검<br>완료 보상 ${goldIncomeText(RIO_QUEST_RULES.rewardGold)} · 한 번만 지급<br>검을 팔거나 강화했어도 재료를 모아 새로 만들면 돼.</p>`,choices);
  }
  return true;
@@ -7150,9 +7240,9 @@ function commitRioDelivery(token){
 function rioQuestObjective(){
  const q=state.town.rioQuest;
  if(state.scene==='dungeon')return {x:null,z:null,label:'아브람의 새 검 의뢰',short:'미궁 밖에서 진행',kind:'guard',note:'원래 미궁 출입 조건은 그대로입니다.'};
- if(q.stage!=='active'||rioEligibleItems().length)return {...rioGuard(),label:'파수병 리오 · 새 검의 부탁',short:q.stage==='active'?'리오에게 납품':'리오의 의뢰',kind:'guard',note:q.stage==='active'?'R · 정상 +0 검 1개 납품 / '+goldIncomeText(RIO_QUEST_RULES.rewardGold):'아브람 일반 의뢰 · 시간 제한 없음'};
+ if(q.stage!=='active'||rioEligibleItems().length)return {...rioGuard(),label:'파수병 리오 · 새 검의 부탁',short:q.stage==='active'?'리오에게 납품':'리오의 의뢰',kind:'guard',note:q.stage==='active'?'상호작용 · 정상 +0 검 1개 납품 / '+goldIncomeText(RIO_QUEST_RULES.rewardGold):'아브람 일반 의뢰 · 시간 제한 없음'};
  const p=MAP_PLACES.find(p=>p.id==='abramForge');
- return {...p,label:'하겐 · 사냥꾼의 검 제작',short:'검 제작 실습',note:hero.craft?.commission===RIO_QUEST_RULES.id?(craftReady(hero.craft)?'하겐에게 R · 제작품 수령':'창을 닫고 제작 완료 대기'):'무기 탭 → 사냥꾼의 검 / 정상 +0으로 리오에게 납품'};
+ return {...p,label:'하겐 · 사냥꾼의 검 제작',short:'검 제작 실습',note:hero.craft?.commission===RIO_QUEST_RULES.id?(craftReady(hero.craft)?'하겐에게 상호작용 · 제작품 수령':'창을 닫고 제작 완료 대기'):'무기 탭 → 사냥꾼의 검 / 정상 +0으로 리오에게 납품'};
 }
 function renderRioQuestHUD(){
  const node=$('rioQuestHUD');if(!node)return;
@@ -7180,7 +7270,7 @@ function recordBoarQuestKill(e){
  const q=state.town.boarQuest;
  if(!q||q.stage!=='active'||e.scene!=='field'||e.archetype!=='forestBoar')return false;
  q.kills=Math.min(BOAR_QUEST_RULES.target,q.kills+1);
- if(q.kills===BOAR_QUEST_RULES.target){q.stage='ready';toast(`멧돼지 ${BOAR_QUEST_RULES.target}마리 처치 완료 · 새벽마을 다린에게 R로 보고`,4);}
+ if(q.kills===BOAR_QUEST_RULES.target){q.stage='ready';toast(`멧돼지 ${BOAR_QUEST_RULES.target}마리 처치 완료 · 새벽마을 다린에게 상호작용해 보고`,4);}
  saveGame();return true;
 }
 function finishBoarQuest(){
@@ -7208,7 +7298,7 @@ function boarQuestObjective(){
   const es=enemies.filter(e=>e.scene==='field'&&e.archetype==='forestBoar'&&e.hp>0).sort((a,b)=>dist(player,a)-dist(player,b));
   const p=es[0]||{x:80,z:-60};return {x:p.x,z:p.z,scene:'field',label:'부러진 검의 재료',short:'멧돼지 사냥',kind:'boar',note:`멧돼지 ${q.kills} / 15 · 일반 의뢰 / 다린에게 보고`};
  }
- return {...g,label:'경비병 다린 · 부러진 검',short:'다린에게 보고',kind:'guard',note:q.stage==='ready'?'R · 완료 보고 / '+goldIncomeText(BOAR_QUEST_RULES.gold):`멧돼지 ${BOAR_QUEST_RULES.target}마리 · 일회성 일반 의뢰`};
+ return {...g,label:'경비병 다린 · 부러진 검',short:'다린에게 보고',kind:'guard',note:q.stage==='ready'?'상호작용 · 완료 보고 / '+goldIncomeText(BOAR_QUEST_RULES.gold):`멧돼지 ${BOAR_QUEST_RULES.target}마리 · 일회성 일반 의뢰`};
 }
 function renderBoarQuestHUD(){
  const node=$('boarQuestHUD');if(!node)return;const q=state.town.boarQuest;
@@ -7330,14 +7420,14 @@ if(window.__MUSAEK_TEST__===true||new URLSearchParams(location.search).get('test
  rioTransaction:()=>rioDeliveryProposal,
 
  captureAttackContext,restoreAttackContext,attackContext,goldAmount,changeGold,moneyText,currencyRuleText,GOLD_INCOME_MULTIPLIER,goldIncomeAmount,goldIncomeText,itemSaleGold,grantGoldIncome,killGoldFor,MONSTER_GOLD_LEVEL_GAP,ECONOMY_REVISION,repairOutstandingContracts,canHitEnemy,
- MOBILE_BUILD,MOBILE_EDITION,mobileInput,installMobileControls,WORLD_LAYOUT_VERSION,ABRAM_RELOCATION,BOAR_QUEST_RULES,DAWN_STREETS,ABRAM_STREETS,initialBoarQuest,restoreBoarQuest,talkBoarGuard,acceptBoarQuest,recordBoarQuestKill,finishBoarQuest,boarQuestObjective,libraryStories,restoreLoreRead,migrateWorldLayout,renderBoarQuestHUD,poseEase,
+ MOBILE_BUILD,MOBILE_EDITION,mobileInput,installMobileControls,mobilePrimaryAction,updateMobileControls,WORLD_LAYOUT_VERSION,ABRAM_RELOCATION,BOAR_QUEST_RULES,DAWN_STREETS,ABRAM_STREETS,initialBoarQuest,restoreBoarQuest,talkBoarGuard,acceptBoarQuest,recordBoarQuestKill,finishBoarQuest,boarQuestObjective,libraryStories,restoreLoreRead,migrateWorldLayout,renderBoarQuestHUD,poseEase,
  grantBoardReward,roomPeople,roomSpawn,renderRoomHUD,npcConversationVisible,maxStamina,renderStatAlert,staminaHelpHTML,updateHelpNumbers,stateLessonHTML,previewGuideStatus,showForgeLesson,tutorialSpendingUnlocked,forgeAccessUnlocked,recipeAvailableHere,recordIntroPurchase,recordIntroSale,
  enhancementLevel,enhancementMultiplier,WEAPON_AWAKENINGS,weaponAwakening,bossSources,BOSS_MATERIAL_IDS,usesBossMaterial,sameBossLineageAllowed,transferPairAllowed,nextTransferId,weaponLineageText,awakeningText,weaponProgressionHTML,enhancementPreviewHTML,weaponLevelCapWarning,transferEffectPreviewHTML,
  toggleGearLock,completeGearSale,commitGearSale,rollEnhancementFailure,TRANSFER_NEXT,transferDonors,validTransferSource,requestTransfer,commitTransfer,transferPanelHTML,recipeLiquidationValue,minimumGearInvestment,gearSaleValue,greatswordShare,skillInputFailure,
  inAbram,inTern,inBrokenRidge,inFogValley,inSouthForest,inGoblinCamp,SOUTH_FOREST,GOBLIN_CAMP,GOBLIN_CAMP_APPROACH,SOUTH_GATE,SOUTH_TRAIL,SLIME_QUEEN_CLEARING,SWAMP_SLIME_POPULATION,SOUTH_ENEMY_TYPES,townName,MONSTER_RARITY,monsterRarityInfo,monsterRarityKey,monsterDisplayName,ABRAM_CAVE,ABRAM_CAVE_ENTRANCE,DUNGEON_ACCESS,ABRAM_BOUNDS,ABRAM_GATE,ABRAM_NORTH_GATE,ABRAM_BUILDINGS,ABRAM_PEOPLE,ABRAM_SMITH,ABRAM_CAMP,ABRAM_MERCHANT,TERN_BOUNDS,TERN_GATE,TERN_BUILDINGS,TERN_PEOPLE,TERN_SMITH,TERN_CAMP,TERN_MERCHANT,TERN_LIBRARIAN,RIDGE_MAIN,RIDGE_MINE_PATH,RIDGE_PATH_SEGMENTS,RIDGE_MINE,RIDGE_FOG,IRON_GIANT_GATE,RIDGE_ENEMY_TYPES,ridgeRawHeight,fieldTerrainHeight,enemyBodyHeight,playerAttackCanReachY,ternUnlocked,talkTernPerson,activeBlacksmith,activeMerchant,activeCamp,abramGateOpen,talkAbramGuard,talkAbramPerson,roomAccessAllowed,repairAbramAccess,dynamicBlocks,
  transactionState:()=>({sale:gearSaleProposal,transfer:transferProposal,anvil:anvilProposal}),
  WORKSHOP_RULES,WEAPON_LEVELS,UPGRADE_MATERIALS,MISC_RECIPES,MAIN_HUNT_TARGET,craftRecipe,weaponLevelText,canWearInstance,effectiveGear,instanceName,enforceWeaponEligibility,gearSaleValue,enhancementChance,enhancementCost,repairCost,anvilPoint,openAnvil,renderAnvil,requestEnhancement,commitEnhancement,requestRepair,commitRepair,showTicketRequirement,confirmDungeonEntry,equippedSlotsHTML,TIME_SOURCE,openClockPanel,renderClockPanel,
- PATCH_REVISION,DUNGEON_PUZZLE_REVISION,GOBLIN_CAMPS,SOUTH_CAMP_TRAILS,SWAMP_SLIME_POPULATION,setMapZoom,zoomMapBounds,TRACK_MARKS,FLOOR_TRACK_ORDER,BOSS_SCHEDULE,dungeonBossStatus,resetLivingDungeonCombat,nextSeoulBossSpawn,seoulClockLabel,respawnScheduledBoss,ironGiantBoss,respawnScheduledIronGiant,isBossEncounter,isIronGiantEncounter,bossRoomSealed,refreshBossEncounter,WEREWOLF_GIMMICKS,werewolfMaskForRatio,triggerWerewolfGimmick,finishWerewolfRoar,rollRespawnDelay,COMBAT_BUFFER_SECONDS,queueCombatAction,restoreCombatBuffer,consumeCombatBuffer,beginnerServicesUnlocked,roomAccessAllowed,refreshIntroMilestones,recordIntroSlimeKill,recordIntroSale,recordIntroPurchase,introPurchaseSatisfied,introHUD,introJournalHTML,showTradeLesson,recordIntroRest,grantIntroHuntReward,grantIntroCraftMaterials,syncGearInstances,gearRowsHTML,sellGear,canCraft,NAV_CONFIG,NAV_RUNTIME,NavMinHeap,navLayer,navCellValid,navCellEdge,navSearch,boardRewardValue,auditBoardEconomy,balanceBoardDelivery,updateTutorial,renderHUD,
+ PATCH_REVISION,DUNGEON_PUZZLE_REVISION,DUNGEON_POTION_CHESTS,ABRAM_SUPPLY_CHESTS,MINI_BOSS_RESPAWN_MS,DAILY_REWARD_RULES,isHourlyMiniBoss,refreshHourlyMiniBosses,seoulDayKey,dailyRewardAvailable,dailyRewardMaterialCandidates,claimDailyReward,nearbyDungeonPotionChest,openDungeonPotionChest,thugChallengeLevel,thugDuelLevel,thugRewardBase,thugRewardForLevel,thugAttackDamage,thugAttackForLevel,GOBLIN_CAMPS,SOUTH_CAMP_TRAILS,SWAMP_SLIME_POPULATION,setMapZoom,zoomMapBounds,TRACK_MARKS,FLOOR_TRACK_ORDER,BOSS_SCHEDULE,dungeonBossStatus,resetLivingDungeonCombat,nextSeoulBossSpawn,seoulClockLabel,respawnScheduledBoss,ironGiantBoss,respawnScheduledIronGiant,isBossEncounter,isIronGiantEncounter,bossRoomSealed,refreshBossEncounter,WEREWOLF_GIMMICKS,werewolfMaskForRatio,triggerWerewolfGimmick,finishWerewolfRoar,rollRespawnDelay,COMBAT_BUFFER_SECONDS,queueCombatAction,restoreCombatBuffer,consumeCombatBuffer,beginnerServicesUnlocked,roomAccessAllowed,refreshIntroMilestones,recordIntroSlimeKill,recordIntroSale,recordIntroPurchase,introPurchaseSatisfied,introHUD,introJournalHTML,showTradeLesson,recordIntroRest,grantIntroHuntReward,grantIntroCraftMaterials,syncGearInstances,gearRowsHTML,sellGear,canCraft,NAV_CONFIG,NAV_RUNTIME,NavMinHeap,navLayer,navCellValid,navCellEdge,navSearch,boardRewardValue,auditBoardEconomy,balanceBoardDelivery,updateTutorial,renderHUD,
 
  TOWN_BOUNDS,townDepartureLocked,repairTutorialDeparture,introGuideCard,renderIntroGuideCard,rawMapObjective,entranceHinted,entranceMapVisible,mapPlacePresentation,FAST_TRAVEL_TOWNS,fastTravelUnlocked,fastTravelCurrentTown,fastTravelThreatNearby,fastTravelBlockedReason,fastTravelTo,fastTravelHTML,inDetailedField,insideWildernessBlock,WORLD_DETAIL_MARGIN,WORLD_BORDER_BACKDROP,WORLD_WILDERNESS_BLOCKS,uiLessonHTML,mapIcon,distanceToSegment,
  ROOM_DEFS,ROOM_BY_ID,currentInterior,playerSceneKey,nearestEnemy,updateRoomCamera,exteriorDoor,roomExit,nearExteriorDoor,requestRoomTransition,advanceRoomTransition,commitRoomTransition,cancelDoorTransition,updateRoomDoorMovement,roomInteraction,repairIndoorPosition,restoreInterior,doorMapPoint,roomMapModel,resumePhysicalMovementKeys,resumePlayInput,
