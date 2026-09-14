@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src https: http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>무색 Mobile 0.12.16 — 터치 조작판</title>
+<html lang="ko"><head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; connect-src https: http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'; form-action 'none'"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><title>무색 Mobile 0.12.19 — iPad 터치 · 90% UI</title>
 <style>
 :root{color-scheme:dark;--ink:#edeae1;--dim:#adb5b1;--line:#ffffff24;--red:#d8675a;--paper:#c7b790}*{box-sizing:border-box}body,html{margin:0;overflow:hidden;width:100%;height:100%;background:#222b2b;color:var(--ink);font:14px/1.65 "Noto Sans CJK KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}button{font:inherit;cursor:pointer;border:1px solid #ffffff50;padding:11px 21px;background:#e4e1d7;color:#172224;border-radius:2px;transition:background .15s}button:hover{background:white}button.secondary{background:#1c272bcb;color:var(--ink);border-color:#ffffff30}button.secondary:hover{background:#354145}button.small{font-size:11px;padding:4px 9px}kbd{font:11px system-ui,sans-serif;border:1px solid #ffffff45;padding:2px 5px;border-radius:3px;white-space:nowrap;color:#f1ede2}.hidden{display:none!important}canvas#game{display:block;width:100vw;height:100vh;outline:none;cursor:crosshair}.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,#07121688)}#hud{position:fixed;inset:0;pointer-events:none;padding:26px 30px}.eyebrow{font-size:10px;letter-spacing:2.6px;color:#acb8b3}.location{font:600 27px/1.6 inherit;letter-spacing:3px;margin:3px 0;font-size:27px}.tag{font-size:11px;color:#b1bbb5}.quest{margin-top:25px;padding:12px 15px;border-left:2px solid var(--paper);max-width:260px;background:linear-gradient(90deg,#132123d9,#13212320)}.quest h3{font-size:13px;margin:0 0 7px;font-weight:600}.quest p{font-size:12px;margin:5px 0;color:#c6cfca}.quest .gold{color:#f1dfac}.right{position:absolute;top:27px;right:30px;text-align:right}#map{display:block;width:170px;height:170px;margin:10px 0 4px;border:1px solid #a8b3a13b;background:#132025b3}.mapHint{font-size:10px;letter-spacing:1px;color:#bcc7bf}#nav{position:absolute;top:25px;left:50%;transform:translateX(-50%);font-size:11px;color:#d1d3c8;letter-spacing:1px;text-align:center;white-space:nowrap}#nav b{display:block;font-size:13px;margin-top:3px;color:#e8debf}#boss{position:absolute;top:76px;left:50%;transform:translateX(-50%);width:390px;text-align:center}.boss-name{font-size:16px;letter-spacing:3px;margin-bottom:8px}.bar{height:6px;background:#091416d1;border:1px solid #ffffff1a}.bar i{display:block;background:#e1dfd4;height:100%;width:100%}#bossFill{background:var(--red)}#bossPhase{font-size:11px;margin-top:6px;color:#c5c9bd}.bottom{position:absolute;left:30px;bottom:28px;width:230px;padding:12px 14px;background:#152226b5}.health-label{display:flex;justify-content:space-between;font-size:11px;margin-bottom:7px}.stamina{height:3px;border:0;margin-top:7px}.stamina i{background:#c3af80}.supplies{font-size:11px;margin-top:8px;color:#c8cfc3}.controls{position:absolute;bottom:26px;right:30px;text-align:right;font-size:11px;line-height:2.3;color:#c6cfc4;background:linear-gradient(270deg,#142125c4,#14212500);padding:8px}.controls kbd{margin-left:7px}#tutorial{position:absolute;left:50%;bottom:143px;transform:translateX(-50%);width:390px;background:#142126ed;border:1px solid #b8b9a342;padding:14px 18px;pointer-events:auto;box-shadow:0 10px 30px #0002}#tutorial .step{color:var(--paper);letter-spacing:2px;font-size:10px}.tutorial-head{display:flex;justify-content:space-between;align-items:center}#tutorial h3{font-size:16px;margin:7px 0 3px}#tutorial p{font-size:12px;color:#c5cec7;margin:0}#guideBar{height:2px;margin-top:12px;background:#414b48}#guideBar i{display:block;height:100%;background:#ccbb8e;transition:width .2s}.prompt{position:absolute;left:50%;bottom:102px;transform:translateX(-50%);background:#152127ed;border:1px solid #b9bfac5c;padding:9px 18px;white-space:nowrap;font-size:12px}#toast{position:absolute;top:205px;left:50%;transform:translateX(-50%);max-width:570px;background:#142226e8;border:1px solid var(--line);padding:11px 21px;text-align:center;font-size:13px;opacity:0;transition:opacity .15s;pointer-events:none}#lock{position:fixed;display:none;width:25px;height:25px;border:1px solid #e6d8b5;transform:translate(-50%,-50%) rotate(45deg);pointer-events:none}#damage{position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 140px #b331376a;opacity:0}#labels{position:fixed;inset:0;pointer-events:none}.world-label{position:absolute;transform:translate(-50%,-100%);font-size:11px;white-space:nowrap;text-shadow:0 2px 4px #000;background:#132025a8;padding:2px 7px;border-radius:2px;color:#e6e3d3}.world-label.npc{color:#eddcb4;border-bottom:1px solid #e0ce9855}.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#081419ba;backdrop-filter:blur(3px);z-index:15}#overlay{justify-content:flex-start;background:linear-gradient(90deg,#0c191bf5,#0c191bbb 47%,#0c191b10);backdrop-filter:none}.titlepanel{margin-left:8vw;max-width:520px}.brand{font-family:serif;font-size:104px;line-height:1.2;letter-spacing:17px;font-weight:500;margin:17px 0}.subtitle{font-size:12px;letter-spacing:7px;color:#bfcbc3}.divider{width:42px;height:2px;background:var(--red);margin:28px 0}.intro{font-size:15px;line-height:2;color:#c7d0c7}.intro small{display:block;font-size:12px;color:#97a8a1;margin-top:16px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}.fine{font-size:11px;color:#93a59d;margin-top:18px}.overlay-foot{position:absolute;left:8vw;bottom:25px;font-size:10px;letter-spacing:2px;color:#96a79f}.modal{max-height:90vh;overflow:auto;background:#152326f5;border:1px solid #bbc2ab40;box-shadow:0 20px 80px #0005;width:min(800px,90vw);padding:25px 30px}.modal h2{font-size:23px;letter-spacing:2px;margin:0 0 15px}.modal p{color:#c7d0c7}.modal .topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;margin:20px 0}.help-item{border-bottom:1px solid var(--line);padding:9px 0;font-size:13px;display:flex;justify-content:space-between}.help-note{background:#0b171a77;padding:12px 16px;font-size:12px;color:#bdc7be}#dialog{background:#09141950;backdrop-filter:none;align-items:flex-end;padding-bottom:105px}#dialog .modal{width:min(700px,90vw);border-left:3px solid var(--paper);padding:21px 26px}#dialogTitle{font-size:17px;margin:0 0 13px;color:#ebdcaf}#dialogText{font-size:15px;line-height:1.9;color:#d9dfd3}#dialogText small{display:block;font-size:12px;color:#a4b3a9;margin-top:14px}.dialog-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.dialog-actions button{font-size:13px}.map-modal{width:min(900px,94vw);padding:20px 25px}#fullmap{display:block;width:100%;height:min(60vh,560px);background:#0c191d;border:1px solid var(--line)}.legend{font-size:11px;line-height:1.8;color:#b8c5ba;margin-top:10px}.journal-text{line-height:1.9;font-size:14px}.journal-text h3{font-size:15px;color:#e1d5b6;margin:20px 0 8px}#error{position:fixed;inset:0;background:#1c2a2e;z-index:100;padding:10vw;font-size:18px}.save-status{font-size:10px;color:#9eaea4;margin-top:5px}@media(max-width:1050px){#hud{padding:18px}.right{right:18px;top:18px}#map{width:130px;height:130px}.quest{max-width:220px;padding:8px 10px}.location{font-size:22px}#tutorial{width:330px;bottom:160px}.controls{right:18px;max-width:480px;font-size:10px}.bottom{left:18px;width:200px}#boss{top:78px;width:300px}#nav{top:20px}.titlepanel{margin-left:7vw}.brand{font-size:86px}}@media(max-height:650px){#tutorial{bottom:127px;padding:9px 14px}#toast{top:148px}#dialog{padding-bottom:50px}.titlepanel .divider{margin:16px 0}.brand{font-size:70px}.intro{font-size:13px}.quest{margin-top:12px}.modal{max-height:94vh}}
 
@@ -255,7 +255,7 @@ button:focus-visible,select:focus-visible{outline:2px solid #e0bf82;outline-offs
 .map-top-actions{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.map-top-actions #mapZoomOut,.map-top-actions #mapZoomIn{min-width:34px;font-size:15px;padding:4px 9px}.map-top-actions #mapZoomReset{min-width:54px;padding:5px 8px;font-variant-numeric:tabular-nums}#fullmap{cursor:zoom-in}
 
 /* Mobile Touch Edition 0.12.14 — separate UI layer; gameplay/save rules stay shared. */
-body.mobile-build{overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+html{touch-action:manipulation}body.mobile-build{overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation;--mobile-ui-scale:.90}
 body.mobile-build #game{touch-action:none}
 .mobile-controls{position:fixed;inset:0;z-index:12;pointer-events:none;touch-action:none}
 .mobile-controls button,.mobile-stick{pointer-events:auto;touch-action:none;-webkit-tap-highlight-color:transparent}
@@ -361,11 +361,24 @@ body.mobile-build .supplies kbd{font-size:7px;padding:1px 4px}
 @media(max-height:430px){body.mobile-build .bottom{top:121px}body.mobile-build #tutorial{left:192px;top:66px}}
 body.mobile-build .bottom{top:145px}
 @media(max-height:430px){body.mobile-build .bottom{top:137px}}
+
+/* v0.12.18 iPad/Quick Look launch guard */
+#quickLookFallback{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#0b151b;color:#e7e0d0;padding:8vw;font-family:system-ui,-apple-system,sans-serif;text-align:center}
+#quickLookFallback .ql-card{max-width:720px;border:1px solid #ffffff2a;background:#142127;padding:28px 30px;line-height:1.8}
+#quickLookFallback h2{margin:0 0 12px;font-size:24px}
+#quickLookFallback p{font-size:14px;color:#bac7c1;margin:8px 0}
+#quickLookFallback b{color:#ead8aa}
+html.musaek-js-running #quickLookFallback{display:none}
+
+/* v0.12.19 — iPad fit: shrink the touch/HUD interface to 90% without shrinking the 3D world.
+   touch-action: manipulation disables Safari double-tap zoom while preserving tap delivery. */
+body.mobile-build #hud,body.mobile-build .mobile-controls{transform:scale(var(--mobile-ui-scale));transform-origin:center center}
+body.mobile-build #overlay .menu-shell,body.mobile-build .overlay:not(#overlay) .modal{transform:scale(var(--mobile-ui-scale));transform-origin:center center}
 </style></head><body class="main-menu mobile-build">
 <canvas id="game" tabindex="0" aria-label="무색 3D 게임"></canvas><div class="vignette"></div><div id="labels"></div>
 <div id="hud"><div class="eyebrow">CHAPTER 01 / A RUMOR IN THE WOODS</div><div class="location" id="regionName">새벽마을</div><div class="tag" id="regionTag">안전 구역 · 사냥꾼의 첫걸음</div>
 <div class="quest"><h3 id="questTitle">첫 번째 발걸음</h3><div id="questLines"></div><div id="boarQuestHUD" class="hidden"><span id="boarQuestText"></span><button id="boarQuestTrack" class="small secondary">추적</button></div><div id="rioQuestHUD" class="hidden"><span id="rioQuestText"></span><button id="rioQuestTrack" class="small secondary">제작 의뢰 추적</button></div></div>
-<div class="right"><div class="eyebrow">MUSAEK / MOBILE 0.12.16</div><canvas id="map" width="240" height="240" aria-label="주변 지도"></canvas><div class="mapHint">N ↑　E →　<kbd>Tab</kbd> 전체 지도</div><div class="tag" id="cameraInfo">60° 내려다보기</div><div class="save-status" id="saveStatus"></div></div>
+<div class="right"><div class="eyebrow">MUSAEK / MOBILE 0.12.19</div><canvas id="map" width="240" height="240" aria-label="주변 지도"></canvas><div class="mapHint">N ↑　E →　<kbd>Tab</kbd> 전체 지도</div><div class="tag" id="cameraInfo">60° 내려다보기</div><div class="save-status" id="saveStatus"></div></div>
 <button id="statAlert" class="hidden" type="button" aria-label="미분배 능력치">!</button><div id="nav"></div><div id="boss" class="hidden"><div class="boss-overline">MID BOSS / THE CRIMSON BEAST</div><div class="boss-name">제보당의 붉은 괴수</div><div class="bar"><i id="bossFill"></i></div><div id="bossHP"></div><div id="bossPhase"></div></div>
 <div class="bottom">
 <div class="health-label"><span><span id="heroLevel">Lv.1</span> · 사냥꾼</span><span id="healthText">HP 100 / 100</span></div>
@@ -396,11 +409,11 @@ body.mobile-build .bottom{top:145px}
   <button id="mobileHeavy" class="mobile-action heavy" type="button">강공</button>
   <button id="mobileLight" class="mobile-action light" type="button">공격</button>
  </div>
- <div id="mobileAimHint" class="mobile-aim-hint">화면 빈 곳 드래그 · 시야/공격 방향</div>
+ <div id="mobileAimHint" class="mobile-aim-hint">빈 화면 드래그 · 공격 방향만 지정</div>
 </div>
 <div id="rotateNotice" class="rotate-notice" aria-hidden="true"><div><b>가로 화면 권장</b><span>휴대폰을 가로로 돌리면 터치 조작이 나타납니다.</span></div></div>
 <div id="lock"></div><div id="damage"></div>
-<div id="overlay" class="overlay"><section class="menu-identity"><div class="menu-kicker" id="overline">A WORLD WITHOUT COLOR</div><h1 class="brand" id="title">무색</h1><div class="subtitle" id="subtitle">THE STOLEN COLORS</div><div class="menu-story"><strong>세상이 잊어도,<br>당신의 여정은 남는다.</strong>잿빛 늪과 오래된 숲.<br>아직 꺼지지 않은 마을의 불빛.<br>멈춰 둔 모험으로 돌아오세요.</div><div class="menu-chapter">CHAPTER 01　/　제보당의 붉은 괴수<br><div class="menu-divider"></div>MOBILE TOUCH EDITION　—　PROTOTYPE 0.12.16</div><button id="sound" class="secondary menu-sound">소리 설정 · 터치해서 켜기</button><button id="openClock" class="secondary menu-sound">시계 설정 · 로컬 / 서버</button></section><section class="menu-shell"><div id="connectionBadge" class="menu-status"><i class="status-light"></i><span>로컬 저장 확인 중</span></div><div id="menuContent"></div><div id="menuMessage" class="menu-message" role="status" aria-live="polite"></div></section></div>
+<div id="overlay" class="overlay"><section class="menu-identity"><div class="menu-kicker" id="overline">A WORLD WITHOUT COLOR</div><h1 class="brand" id="title">무색</h1><div class="subtitle" id="subtitle">THE STOLEN COLORS</div><div class="menu-story"><strong>세상이 잊어도,<br>당신의 여정은 남는다.</strong>잿빛 늪과 오래된 숲.<br>아직 꺼지지 않은 마을의 불빛.<br>멈춰 둔 모험으로 돌아오세요.</div><div class="menu-chapter">CHAPTER 01　/　제보당의 붉은 괴수<br><div class="menu-divider"></div>MOBILE TOUCH EDITION　—　PROTOTYPE 0.12.19</div><button id="sound" class="secondary menu-sound">소리 설정 · 터치해서 켜기</button><button id="openClock" class="secondary menu-sound">시계 설정 · 로컬 / 서버</button></section><section class="menu-shell"><div id="connectionBadge" class="menu-status"><i class="status-light"></i><span>로컬 저장 확인 중</span></div><div id="menuContent"></div><div id="menuMessage" class="menu-message" role="status" aria-live="polite"></div></section></div>
 <input id="accountBackupFile" type="file" accept=".json,.musaek,application/json" class="hidden">
 <div id="storagePanel" class="overlay hidden"><section class="modal storage-modal"><div class="topline"><div><div class="eyebrow">THE HUNTER'S ARCHIVE</div><h2 id="storageTitle">여정의 기록</h2></div><button id="closeStorage" class="secondary small">닫기</button></div><p class="storage-topnote" id="storageHint"></p><div id="saveCards" class="save-cards"></div><div class="storage-tools"><button id="storageExport" class="secondary">현재 진행 파일로 내보내기</button><button id="storageImport" class="secondary">기존 저장 파일 가져오기</button><button id="storageAccountExport" class="secondary">계정 전체 백업</button><button id="storageRefresh" class="secondary">목록 새로고침</button></div><div id="storageMessage" class="storage-note" role="status" aria-live="polite"></div></section></div>
 
@@ -410,7 +423,7 @@ body.mobile-build .bottom{top:145px}
 
 <div id="dialog" class="overlay hidden"><section class="modal"><h2 id="dialogTitle"></h2><div id="dialogText"></div><div id="dialogActions" class="dialog-actions"></div></section></div>
 <div id="help" class="overlay hidden"><section class="modal"><div class="topline"><h2>사냥꾼의 모바일 조작 안내</h2><button id="closeHelp" class="secondary small">닫기</button></div><div class="help-resource"><b>마나 MP ≠ 기력</b><p>마나: 일반·강공격·스킬·달리기의 연료. 기력: 일반·강공격·대시의 여력.<br>일반·강공격은 두 자원을 함께 쓰고, 스킬은 마나만, F 대시는 기력만 씁니다.<br>Q 하급 회복약은 HP만 회복합니다. 자세한 설명은 이 도움말 아래의 생존 수첩에서 다시 읽으세요.</p></div><div class="help-grid"><div class="help-item"><span>제작한 방패로 1회 방어</span><kbd>G 누르기</kbd></div>
-<div class="help-item"><span>이동 · 바깥까지 밀면 질주</span><kbd>왼쪽 스틱</kbd></div><div class="help-item"><span>상호작용 · 대화</span><kbd>상호작용</kbd></div><div class="help-item"><span>점프</span><kbd>점프</kbd></div><div class="help-item"><span>달리기 · MP 초당 0.1</span><kbd>스틱 바깥</kbd></div><div class="help-item"><span>대시 · 공격 중 사용 가능</span><kbd>대시</kbd></div><div class="help-item"><span>약공격 · 3연타</span><kbd>공격</kbd></div><div class="help-item"><span>강공격</span><kbd>강공</kbd></div><div class="help-item"><span>공격 방향</span><kbd>자동 근접 조준</kbd></div><div class="help-item"><span>시야 이동</span><kbd>빈 화면 드래그</kbd></div><div class="help-item"><span>카메라 거리</span><kbd>두 손가락 확대/축소</kbd></div><div class="help-item"><span>하급 회복약 · HP +30 (고정) / 8초</span><kbd>회복</kbd></div><div class="help-item"><span>탐험 지도</span><kbd>지도</kbd></div><div class="help-item"><span>메뉴 · 저장 · 불러오기</span><kbd>메뉴</kbd></div><div class="help-item"><span>소리 설정 / 음소거</span><kbd>B / M</kbd></div></div><div class="help-item"><span>상태 · 능력치 · 스킬 장착</span><kbd>상태</kbd></div><div class="help-item"><span>스킬</span><kbd>하단 스킬 슬롯 터치</kbd></div><div class="help-note">베기: MP 3.5 / 재사용 1초. 일반 공격 MP 0.5, 강공격 MP 1.5. 기력 소모는 아래 현재 무기 기준을 확인하세요. 피해 숫자는 실제 감소한 HP입니다.<br>F5: 슬롯 1에 빠른 저장 · F9: 불러오기 목록. 로컬 계정은 이 브라우저에 저장됩니다. 파일 이동 전에 계정 백업을 보관하세요. 달리는 동안 MP 자연 회복은 멈춥니다. MP가 바닥나면 걷기로 전환되며, 회복 후 Shift를 떼었다가 다시 누르세요. 카메라는 60도 각도를 유지합니다. 마을은 안전 구역입니다. 먼저 길잡이 세라에게 마나·기력과 상태창을 배우고 미분배 포인트를 모두 사용한 뒤, 슬라임 5마리·판매·회복약 구매·수습 장검 제작·휴식의 입문 의뢰를 완료하세요. 마을 서쪽 대장간에서는 무기·방어구·아티팩트·미궁 입장권을 제작하고, 모루에서 무기를 강화·복구·전승할 수 있습니다. 이후 로안의 슬라임 25마리 메인 의뢰를 받고 완료 보고하면 미궁 입장 자격을 얻습니다. 외부에서 미궁에 들어갈 때마다 입장권 1개를 사용합니다.</div><div id="actualStaminaHelp" class="help-note"></div><div id="survivalNotes"></div><div class="actions"><button id="showGuide" class="secondary">단계별 가이드 다시 보기</button></div></section></div>
+<div class="help-item"><span>이동 · 바깥까지 밀면 질주</span><kbd>왼쪽 스틱</kbd></div><div class="help-item"><span>상호작용 · 대화</span><kbd>상호작용</kbd></div><div class="help-item"><span>점프</span><kbd>점프</kbd></div><div class="help-item"><span>달리기 · MP 초당 0.1</span><kbd>스틱 바깥</kbd></div><div class="help-item"><span>대시 · 공격 중 사용 가능</span><kbd>대시</kbd></div><div class="help-item"><span>약공격 · 3연타</span><kbd>공격</kbd></div><div class="help-item"><span>강공격</span><kbd>강공</kbd></div><div class="help-item"><span>공격 방향</span><kbd>자동 근접 조준</kbd></div><div class="help-item"><span>수동 공격 방향</span><kbd>빈 화면 드래그 · 카메라는 캐릭터 중심</kbd></div><div class="help-item"><span>카메라 거리</span><kbd>두 손가락 확대/축소</kbd></div><div class="help-item"><span>하급 회복약 · HP +30 (고정) / 8초</span><kbd>회복</kbd></div><div class="help-item"><span>탐험 지도</span><kbd>지도</kbd></div><div class="help-item"><span>메뉴 · 저장 · 불러오기</span><kbd>메뉴</kbd></div><div class="help-item"><span>소리 설정 / 음소거</span><kbd>B / M</kbd></div></div><div class="help-item"><span>상태 · 능력치 · 스킬 장착</span><kbd>상태</kbd></div><div class="help-item"><span>스킬</span><kbd>하단 스킬 슬롯 터치</kbd></div><div class="help-note">베기: MP 3.5 / 재사용 1초. 일반 공격 MP 0.5, 강공격 MP 1.5. 기력 소모는 아래 현재 무기 기준을 확인하세요. 피해 숫자는 실제 감소한 HP입니다.<br>F5: 슬롯 1에 빠른 저장 · F9: 불러오기 목록. 로컬 계정은 이 브라우저에 저장됩니다. 파일 이동 전에 계정 백업을 보관하세요. 달리는 동안 MP 자연 회복은 멈춥니다. MP가 바닥나면 걷기로 전환되며, 회복 후 Shift를 떼었다가 다시 누르세요. 카메라는 60도 각도를 유지합니다. 마을은 안전 구역입니다. 먼저 길잡이 세라에게 마나·기력과 상태창을 배우고 미분배 포인트를 모두 사용한 뒤, 슬라임 5마리·판매·회복약 구매·수습 장검 제작·휴식의 입문 의뢰를 완료하세요. 마을 서쪽 대장간에서는 무기·방어구·아티팩트·미궁 입장권을 제작하고, 모루에서 무기를 강화·복구·전승할 수 있습니다. 이후 로안의 슬라임 25마리 메인 의뢰를 받고 완료 보고하면 미궁 입장 자격을 얻습니다. 외부에서 미궁에 들어갈 때마다 입장권 1개를 사용합니다.</div><div id="actualStaminaHelp" class="help-note"></div><div id="survivalNotes"></div><div class="actions"><button id="showGuide" class="secondary">단계별 가이드 다시 보기</button></div></section></div>
 <div id="mapOverlay" class="overlay hidden"><section class="modal map-modal"><div class="topline"><div><div class="eyebrow">FIELD NOTES / EXPLORATION</div><h2 id="mapTitle">색을 잃은 대지</h2></div><div class="map-top-actions"><button id="mapZoomOut" class="secondary small" aria-label="지도 축소">−</button> <button id="mapZoomReset" class="secondary small"><span id="mapZoomValue">100%</span></button> <button id="mapZoomIn" class="secondary small" aria-label="지도 확대">＋</button> <button id="townMapToggle" class="secondary small">마을 확대</button> <button id="mapExtent" class="secondary small hidden">미궁 전체 범위</button> <button id="closeMap" class="secondary small">닫기</button></div></div>
 <div class="map-layout"><div class="map-sheet"><canvas id="fullmap" width="1000" height="660" aria-label="탐험 지도"></canvas><div class="legend" id="mapLegend"></div></div><aside class="map-sidebar"><div class="map-objective"><div class="eyebrow">목적지</div><strong id="mapObjective"></strong><p id="mapObjectiveNote"></p><small id="mapDistance"></small><button id="mapResetTarget" class="secondary small">의뢰 목적지로</button></div><div id="mapTravel" class="map-travel hidden"></div><div id="mapPlaces"></div><div class="map-note" id="mapHintText"></div></aside></div></section></div>
 <div id="journal" class="overlay hidden"><section class="modal"><div class="topline"><h2>모험 기록</h2><button id="closeJournal" class="secondary small">닫기</button></div><div id="journalText" class="journal-text"></div></section></div>
@@ -437,14 +450,15 @@ body.mobile-build .bottom{top:145px}
 <script>
 'use strict';
 (()=>{
-/* MUSAEK 0.12.16 — local-save boot recovery and startup deadlock prevention.
+try{document.documentElement.classList.add('musaek-js-running');}catch(_){}
+/* MUSAEK 0.12.19 — merchant sale chime and mobile iPad touch/UI polish.
  * All probabilities below are independent Bernoulli rolls, at Luck 5.
  * Skill power is not HP damage: strength and magic can modify it.
  */
 
 const MOBILE_BUILD=true;
-const MOBILE_EDITION='0.12.14-m1';
-const PATCH_REVISION=41;
+const MOBILE_EDITION='0.12.19-m3';
+const PATCH_REVISION=44;
 const DUNGEON_PUZZLE_REVISION=2;
 const RESPEC_GRANT_REVISION=1;
 const WORLD_LAYOUT_VERSION=3;
@@ -1825,14 +1839,17 @@ function changeGold(delta){
  if(ticks<0)return false;
  hero.gold=ticks/10;return true;
 }
-function sellItem(id,all=false){if(!beginnerServicesUnlocked())return false;
+function sellItem(id,all=false,playSaleSound=true){if(!beginnerServicesUnlocked())return false;
  if(state.mode!=='shop'||state.scene!=='field'||dist(player,activeMerchant())>4||!inTownBuilding('shop')||!ITEMS[id]||ITEMS[id].noSell)return false;
  const own=hero.inventory[id]||0,n=all?own:Math.min(1,own);if(!n)return false;
- const payout=itemSaleGold(id,n);hero.inventory[id]-=n;if(!hero.inventory[id])delete hero.inventory[id];if(payout>0)changeGold(payout);recordIntroSale(n);saveGame();return true;
+ const payout=itemSaleGold(id,n);hero.inventory[id]-=n;if(!hero.inventory[id])delete hero.inventory[id];if(payout>0)changeGold(payout);recordIntroSale(n);
+ if(payout>0&&playSaleSound&&activeMerchant()===MERCHANT)SOUND.effect('sellCoin',MERCHANT);
+ saveGame();return true;
 }
 function sellAll(){if(!beginnerServicesUnlocked())return false;
  if(state.mode!=='shop'||dist(player,activeMerchant())>4)return 0;
- const before=hero.gold;for(const id of Object.keys(hero.inventory)){if(ITEMS[id]?.noSell||ITEMS[id]?.rarity?.includes('코어')||id==='redGem')continue;sellItem(id,true);}return goldAmount(hero.gold-before);
+ const before=hero.gold;for(const id of Object.keys(hero.inventory)){if(ITEMS[id]?.noSell||ITEMS[id]?.rarity?.includes('코어')||id==='redGem')continue;sellItem(id,true,false);}
+ const earned=goldAmount(hero.gold-before);if(earned>0&&activeMerchant()===MERCHANT)SOUND.effect('sellCoin',MERCHANT);return earned;
 }
 function buyPotion(){
  if(!beginnerServicesUnlocked()||state.mode!=='shop'||state.scene!=='field'||!inTownBuilding('shop')||dist(player,activeMerchant())>4)return false;
@@ -3490,6 +3507,7 @@ function createSoundSynth(ctx,destination=ctx.destination){
    case 'werewolfClaw':o(105,.28,.14,'sawtooth',48);n(.27,.35,1900,.02);break;
    case 'werewolfRush':o(73,.46,.19,'sawtooth',36);n(.45,.32,610);break;
    case 'werewolfSlam':o(68,.58,.27,'sine',27);n(.50,.40,270);break;
+   case 'sellCoin':bell(fx,88,t,.12,.070*k,pan);bell(fx,95,t+.045,.16,.050*k,pan);o(2100,.055,.030,'triangle',1450,.008);break;
    case 'coin':bell(fx,84,t,.18,.055*k,pan);bell(fx,91,t+.055,.24,.045*k,pan);o(1460,.08,.025,'triangle',980,.015);break;
    case 'hotspring':n(.70,.055,620);o(185,.30,.025,'sine',130,.04);bell(fx,69,t+.12,.80,.045*k,pan);bell(fx,76,t+.38,.72,.035*k,pan);break;
    case 'ui':bell(fx,74,t,.12,.035*k,0);break;
@@ -4145,14 +4163,11 @@ function sampleStrike(a){
 }
 function updateCamera(dt){
  if(currentInterior()){updateRoomCamera(dt);return;}
- const nx=pointer.active?pointer.nx:((keys.has('ArrowRight')?1:0)-(keys.has('ArrowLeft')?1:0))*.8;
- const ny=pointer.active?pointer.ny:((keys.has('ArrowDown')?1:0)-(keys.has('ArrowUp')?1:0))*.8;
- const deadzone=v=>Math.sign(v)*smooth(clamp((Math.abs(v)-.10)/.90,0,1));
- const safeLead=Math.min(1,camera.distance/CONFIG.cameraDistance);
- camera.lead.x=damp(camera.lead.x,deadzone(nx)*CONFIG.cameraLeadX*safeLead*Math.min(1,innerWidth/innerHeight/1.25),5.5,dt);
- camera.lead.z=damp(camera.lead.z,deadzone(ny)*CONFIG.cameraLeadZ*safeLead,5.5,dt);
- camera.focus.x=damp(camera.focus.x,player.x+camera.lead.x,9,dt);
- camera.focus.z=damp(camera.focus.z,player.z+camera.lead.z,9,dt);
+ // v0.12.18: aiming no longer pushes the camera away from the hunter.
+ // Mouse/touch still chooses attack direction, while world framing stays player-centered.
+ camera.lead.x=damp(camera.lead.x,0,10,dt);camera.lead.z=damp(camera.lead.z,0,10,dt);
+ camera.focus.x=damp(camera.focus.x,player.x,10,dt);
+ camera.focus.z=damp(camera.focus.z,player.z,10,dt);
  // Anchor to the terrain rather than the jump pose, so the camera climbs the ridge without bobbing.
  const ground=state.scene==='field'?(ridgeRawHeight(player.x,player.z)??0):0;camera.focus.y=damp(camera.focus.y,ground+.65,9,dt);
  const bossFight=isBossEncounter()||isIronGiantEncounter();
@@ -5202,7 +5217,7 @@ function renderProgressHUD(){
 
 const GUIDE=[
  {title:'광장을 걸어 보자',text:MOBILE_BUILD?'왼쪽 스틱으로 이동해 봐. 약 5m를 걸으면 다음 안내로 넘어가.':'W A S D로 이동해 봐. 약 5m를 걸으면 다음 안내로 넘어가.',test:()=>state.guideMove>5},
- {title:'주변을 둘러보자',text:MOBILE_BUILD?'버튼이 없는 화면을 드래그해 시야를 움직여 봐.':'마우스 포인터를 화면 가장자리 쪽으로 옮겨 봐. 시야가 부드럽게 따라가.',test:()=>state.guideLook>.6},
+ {title:'공격 방향을 정해 보자',text:MOBILE_BUILD?'버튼이 없는 화면을 드래그해 공격 방향만 정해 봐. 카메라는 캐릭터 중심을 유지해.':'마우스를 움직여 공격 방향을 정해 봐. 카메라는 캐릭터 중심을 유지해.',test:()=>state.guideLook>.6},
  {title:'조금 더 빠르게',text:MOBILE_BUILD?'이동 스틱을 바깥쪽까지 밀고 2초 달려 보자. MP 초당 0.1 소모.':'Shift + WASD로 2초 달려 보자. MP 초당 0.1 소모. 바닥나면 걷기로 바뀐다.',test:()=>state.guideRun>2},
  {title:'가볍게 뛰어오르기',text:MOBILE_BUILD?'오른쪽의 점프 버튼을 눌러 봐. 낮은 통나무는 뛰어넘을 수 있어.':'Space로 점프해 봐. 연습장 낮은 통나무는 뛰어넘을 수 있어.',test:()=>state.guideFlags.jump},
  {title:'공격을 피할 때는',text:MOBILE_BUILD?'대시 버튼을 눌러 봐. 기력을 사용하고 잠깐 공격을 피할 수 있어.':'F로 대시해 봐. 기력을 사용하고 짧은 시간 공격을 피할 수 있어.',test:()=>state.guideFlags.dash},
@@ -5464,6 +5479,7 @@ async function logoutAccount(){
 }
 function bootAccounts(){
  ACCOUNT.booted=false;renderMainMenu('title');let initIssue='';
+ const localFileMode=location.protocol==='file:';
  try{ACCOUNT_RESET.runOnce();}catch(err){initIssue=err?.message||'로컬 계정 초기화 확인에 실패했습니다.';}
  try{
   LOCAL.available();ACCOUNT.backend=true;ACCOUNT.public=false;ACCOUNT.user=null;ACCOUNT.csrf='local-only';ACCOUNT.revision=ACCOUNT.serverRevision=0;
@@ -5476,6 +5492,7 @@ function bootAccounts(){
  if(!ACCOUNT.backend)setMenuMessage((ACCOUNT_RESET.didReset()?'기존 계정 초기화 완료. ':'')+(initIssue||'로컬 저장 기능을 사용할 수 없습니다.')+' 게스트 플레이는 가능합니다.',true);
  else if(initIssue)setMenuMessage(initIssue+' 기존 데이터는 삭제하지 않았습니다.',true);
  else if(ACCOUNT_RESET.didReset())setMenuMessage('기존 로그인·회원가입 기록을 한 번 초기화했습니다. 새 계정을 등록하거나 게스트로 시작하세요. 게스트 세이브는 유지됩니다.');
+ else if(localFileMode)setMenuMessage('로컬 HTML 실행입니다. 저장이 불안정하면 게스트로 시작해 진행 파일을 내보내세요. iPad에서는 HTTPS 주소로 Safari에서 여는 방식을 권장합니다.');
 }
 async function openStoragePanel(mode='load'){
  if(!ACCOUNT.user&&!ACCOUNT.guest)return;
@@ -5565,7 +5582,7 @@ function updateMobileControls(){
  const it=playing&&player.grounded?interactionTarget():null;
  if(interact){interact.textContent='상호작용';interact.classList.toggle('ready',!!it);}
  if(healBtn)healBtn.textContent=player.healCD>0?fmt(player.healCD):'회복';
- if(guardBtn)guardBtn.classList.toggle('pressed',!!player.guardActive);
+ if(guardBtn){const hasShield=!!equippedGear('shield');guardBtn.classList.toggle('hidden',!hasShield);guardBtn.classList.toggle('pressed',hasShield&&!!player.guardActive);}
 }
 function mobileSetLook(clientX,clientY){
  pointer.x=clamp(clientX,0,innerWidth);pointer.y=clamp(clientY,0,innerHeight);
@@ -5596,7 +5613,7 @@ function installMobileControls(){
  $('mobileMenu')?.addEventListener('click',()=>{if(state.mode==='play')pause();});
  $('map')?.addEventListener('pointerdown',e=>{if(state.mode==='play'){e.preventDefault();togglePanel('mapOverlay','map');}});
  for(let i=0;i<4;i++)$('skill'+i)?.addEventListener('pointerdown',e=>{if(state.mode!=='play')return;e.preventDefault();castSkill(i);});
- // Empty world area controls view/attack direction. Two touches pinch camera distance.
+ // Empty world area controls attack direction only. Two touches pinch centered camera distance.
  const worldTouches=new Map();
  const updatePinch=()=>{if(worldTouches.size!==2){mobileInput.pinchDistance=0;return;}const a=[...worldTouches.values()],d=Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);if(!mobileInput.pinchDistance){mobileInput.pinchDistance=d;mobileInput.pinchZoom=camera.zoom;return;}const delta=(mobileInput.pinchDistance-d)/28;camera.zoom=clamp(mobileInput.pinchZoom+delta,CONFIG.cameraMin,CONFIG.cameraMax);};
  canvas.addEventListener('pointerdown',e=>{if(state.mode!=='play'||e.pointerType!=='touch')return;e.preventDefault();worldTouches.set(e.pointerId,{x:e.clientX,y:e.clientY});canvas.setPointerCapture?.(e.pointerId);if(worldTouches.size===1){mobileInput.lookPointer=e.pointerId;mobileSetLook(e.clientX,e.clientY);}updatePinch();});
@@ -6640,7 +6657,7 @@ function updateRoomCamera(dt=0,snap=false){
  const distZ=(b.rd*.90+4.7)/(2*Math.tan(vfov/2)*.72);
  const distX=(b.rw+3.0)/(2*Math.tan(vfov/2)*aspect*.62);
  const d=Math.max(18,distZ,distX);
- const tx=b.x+(pointer.active?pointer.nx*.35:0),tz=b.z-.45+(pointer.active?pointer.ny*.28:0);
+ const tx=b.x,tz=b.z-.45; // v0.12.18: indoor framing never follows pointer/touch pan.
  if(snap){camera.focus=v3(tx,.6,tz);camera.distance=d;camera.lead=v3();}
  else if(dt>0){camera.focus.x=damp(camera.focus.x,tx,8,dt);camera.focus.z=damp(camera.focus.z,tz,8,dt);camera.focus.y=.6;camera.distance=damp(camera.distance,d,8,dt);}
  else camera.distance=d; // resize while paused changes framing, not game state.
@@ -7293,6 +7310,9 @@ function frame(now){
  if(state.mode==='board')tickBoardClockPanel(TIME_SOURCE.now());
  render();requestAnimationFrame(frame);
 }
+// Browser gesture policy only: keep both gameplay taps, cancel Safari's default double-tap zoom.
+if(MOBILE_BUILD)document.addEventListener('dblclick',event=>event.preventDefault(),{passive:false});
+
 const TEST_BOOT=window.__MUSAEK_TEST__===true||new URLSearchParams(location.search).get('test')==='1';
 if(TEST_BOOT){
  try{initializeWorld();setupTownUI();bootAccounts();TIME_SOURCE.resume();}catch(err){failRuntimeBoot(err);}
